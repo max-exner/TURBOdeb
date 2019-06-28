@@ -1,0 +1,56 @@
+// Encrypted letters without a turn for Maxis testbench
+
+//Configuration EnigmaTB
+reflector       : B
+drum 0          : 2 (nearest to refelctor)
+drum 1          : 5
+drum 2          : 3
+
+start position  : ZZZ
+
+
+
+B -> O
+D -> E
+F -> L
+H -> P
+J -> N
+L -> F
+N -> J
+P -> H
+R -> U
+T -> S
+V -> Q
+X -> C
+Z -> I
+
+
+0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1
+
+A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
+
+0   0   1   0   1   1   0   1   1   1   0   1   0   1   1   1   1   0   1   0   1   0   0   0   0   0   
+
+
+A -> G
+C -> X
+E -> D
+G -> A
+I -> Z
+K -> M
+M -> K
+O -> B
+Q -> V
+S -> T
+U -> R
+W -> Y
+Y -> W
+
+
+1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0   1   0
+
+A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
+
+1   1   0   1   0   0   1   0   0   0   1   0   1   0   0   0   0   1   0   1   0   1   1   1   1   1  
+
+

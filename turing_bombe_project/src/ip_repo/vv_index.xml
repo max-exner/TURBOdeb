@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Index Version="1" Minor="0">
+	<Repository value="/home/tobias/Development/TURBOdeb/repar_turing_bombe/turing_bombe_project/src/ip_repo">
+	</Repository>
+	<IP>
+		<VLNV value="user.org:user:TURBO_enigma:1.0">
+		</VLNV>
+		<DisplayName value="TURBO_enigma_v1_0">
+		</DisplayName>
+		<Description value="TURBO_enigma_v1_0">
+		</Description>
+		<CoreRevision value="2">
+		</CoreRevision>
+		<ComponentPath value="TURBO_enigma/component.xml">
+		</ComponentPath>
+		<Families>
+			<Family name="zynq">
+				<Part status="Production" name="ALL">
+				</Part>
+			</Family>
+		</Families>
+		<Taxonomies>
+			<Taxonomy value="/UserIP">
+			</Taxonomy>
+		</Taxonomies>
+		<LockPrevVersions value="false">
+		</LockPrevVersions>
+	</IP>
+	<IP>
+		<VLNV value="user.org:user:design_enigma:1.0">
+		</VLNV>
+		<DisplayName value="design_enigma_v1_0">
+		</DisplayName>
+		<Description value="design_enigma_v1_0">
+		</Description>
+		<CoreRevision value="3">
+		</CoreRevision>
+		<ComponentPath value="enigma_ip/component.xml">
+		</ComponentPath>
+		<Families>
+			<Family name="zynq">
+				<Part status="Production" name="ALL">
+				</Part>
+			</Family>
+		</Families>
+		<Taxonomies>
+			<Taxonomy value="/UserIP">
+			</Taxonomy>
+		</Taxonomies>
+		<LockPrevVersions value="false">
+		</LockPrevVersions>
+		<VendorDisplayName value="Maximilian Exner">
+		</VendorDisplayName>
+	</IP>
+</Index>
+

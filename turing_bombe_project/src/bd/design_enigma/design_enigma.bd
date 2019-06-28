@@ -1,0 +1,1073 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xA9E3B03D20F147F9",
+      "device": "xc7z020clg400-1",
+      "name": "design_enigma",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "xlconstant_0": "",
+      "pseudo_lut": "",
+      "drum_1": "",
+      "drum_2": "",
+      "drum_3": "",
+      "drum_ukw_0": "",
+      "enigma_control": ""
+    },
+    "ports": {
+      "UB_CLK_IN": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        }
+      },
+      "SOFT_RESET_IN": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "CONFIG_START_POS_DRUM_1_IN": {
+        "type": "data",
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "CONFIG_START_POS_DRUM_2_IN": {
+        "type": "data",
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "CONFIG_START_POS_DRUM_3_IN": {
+        "type": "data",
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "CHARACTERS_IN_DB0": {
+        "type": "data",
+        "direction": "I",
+        "left": "25",
+        "right": "0"
+      },
+      "CHARACTERS_IN_DB1": {
+        "type": "data",
+        "direction": "I",
+        "left": "25",
+        "right": "0"
+      },
+      "DRUM_IMPULS_IN": {
+        "type": "data",
+        "direction": "I"
+      },
+      "START_IN": {
+        "type": "data",
+        "direction": "I"
+      },
+      "CODED_CHARACTERS_OUT_DB0": {
+        "type": "data",
+        "direction": "O",
+        "left": "25",
+        "right": "0"
+      },
+      "CODED_CHARACTERS_OUT_DB1": {
+        "type": "data",
+        "direction": "O",
+        "left": "25",
+        "right": "0"
+      },
+      "READY_OUT": {
+        "type": "data",
+        "direction": "O"
+      },
+      "CONFIG_DRUM_TYP_1_IN": {
+        "type": "data",
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "CONFIG_DRUM_TYP_2_IN": {
+        "type": "data",
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "CONFIG_DRUM_TYP_3_IN": {
+        "type": "data",
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      }
+    },
+    "components": {
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_enigma_xlconstant_0_1",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          }
+        }
+      },
+      "pseudo_lut": {
+        "vlnv": "xilinx.com:module_ref:pseudo_lut:1.0",
+        "xci_name": "design_enigma_pseudo_lut_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pseudo_lut",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "UB_CLK_IN": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "SOFT_RESET_N_IN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "DIRECTION_1": {
+            "direction": "I"
+          },
+          "DIRECTION_2": {
+            "direction": "I"
+          },
+          "DIRECTION_3": {
+            "direction": "I"
+          },
+          "CHARACTERS_FROM_DRUM_IN_1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_FROM_DRUM_IN_2": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_FROM_DRUM_IN_3": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_FROM_DRUM_IN_UKW": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "REQUEST_1": {
+            "direction": "I"
+          },
+          "REQUEST_2": {
+            "direction": "I"
+          },
+          "REQUEST_3": {
+            "direction": "I"
+          },
+          "REQUEST_UKW": {
+            "direction": "I"
+          },
+          "DRUM_TYP_IN_1": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "DRUM_TYP_IN_2": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "DRUM_TYP_IN_3": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "DRUM_TYP_IN_UKW": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "PROJECTION": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "BUSY_OUT": {
+            "direction": "O"
+          },
+          "READY_OUT_1": {
+            "direction": "O"
+          },
+          "READY_OUT_2": {
+            "direction": "O"
+          },
+          "READY_OUT_3": {
+            "direction": "O"
+          },
+          "READY_OUT_UKW": {
+            "direction": "O"
+          }
+        }
+      },
+      "drum_1": {
+        "vlnv": "xilinx.com:module_ref:drum:1.0",
+        "xci_name": "design_enigma_drum_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "drum",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "UB_CLK_IN": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "SOFT_RESET_N_IN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "CONFIG_DRUM_TYP_IN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_START_POS": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_DRUM_OVERFLOW": {
+            "direction": "I"
+          },
+          "CHARACTERS_IN_FWD": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_IN_BWD": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "REQUEST_IN_FWD": {
+            "direction": "I"
+          },
+          "REQUEST_IN_BWD": {
+            "direction": "I"
+          },
+          "DRUM_IMPULS_IN": {
+            "direction": "I"
+          },
+          "LUT_READY_IN": {
+            "direction": "I"
+          },
+          "LUT_BUSY_IN": {
+            "direction": "I"
+          },
+          "CHARACTERS_FROM_LUT": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_TO_LUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "DRUM_TYP_TO_LUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "DIRECTION_TO_LUT": {
+            "direction": "O"
+          },
+          "REQUEST_TO_LUT": {
+            "direction": "O"
+          },
+          "CHARACTERS_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "READY_OUT_FWD": {
+            "direction": "O"
+          },
+          "READY_OUT_BWD": {
+            "direction": "O"
+          },
+          "DRUM_IMPULS_OUT": {
+            "direction": "O"
+          }
+        }
+      },
+      "drum_2": {
+        "vlnv": "xilinx.com:module_ref:drum:1.0",
+        "xci_name": "design_enigma_drum_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "drum",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "UB_CLK_IN": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "SOFT_RESET_N_IN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "CONFIG_DRUM_TYP_IN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_START_POS": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_DRUM_OVERFLOW": {
+            "direction": "I"
+          },
+          "CHARACTERS_IN_FWD": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_IN_BWD": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "REQUEST_IN_FWD": {
+            "direction": "I"
+          },
+          "REQUEST_IN_BWD": {
+            "direction": "I"
+          },
+          "DRUM_IMPULS_IN": {
+            "direction": "I"
+          },
+          "LUT_READY_IN": {
+            "direction": "I"
+          },
+          "LUT_BUSY_IN": {
+            "direction": "I"
+          },
+          "CHARACTERS_FROM_LUT": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_TO_LUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "DRUM_TYP_TO_LUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "DIRECTION_TO_LUT": {
+            "direction": "O"
+          },
+          "REQUEST_TO_LUT": {
+            "direction": "O"
+          },
+          "CHARACTERS_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "READY_OUT_FWD": {
+            "direction": "O"
+          },
+          "READY_OUT_BWD": {
+            "direction": "O"
+          },
+          "DRUM_IMPULS_OUT": {
+            "direction": "O"
+          }
+        }
+      },
+      "drum_3": {
+        "vlnv": "xilinx.com:module_ref:drum:1.0",
+        "xci_name": "design_enigma_drum_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "drum",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "UB_CLK_IN": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "SOFT_RESET_N_IN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "CONFIG_DRUM_TYP_IN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_START_POS": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_DRUM_OVERFLOW": {
+            "direction": "I"
+          },
+          "CHARACTERS_IN_FWD": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_IN_BWD": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "REQUEST_IN_FWD": {
+            "direction": "I"
+          },
+          "REQUEST_IN_BWD": {
+            "direction": "I"
+          },
+          "DRUM_IMPULS_IN": {
+            "direction": "I"
+          },
+          "LUT_READY_IN": {
+            "direction": "I"
+          },
+          "LUT_BUSY_IN": {
+            "direction": "I"
+          },
+          "CHARACTERS_FROM_LUT": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_TO_LUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "DRUM_TYP_TO_LUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "DIRECTION_TO_LUT": {
+            "direction": "O"
+          },
+          "REQUEST_TO_LUT": {
+            "direction": "O"
+          },
+          "CHARACTERS_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "READY_OUT_FWD": {
+            "direction": "O"
+          },
+          "READY_OUT_BWD": {
+            "direction": "O"
+          },
+          "DRUM_IMPULS_OUT": {
+            "direction": "O"
+          }
+        }
+      },
+      "drum_ukw_0": {
+        "vlnv": "xilinx.com:module_ref:drum_ukw:1.0",
+        "xci_name": "design_enigma_drum_ukw_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "drum_ukw",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "UB_CLK_IN": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "SOFT_RESET_N_IN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "CHARACTERS_IN_FWD": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "REQUEST_IN_FWD": {
+            "direction": "I"
+          },
+          "LUT_READY_IN": {
+            "direction": "I"
+          },
+          "LUT_BUSY_IN": {
+            "direction": "I"
+          },
+          "CHARACTERS_FROM_LUT": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_TO_LUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "DRUM_TYP_TO_LUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "REQUEST_TO_LUT": {
+            "direction": "O"
+          },
+          "CHARACTERS_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "READY_OUT_BWD": {
+            "direction": "O"
+          }
+        }
+      },
+      "enigma_control": {
+        "vlnv": "xilinx.com:module_ref:enigma_control:1.0",
+        "xci_name": "design_enigma_enigma_control_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "enigma_control",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "UB_CLK_IN": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "SOFT_RESET_N_IN": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "CONFIG_START_POS_DRUM_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_START_POS_DRUM_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_START_POS_DRUM_3_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_DRUM_TYP_1_IN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_DRUM_TYP_2_IN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_DRUM_TYP_3_IN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "CHARACTERS_IN_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_IN_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DRUM_IMPULS_IN": {
+            "direction": "I"
+          },
+          "START_IN": {
+            "direction": "I"
+          },
+          "CHARACTERS_FROM_DRUM_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "READY_FROM_DRUM_IN": {
+            "direction": "I"
+          },
+          "CHARACTERS_TO_FIRST_DRUM_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "START_TO_FIRST_DRUM_OUT": {
+            "direction": "O"
+          },
+          "DRUM_IMPULS_OUT": {
+            "direction": "O"
+          },
+          "CODED_CHARACTERS_OUT_DB0": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "CODED_CHARACTERS_OUT_DB1": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "READY_OUT": {
+            "direction": "O"
+          },
+          "CONFIG_START_POS_DRUM_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_START_POS_DRUM_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_START_POS_DRUM_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_DRUM_TYP_1_OUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_DRUM_TYP_2_OUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_DRUM_TYP_3_OUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_DRUM_OVERFLOW_2_OUT": {
+            "direction": "O"
+          },
+          "CONFIG_DRUM_OVERFLOW_3_OUT": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "drum_0_CHARACTERS_TO_LUT": {
+        "ports": [
+          "drum_1/CHARACTERS_TO_LUT",
+          "pseudo_lut/CHARACTERS_FROM_DRUM_IN_1"
+        ]
+      },
+      "drum_0_DRUM_TYP_TO_LUT": {
+        "ports": [
+          "drum_1/DRUM_TYP_TO_LUT",
+          "pseudo_lut/DRUM_TYP_IN_1"
+        ]
+      },
+      "drum_0_DIRECTION_TO_LUT": {
+        "ports": [
+          "drum_1/DIRECTION_TO_LUT",
+          "pseudo_lut/DIRECTION_1"
+        ]
+      },
+      "drum_0_REQUEST_TO_LUT": {
+        "ports": [
+          "drum_1/REQUEST_TO_LUT",
+          "pseudo_lut/REQUEST_1"
+        ]
+      },
+      "drum_1_CHARACTERS_OUT": {
+        "ports": [
+          "drum_2/CHARACTERS_OUT",
+          "drum_1/CHARACTERS_IN_BWD",
+          "drum_3/CHARACTERS_IN_FWD"
+        ]
+      },
+      "drum_0_READY_OUT_FWD": {
+        "ports": [
+          "drum_1/READY_OUT_FWD",
+          "drum_2/REQUEST_IN_FWD"
+        ]
+      },
+      "drum_1_READY_OUT_FWD": {
+        "ports": [
+          "drum_2/READY_OUT_FWD",
+          "drum_3/REQUEST_IN_FWD"
+        ]
+      },
+      "drum_1_READY_OUT_BWD": {
+        "ports": [
+          "drum_2/READY_OUT_BWD",
+          "drum_1/REQUEST_IN_BWD"
+        ]
+      },
+      "drum_1_DRUM_IMPULS_OUT": {
+        "ports": [
+          "drum_2/DRUM_IMPULS_OUT",
+          "drum_1/DRUM_IMPULS_IN"
+        ]
+      },
+      "drum_2_DRUM_IMPULS_OUT": {
+        "ports": [
+          "drum_3/DRUM_IMPULS_OUT",
+          "drum_2/DRUM_IMPULS_IN"
+        ]
+      },
+      "pseudo_lut_0_READY_OUT_1": {
+        "ports": [
+          "pseudo_lut/READY_OUT_1",
+          "drum_1/LUT_READY_IN"
+        ]
+      },
+      "pseudo_lut_0_BUSY_OUT": {
+        "ports": [
+          "pseudo_lut/BUSY_OUT",
+          "drum_1/LUT_BUSY_IN",
+          "drum_2/LUT_BUSY_IN",
+          "drum_3/LUT_BUSY_IN",
+          "drum_ukw_0/LUT_BUSY_IN"
+        ]
+      },
+      "pseudo_lut_0_PROJECTION": {
+        "ports": [
+          "pseudo_lut/PROJECTION",
+          "drum_1/CHARACTERS_FROM_LUT",
+          "drum_2/CHARACTERS_FROM_LUT",
+          "drum_3/CHARACTERS_FROM_LUT",
+          "drum_ukw_0/CHARACTERS_FROM_LUT"
+        ]
+      },
+      "pseudo_lut_0_READY_OUT_2": {
+        "ports": [
+          "pseudo_lut/READY_OUT_2",
+          "drum_2/LUT_READY_IN"
+        ]
+      },
+      "pseudo_lut_0_READY_OUT_3": {
+        "ports": [
+          "pseudo_lut/READY_OUT_3",
+          "drum_3/LUT_READY_IN"
+        ]
+      },
+      "pseudo_lut_0_READY_OUT_UKW": {
+        "ports": [
+          "pseudo_lut/READY_OUT_UKW",
+          "drum_ukw_0/LUT_READY_IN"
+        ]
+      },
+      "drum_2_READY_OUT_BWD": {
+        "ports": [
+          "drum_3/READY_OUT_BWD",
+          "drum_2/REQUEST_IN_BWD"
+        ]
+      },
+      "drum_2_CHARACTERS_OUT": {
+        "ports": [
+          "drum_3/CHARACTERS_OUT",
+          "drum_2/CHARACTERS_IN_BWD",
+          "drum_ukw_0/CHARACTERS_IN_FWD"
+        ]
+      },
+      "drum_1_REQUEST_TO_LUT": {
+        "ports": [
+          "drum_2/REQUEST_TO_LUT",
+          "pseudo_lut/REQUEST_2"
+        ]
+      },
+      "drum_2_READY_OUT_FWD": {
+        "ports": [
+          "drum_3/READY_OUT_FWD",
+          "drum_ukw_0/REQUEST_IN_FWD"
+        ]
+      },
+      "drum_2_DRUM_TYP_TO_LUT": {
+        "ports": [
+          "drum_3/DRUM_TYP_TO_LUT",
+          "pseudo_lut/DRUM_TYP_IN_3"
+        ]
+      },
+      "drum_ukw_0_DRUM_TYP_TO_LUT": {
+        "ports": [
+          "drum_ukw_0/DRUM_TYP_TO_LUT",
+          "pseudo_lut/DRUM_TYP_IN_UKW"
+        ]
+      },
+      "drum_1_DRUM_TYP_TO_LUT": {
+        "ports": [
+          "drum_2/DRUM_TYP_TO_LUT",
+          "pseudo_lut/DRUM_TYP_IN_2"
+        ]
+      },
+      "drum_1_DIRECTION_TO_LUT": {
+        "ports": [
+          "drum_2/DIRECTION_TO_LUT",
+          "pseudo_lut/DIRECTION_2"
+        ]
+      },
+      "drum_1_CHARACTERS_TO_LUT": {
+        "ports": [
+          "drum_2/CHARACTERS_TO_LUT",
+          "pseudo_lut/CHARACTERS_FROM_DRUM_IN_2"
+        ]
+      },
+      "drum_2_CHARACTERS_TO_LUT": {
+        "ports": [
+          "drum_3/CHARACTERS_TO_LUT",
+          "pseudo_lut/CHARACTERS_FROM_DRUM_IN_3"
+        ]
+      },
+      "drum_2_DIRECTION_TO_LUT": {
+        "ports": [
+          "drum_3/DIRECTION_TO_LUT",
+          "pseudo_lut/DIRECTION_3"
+        ]
+      },
+      "drum_2_REQUEST_TO_LUT": {
+        "ports": [
+          "drum_3/REQUEST_TO_LUT",
+          "pseudo_lut/REQUEST_3"
+        ]
+      },
+      "drum_ukw_0_CHARACTERS_TO_LUT": {
+        "ports": [
+          "drum_ukw_0/CHARACTERS_TO_LUT",
+          "pseudo_lut/CHARACTERS_FROM_DRUM_IN_UKW"
+        ]
+      },
+      "drum_ukw_0_REQUEST_TO_LUT": {
+        "ports": [
+          "drum_ukw_0/REQUEST_TO_LUT",
+          "pseudo_lut/REQUEST_UKW"
+        ]
+      },
+      "drum_ukw_0_CHARACTERS_OUT": {
+        "ports": [
+          "drum_ukw_0/CHARACTERS_OUT",
+          "drum_3/CHARACTERS_IN_BWD"
+        ]
+      },
+      "drum_0_CHARACTERS_OUT": {
+        "ports": [
+          "drum_1/CHARACTERS_OUT",
+          "drum_2/CHARACTERS_IN_FWD",
+          "enigma_control/CHARACTERS_FROM_DRUM_IN"
+        ]
+      },
+      "drum_ukw_0_READY_OUT_BWD": {
+        "ports": [
+          "drum_ukw_0/READY_OUT_BWD",
+          "drum_3/REQUEST_IN_BWD"
+        ]
+      },
+      "enigma_control_0_CHARACTERS_TO_FIRST_DRUM_OUT": {
+        "ports": [
+          "enigma_control/CHARACTERS_TO_FIRST_DRUM_OUT",
+          "drum_1/CHARACTERS_IN_FWD"
+        ]
+      },
+      "enigma_control_0_START_TO_FIRST_DRUM_OUT": {
+        "ports": [
+          "enigma_control/START_TO_FIRST_DRUM_OUT",
+          "drum_1/REQUEST_IN_FWD"
+        ]
+      },
+      "enigma_control_0_DRUM_IMPULS_OUT": {
+        "ports": [
+          "enigma_control/DRUM_IMPULS_OUT",
+          "drum_3/DRUM_IMPULS_IN"
+        ]
+      },
+      "enigma_control_0_CONFIG_START_POS_DRUM_1_OUT": {
+        "ports": [
+          "enigma_control/CONFIG_START_POS_DRUM_1_OUT",
+          "drum_1/CONFIG_START_POS"
+        ]
+      },
+      "enigma_control_0_CONFIG_START_POS_DRUM_2_OUT": {
+        "ports": [
+          "enigma_control/CONFIG_START_POS_DRUM_2_OUT",
+          "drum_2/CONFIG_START_POS"
+        ]
+      },
+      "enigma_control_0_CONFIG_START_POS_DRUM_3_OUT": {
+        "ports": [
+          "enigma_control/CONFIG_START_POS_DRUM_3_OUT",
+          "drum_3/CONFIG_START_POS"
+        ]
+      },
+      "enigma_control_0_CONFIG_DRUM_TYP_1_OUT": {
+        "ports": [
+          "enigma_control/CONFIG_DRUM_TYP_1_OUT",
+          "drum_1/CONFIG_DRUM_TYP_IN"
+        ]
+      },
+      "enigma_control_0_CONFIG_DRUM_TYP_2_OUT": {
+        "ports": [
+          "enigma_control/CONFIG_DRUM_TYP_2_OUT",
+          "drum_2/CONFIG_DRUM_TYP_IN"
+        ]
+      },
+      "enigma_control_0_CONFIG_DRUM_TYP_3_OUT": {
+        "ports": [
+          "enigma_control/CONFIG_DRUM_TYP_3_OUT",
+          "drum_3/CONFIG_DRUM_TYP_IN"
+        ]
+      },
+      "enigma_control_0_CONFIG_DRUM_OVERFLOW_2_OUT": {
+        "ports": [
+          "enigma_control/CONFIG_DRUM_OVERFLOW_2_OUT",
+          "drum_2/CONFIG_DRUM_OVERFLOW"
+        ]
+      },
+      "enigma_control_0_CONFIG_DRUM_OVERFLOW_3_OUT": {
+        "ports": [
+          "enigma_control/CONFIG_DRUM_OVERFLOW_3_OUT",
+          "drum_3/CONFIG_DRUM_OVERFLOW"
+        ]
+      },
+      "drum_0_READY_OUT_BWD": {
+        "ports": [
+          "drum_1/READY_OUT_BWD",
+          "enigma_control/READY_FROM_DRUM_IN"
+        ]
+      },
+      "UB_CLK_IN_1": {
+        "ports": [
+          "UB_CLK_IN",
+          "pseudo_lut/UB_CLK_IN",
+          "drum_1/UB_CLK_IN",
+          "drum_2/UB_CLK_IN",
+          "drum_3/UB_CLK_IN",
+          "drum_ukw_0/UB_CLK_IN",
+          "enigma_control/UB_CLK_IN"
+        ]
+      },
+      "SOFT_RESET_IN_1": {
+        "ports": [
+          "SOFT_RESET_IN",
+          "pseudo_lut/SOFT_RESET_N_IN",
+          "drum_1/SOFT_RESET_N_IN",
+          "drum_2/SOFT_RESET_N_IN",
+          "drum_3/SOFT_RESET_N_IN",
+          "drum_ukw_0/SOFT_RESET_N_IN",
+          "enigma_control/SOFT_RESET_N_IN"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "drum_1/CONFIG_DRUM_OVERFLOW"
+        ]
+      },
+      "CONFIG_START_POS_DRUM_1_IN_1": {
+        "ports": [
+          "CONFIG_START_POS_DRUM_1_IN",
+          "enigma_control/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "CONFIG_START_POS_DRUM_2_IN_1": {
+        "ports": [
+          "CONFIG_START_POS_DRUM_2_IN",
+          "enigma_control/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "CONFIG_START_POS_DRUM_3_IN_1": {
+        "ports": [
+          "CONFIG_START_POS_DRUM_3_IN",
+          "enigma_control/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "CHARACTERS_IN_DB0_1": {
+        "ports": [
+          "CHARACTERS_IN_DB0",
+          "enigma_control/CHARACTERS_IN_DB0"
+        ]
+      },
+      "CHARACTERS_IN_DB1_1": {
+        "ports": [
+          "CHARACTERS_IN_DB1",
+          "enigma_control/CHARACTERS_IN_DB1"
+        ]
+      },
+      "DRUM_IMPULS_IN_1": {
+        "ports": [
+          "DRUM_IMPULS_IN",
+          "enigma_control/DRUM_IMPULS_IN"
+        ]
+      },
+      "START_IN_1": {
+        "ports": [
+          "START_IN",
+          "enigma_control/START_IN"
+        ]
+      },
+      "enigma_control_CODED_CHARECTERS_OUT_DB0": {
+        "ports": [
+          "enigma_control/CODED_CHARACTERS_OUT_DB0",
+          "CODED_CHARACTERS_OUT_DB0"
+        ]
+      },
+      "enigma_control_CODED_CHARECTERS_OUT_DB1": {
+        "ports": [
+          "enigma_control/CODED_CHARACTERS_OUT_DB1",
+          "CODED_CHARACTERS_OUT_DB1"
+        ]
+      },
+      "enigma_control_READY_OUT": {
+        "ports": [
+          "enigma_control/READY_OUT",
+          "READY_OUT"
+        ]
+      },
+      "CONFIG_DRUM_TYP_1_IN_1": {
+        "ports": [
+          "CONFIG_DRUM_TYP_1_IN",
+          "enigma_control/CONFIG_DRUM_TYP_1_IN"
+        ]
+      },
+      "CONFIG_DRUM_TYP_2_IN_1": {
+        "ports": [
+          "CONFIG_DRUM_TYP_2_IN",
+          "enigma_control/CONFIG_DRUM_TYP_2_IN"
+        ]
+      },
+      "CONFIG_DRUM_TYP_3_IN_1": {
+        "ports": [
+          "CONFIG_DRUM_TYP_3_IN",
+          "enigma_control/CONFIG_DRUM_TYP_3_IN"
+        ]
+      }
+    }
+  }
+}

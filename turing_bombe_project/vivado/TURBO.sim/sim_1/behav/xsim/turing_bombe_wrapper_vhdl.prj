@@ -1,0 +1,17 @@
+# compile vhdl design source files
+vhdl xpm  \
+"/usr/bin/Xilinx/Vivado20183/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../../src/hdl/TURBOdebPackages.vhd" \
+"../../../../../src/hdl/indicator_drum.vhd" \
+"../../../../../src/hdl/turing_bombe_controller.vhd" \
+"../../../../../src/hdl/diagonal_board.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe/ip/turing_bombe_indicator_drum_0_0/sim/turing_bombe_indicator_drum_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe/ip/turing_bombe_turing_bombe_control_0_0/sim/turing_bombe_turing_bombe_control_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe/ip/turing_bombe_diagonal_board_0_0/sim/turing_bombe_diagonal_board_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe/sim/turing_bombe.vhd" \
+"../../../../../src/bd/turing_bombe/hdl/turing_bombe_wrapper.vhd" \
+
+# Do not sort compile order
+nosort

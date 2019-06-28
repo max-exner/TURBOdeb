@@ -1,0 +1,16 @@
+# compile vhdl design source files
+vhdl xpm  \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../../src/hdl/drum.vhd" \
+"../../../../../src/hdl/drum_ukw.vhd" \
+"../../../../../src/hdl/enigma_contol.vhd" \
+"../../../../../src/hdl/pseudo_lut.vhd" \
+"../../../../../src/hdl/enigma_top.vhd" \
+"../../../../TURBO.ip_user_files/bd/TURBO_enigma_bd/ip/TURBO_enigma_bd_enigma_top_0_0/sim/TURBO_enigma_bd_enigma_top_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/TURBO_enigma_bd/sim/TURBO_enigma_bd.vhd" \
+"../../../../../src/bd/TURBO_enigma_bd/hdl/TURBO_enigma_bd_wrapper.vhd" \
+
+# Do not sort compile order
+nosort

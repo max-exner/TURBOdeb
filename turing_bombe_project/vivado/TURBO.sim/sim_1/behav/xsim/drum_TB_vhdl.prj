@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xpm  \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../../src/hdl/drum.vhd" \
+"../../../../../src/sim/drum_TB.vhd" \
+
+# Do not sort compile order
+nosort

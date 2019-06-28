@@ -1,0 +1,28 @@
+# compile verilog/system verilog design source files
+sv xilinx_vip  --include "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/include" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/axi_vip_if.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/clk_vip_if.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/rst_vip_if.sv" \
+
+sv xil_defaultlib  --include "../../../../../src/bd/turing_bombe/ipshared/979d/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/b2d0/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/ec67/hdl" --include "../../../../../src/bd/turing_bombe/ipshared/70cf/hdl" --include "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/include" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+
+verilog xlconstant_v1_1_5  --include "../../../../../src/bd/turing_bombe/ipshared/979d/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/b2d0/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/ec67/hdl" --include "../../../../../src/bd/turing_bombe/ipshared/70cf/hdl" --include "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../../../src/bd/turing_bombe_without_zynq/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v" \
+
+verilog xil_defaultlib  --include "../../../../../src/bd/turing_bombe/ipshared/979d/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/b2d0/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/ec67/hdl" --include "../../../../../src/bd/turing_bombe/ipshared/70cf/hdl" --include "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/include" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_xlconstant_0_0/sim/turing_bombe_without_zynq_xlconstant_0_0.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xpm  \
+"/usr/bin/Xilinx/Vivado20183/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../../src/hdl/TURBOdebPackages.vhd" \
+"../../../../../src/hdl/diagonal_board.vhd" \
+"../../../../../src/sim/diagonal_board_TB.vhd" \
+
+# Do not sort compile order
+nosort

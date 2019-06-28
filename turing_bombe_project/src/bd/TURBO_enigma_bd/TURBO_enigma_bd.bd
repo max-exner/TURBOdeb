@@ -1,0 +1,307 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xD9E934A2176FC20",
+      "device": "xc7z020clg400-1",
+      "name": "TURBO_enigma_bd",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3",
+      "validated": "true"
+    },
+    "design_tree": {
+      "enigma_top_0": ""
+    },
+    "ports": {
+      "UB_CLK_IN": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "SOFT_RESET_N_IN",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "TURBO_enigma_bd_UB_CLK_IN",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "50000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "SOFT_RESET_N_IN": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "CONFIG_START_POS_DRUM_1_IN": {
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "CONFIG_START_POS_DRUM_2_IN": {
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "CONFIG_START_POS_DRUM_3_IN": {
+        "direction": "I",
+        "left": "4",
+        "right": "0"
+      },
+      "CONFIG_DRUM_TYP_1_IN": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "CONFIG_DRUM_TYP_2_IN": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "CONFIG_DRUM_TYP_3_IN": {
+        "direction": "I",
+        "left": "2",
+        "right": "0"
+      },
+      "CHARACTERS_IN_DB0": {
+        "direction": "I",
+        "left": "25",
+        "right": "0"
+      },
+      "CHARACTERS_IN_DB1": {
+        "direction": "I",
+        "left": "25",
+        "right": "0"
+      },
+      "DRUM_IMPULS_IN": {
+        "direction": "I"
+      },
+      "START_IN": {
+        "direction": "I"
+      },
+      "CODED_CHARACTERS_OUT_DB0": {
+        "direction": "O",
+        "left": "25",
+        "right": "0"
+      },
+      "CODED_CHARACTERS_OUT_DB1": {
+        "direction": "O",
+        "left": "25",
+        "right": "0"
+      },
+      "READY_OUT": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "enigma_top_0": {
+        "vlnv": "xilinx.com:module_ref:enigma_top:1.0",
+        "xci_name": "TURBO_enigma_bd_enigma_top_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "enigma_top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "UB_CLK_IN": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "SOFT_RESET_N_IN",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "TURBO_enigma_bd_UB_CLK_IN",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "constant"
+              }
+            }
+          },
+          "SOFT_RESET_N_IN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "CONFIG_START_POS_DRUM_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_START_POS_DRUM_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_START_POS_DRUM_3_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "CONFIG_DRUM_TYP_1_IN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_DRUM_TYP_2_IN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "CONFIG_DRUM_TYP_3_IN": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "CHARACTERS_IN_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "CHARACTERS_IN_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DRUM_IMPULS_IN": {
+            "direction": "I"
+          },
+          "START_IN": {
+            "direction": "I"
+          },
+          "CODED_CHARACTERS_OUT_DB0": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "CODED_CHARACTERS_OUT_DB1": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "READY_OUT": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "UB_CLK_IN_1": {
+        "ports": [
+          "UB_CLK_IN",
+          "enigma_top_0/UB_CLK_IN"
+        ]
+      },
+      "SOFT_RESET_N_IN_1": {
+        "ports": [
+          "SOFT_RESET_N_IN",
+          "enigma_top_0/SOFT_RESET_N_IN"
+        ]
+      },
+      "CONFIG_START_POS_DRUM_1_IN_1": {
+        "ports": [
+          "CONFIG_START_POS_DRUM_1_IN",
+          "enigma_top_0/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "CONFIG_START_POS_DRUM_2_IN_1": {
+        "ports": [
+          "CONFIG_START_POS_DRUM_2_IN",
+          "enigma_top_0/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "CONFIG_START_POS_DRUM_3_IN_1": {
+        "ports": [
+          "CONFIG_START_POS_DRUM_3_IN",
+          "enigma_top_0/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "CONFIG_DRUM_TYP_1_IN_1": {
+        "ports": [
+          "CONFIG_DRUM_TYP_1_IN",
+          "enigma_top_0/CONFIG_DRUM_TYP_1_IN"
+        ]
+      },
+      "CONFIG_DRUM_TYP_2_IN_1": {
+        "ports": [
+          "CONFIG_DRUM_TYP_2_IN",
+          "enigma_top_0/CONFIG_DRUM_TYP_2_IN"
+        ]
+      },
+      "CONFIG_DRUM_TYP_3_IN_1": {
+        "ports": [
+          "CONFIG_DRUM_TYP_3_IN",
+          "enigma_top_0/CONFIG_DRUM_TYP_3_IN"
+        ]
+      },
+      "CHARACTERS_IN_DB0_1": {
+        "ports": [
+          "CHARACTERS_IN_DB0",
+          "enigma_top_0/CHARACTERS_IN_DB0"
+        ]
+      },
+      "CHARACTERS_IN_DB1_1": {
+        "ports": [
+          "CHARACTERS_IN_DB1",
+          "enigma_top_0/CHARACTERS_IN_DB1"
+        ]
+      },
+      "DRUM_IMPULS_IN_1": {
+        "ports": [
+          "DRUM_IMPULS_IN",
+          "enigma_top_0/DRUM_IMPULS_IN"
+        ]
+      },
+      "START_IN_1": {
+        "ports": [
+          "START_IN",
+          "enigma_top_0/START_IN"
+        ]
+      },
+      "enigma_top_0_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "enigma_top_0/CODED_CHARACTERS_OUT_DB0",
+          "CODED_CHARACTERS_OUT_DB0"
+        ]
+      },
+      "enigma_top_0_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "enigma_top_0/CODED_CHARACTERS_OUT_DB1",
+          "CODED_CHARACTERS_OUT_DB1"
+        ]
+      },
+      "enigma_top_0_READY_OUT": {
+        "ports": [
+          "enigma_top_0/READY_OUT",
+          "READY_OUT"
+        ]
+      }
+    }
+  }
+}

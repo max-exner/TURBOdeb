@@ -1,0 +1,46 @@
+# compile vhdl design source files
+vhdl xpm  \
+"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../../src/hdl/TURBOdebPackages.vhd" \
+"../../../../../src/hdl/diagonal_board.vhd" \
+"../../../../../src/hdl/indicator_drum.vhd" \
+"../../../../../src/hdl/turing_bombe_controller.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ipshared/27f2/sim/TURBO_enigma_bd_enigma_top_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ipshared/27f2/src/drum.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ipshared/27f2/src/drum_ukw.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ipshared/27f2/src/enigma_contol.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ipshared/27f2/src/pseudo_lut.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ipshared/27f2/src/enigma_top.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ipshared/27f2/sim/TURBO_enigma_bd.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_0_0/sim/turing_bombe_without_zynq_TURBO_enigma_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_1_0/sim/turing_bombe_without_zynq_TURBO_enigma_1_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_10_0/sim/turing_bombe_without_zynq_TURBO_enigma_10_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_11_0/sim/turing_bombe_without_zynq_TURBO_enigma_11_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_12_0/sim/turing_bombe_without_zynq_TURBO_enigma_12_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_2_0/sim/turing_bombe_without_zynq_TURBO_enigma_2_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_4_0/sim/turing_bombe_without_zynq_TURBO_enigma_4_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_5_0/sim/turing_bombe_without_zynq_TURBO_enigma_5_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_6_0/sim/turing_bombe_without_zynq_TURBO_enigma_6_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_7_0/sim/turing_bombe_without_zynq_TURBO_enigma_7_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_8_0/sim/turing_bombe_without_zynq_TURBO_enigma_8_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_9_0/sim/turing_bombe_without_zynq_TURBO_enigma_9_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_diagonal_board_0_0/sim/turing_bombe_without_zynq_diagonal_board_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_indicator_drum_0_0/sim/turing_bombe_without_zynq_indicator_drum_0_0.vhd" \
+
+vhdl lib_cdc_v1_0_2  \
+"../../../../../src/bd/turing_bombe_without_zynq/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd" \
+
+vhdl proc_sys_reset_v5_0_13  \
+"../../../../../src/bd/turing_bombe_without_zynq/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_proc_sys_reset_0_0/sim/turing_bombe_without_zynq_proc_sys_reset_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_turing_bombe_control_0_0/sim/turing_bombe_without_zynq_turing_bombe_control_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/turing_bombe_without_zynq/sim/turing_bombe_without_zynq.vhd" \
+"../../../../../src/bd/turing_bombe_without_zynq/hdl/turing_bombe_without_zynq_wrapper.vhd" \
+"../../../../../src/sim/turing_bombe_wrapper_TB.vhd" \
+
+# Do not sort compile order
+nosort
