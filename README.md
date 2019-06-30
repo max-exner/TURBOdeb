@@ -16,9 +16,9 @@ an FPGA using the solution algorithm of the Turing Bombe. The Turing Bombe is an
 ### CPU Implementation
 
 To run the CPU implementation, do the following steps (please use the Linux GCC toolchain):
-* Open the [MAIN](/sw/src/main.cpp) 
+* Open the [MAIN](/c_implementation/src/main.cpp) 
 * Make sure that the #define FPGA_CALC is undefined
-* Use the [makefile](/sw/makefile) in the sw directory to build the application.
+* Use the [makefile](/c_implementation/makefile) in the sw directory to build the application.
 * Use the following call to run the CPU implementation (from the sw directory):
 ```
 ./bin/TURBOdeb "<Path_of_the_message_json>"
@@ -28,19 +28,19 @@ The console prints will give you feedback on the decryption process and the timi
 
 ### FPGA Implementation
 
-Until yet it was not possible to run the full FPGA implementation on real hardware. The reason for this is that it was not possible to implement the UART interface. It is possible to program the [bitstream](/hw/turing_bombe_wrapper.bit), but then the components still wait for an instruction from the zynq processing system.
+Until yet it was not possible to run the full FPGA implementation on real hardware. The reason for this is that it was not possible to implement the UART interface. It is possible to program the [bitstream](/turing_bombe_project/bitstreams/turing_bombe_wrapper.bit), but then the components still wait for an instruction from the zynq processing system.
 
 Future (when the UART interface works correctly):
 
 * Open the Vivado project and open the SDK (this project is created with Vivado 2018.3). 
 * Choose the turbo_uart_to_bram Project and run as "Launch in Hardware (system debugger)"
 * Check the serial port, the port with the highest count is the right one
-* Open the [MAIN](/sw/src/main.cpp) and make sure that the #define FPGA_CALC is defined.
+* Open the [MAIN](/c_implementation/src/main.cpp) and make sure that the #define FPGA_CALC is defined.
 * Check the serial port in line 47
 ```
 int serial_port = open("/dev/<serial_port>", O_RDWR);
 ```
-* Use the [makefile](/sw/makefile) in the sw directory to build the application.
+* Use the [makefile](/c_implementation/makefile) in the sw directory to build the application.
 * Use the following call to run the CPU implementation (from the sw directory):
 ```
 ./bin/TURBOdeb "<Path_of_the_message_json>"
