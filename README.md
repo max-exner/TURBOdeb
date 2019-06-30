@@ -15,7 +15,7 @@ an FPGA using the solution algorithm of the Turing Bombe. The Turing Bombe is an
 
 ### CPU Implementation
 
-To run the CPU implementation, do the following steps:
+To run the CPU implementation, do the following steps (please use the Linux GCC toolchain):
 * Open the [MAIN](/sw/src/main.cpp) 
 * Make sure that the #define FPGA_CALC is undefined
 * Use the [makefile](/sw/makefile) in the sw directory to build the application.
@@ -32,7 +32,7 @@ Until yet it was not possible to run the full FPGA implementation on real hardwa
 
 Future (when the UART interface works correctly):
 
-* Open the Vivado project and open the SDK. 
+* Open the Vivado project and open the SDK (this project is created with Vivado 2018.3). 
 * Choose the turbo_uart_to_bram Project and run as "Launch in Hardware (system debugger)"
 * Check the serial port, the port with the highest count is the right one
 * Open the [MAIN](/sw/src/main.cpp) and make sure that the #define FPGA_CALC is defined.
