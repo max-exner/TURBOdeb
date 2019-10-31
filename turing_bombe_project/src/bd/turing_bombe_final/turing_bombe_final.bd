@@ -1,0 +1,4179 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xB4EAF6B664608A99",
+      "device": "xc7z020clg400-1",
+      "name": "turing_bombe_final",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3",
+      "validated": "true"
+    },
+    "design_tree": {
+      "TURBO_enigma_0": "",
+      "TURBO_enigma_1": "",
+      "TURBO_enigma_10": "",
+      "TURBO_enigma_11": "",
+      "TURBO_enigma_12": "",
+      "TURBO_enigma_2": "",
+      "TURBO_enigma_4": "",
+      "TURBO_enigma_5": "",
+      "TURBO_enigma_6": "",
+      "TURBO_enigma_7": "",
+      "TURBO_enigma_8": "",
+      "TURBO_enigma_9": "",
+      "axi_bram_ctrl_0": "",
+      "diagonal_board_0": "",
+      "indicator_drum_0": "",
+      "proc_sys_reset_0": "",
+      "processing_system7_0": "",
+      "smartconnect_0": "",
+      "turing_bombe_control_0": "",
+      "xlconstant_0": ""
+    },
+    "interface_ports": {
+      "DDR": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:ddrx_rtl:1.0",
+        "parameters": {
+          "AXI_ARBITRATION_SCHEME": {
+            "value": "TDM",
+            "value_src": "default"
+          },
+          "BURST_LENGTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "CAS_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CAS_WRITE_LATENCY": {
+            "value": "11",
+            "value_src": "default"
+          },
+          "CS_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "DATA_MASK_ENABLED": {
+            "value": "true",
+            "value_src": "default"
+          },
+          "DATA_WIDTH": {
+            "value": "8",
+            "value_src": "default"
+          },
+          "MEMORY_TYPE": {
+            "value": "COMPONENTS",
+            "value_src": "default"
+          },
+          "MEM_ADDR_MAP": {
+            "value": "ROW_COLUMN_BANK",
+            "value_src": "default"
+          },
+          "SLOT": {
+            "value": "Single",
+            "value_src": "default"
+          },
+          "TIMEPERIOD_PS": {
+            "value": "1250",
+            "value_src": "default"
+          }
+        }
+      },
+      "FIXED_IO": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:display_processing_system7:fixedio_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "ports": {
+      "CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "turing_bombe_final_CLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "50000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "LED_FIRST_STOP_OUT": {
+        "direction": "O"
+      },
+      "LED_FOURTH_STOP_OUT": {
+        "direction": "O"
+      },
+      "LED_SECOND_STOP_OUT": {
+        "direction": "O"
+      },
+      "LED_THIRD_STOP_OUT": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "TURBO_enigma_0": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_0_0"
+      },
+      "TURBO_enigma_1": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_1_0"
+      },
+      "TURBO_enigma_10": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_10_0"
+      },
+      "TURBO_enigma_11": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_11_0"
+      },
+      "TURBO_enigma_12": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_12_0"
+      },
+      "TURBO_enigma_2": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_2_0"
+      },
+      "TURBO_enigma_4": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_4_0"
+      },
+      "TURBO_enigma_5": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_5_0"
+      },
+      "TURBO_enigma_6": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_6_0"
+      },
+      "TURBO_enigma_7": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_7_0"
+      },
+      "TURBO_enigma_8": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_8_0"
+      },
+      "TURBO_enigma_9": {
+        "vlnv": "user.org:user:TURBO_enigma:1.1",
+        "xci_name": "turing_bombe_final_TURBO_enigma_9_0"
+      },
+      "axi_bram_ctrl_0": {
+        "vlnv": "xilinx.com:ip:axi_bram_ctrl:4.1",
+        "xci_name": "turing_bombe_final_axi_bram_ctrl_0_0",
+        "parameters": {
+          "SINGLE_PORT_BRAM": {
+            "value": "1"
+          }
+        }
+      },
+      "diagonal_board_0": {
+        "vlnv": "xilinx.com:module_ref:diagonal_board:1.0",
+        "xci_name": "turing_bombe_final_diagonal_board_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "diagonal_board",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "CLK_IN": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESET_IN",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "turing_bombe_final_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "constant"
+              }
+            }
+          },
+          "RESET_IN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "INPUT_VOLTAGE_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "TEST_REGISTER_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "READY_ENIGMA_1": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_2": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_3": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_4": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_5": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_6": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_7": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_8": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_9": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_10": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_11": {
+            "direction": "I"
+          },
+          "READY_ENIGMA_12": {
+            "direction": "I"
+          },
+          "READY_OUT": {
+            "direction": "O"
+          },
+          "NO_OUTPUT_CHANGE_OUT": {
+            "direction": "O"
+          },
+          "ACTIVE_OUT_1_ENIGMA_1_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_1_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_2_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_2_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_3_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_3_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_4_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_4_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_5_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_5_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_6_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_6_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_7_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_7_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_8_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_8_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_9_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_9_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_10_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_10_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_11_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_11_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_1_ENIGMA_12_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ACTIVE_OUT_2_ENIGMA_12_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_1_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_1_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_2_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_2_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_3_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_3_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_4_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_4_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_5_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_5_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_6_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_6_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_7_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_7_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_8_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_8_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_9_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_9_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_10_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_10_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_11_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_11_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_12_DB_CON_1_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_12_DB_CON_2_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_1_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_1_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_2_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_2_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_3_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_3_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_4_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_4_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_5_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_5_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_6_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_6_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_7_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_7_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_8_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_8_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_9_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_9_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_10_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_10_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_11_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_11_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_12_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_12_DB2_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "RESULT_REGISTER_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          }
+        }
+      },
+      "indicator_drum_0": {
+        "vlnv": "xilinx.com:module_ref:indicator_drum:1.0",
+        "xci_name": "turing_bombe_final_indicator_drum_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "indicator_drum",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESET_IN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "const_prop"
+              }
+            }
+          },
+          "CLK_IN": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESET_IN",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "turing_bombe_final_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "constant"
+              }
+            }
+          },
+          "ROTATE_IMPULS_IN": {
+            "direction": "I"
+          },
+          "POS_INDICATOR_DRUM_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "POS_INDICATOR_DRUM_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "POS_INDICATOR_DRUM_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          }
+        }
+      },
+      "proc_sys_reset_0": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "turing_bombe_final_proc_sys_reset_0_0"
+      },
+      "processing_system7_0": {
+        "vlnv": "xilinx.com:ip:processing_system7:5.5",
+        "xci_name": "turing_bombe_final_processing_system7_0_0",
+        "parameters": {
+          "PCW_ACT_APU_PERIPHERAL_FREQMHZ": {
+            "value": "660"
+          },
+          "PCW_ACT_CAN0_PERIPHERAL_FREQMHZ": {
+            "value": "23.8095"
+          },
+          "PCW_ACT_CAN1_PERIPHERAL_FREQMHZ": {
+            "value": "23.8095"
+          },
+          "PCW_ACT_CAN_PERIPHERAL_FREQMHZ": {
+            "value": "10"
+          },
+          "PCW_ACT_DCI_PERIPHERAL_FREQMHZ": {
+            "value": "9"
+          },
+          "PCW_ACT_ENET0_PERIPHERAL_FREQMHZ": {
+            "value": "10"
+          },
+          "PCW_ACT_ENET1_PERIPHERAL_FREQMHZ": {
+            "value": "10"
+          },
+          "PCW_ACT_FPGA0_PERIPHERAL_FREQMHZ": {
+            "value": "49"
+          },
+          "PCW_ACT_FPGA1_PERIPHERAL_FREQMHZ": {
+            "value": "10"
+          },
+          "PCW_ACT_FPGA2_PERIPHERAL_FREQMHZ": {
+            "value": "10"
+          },
+          "PCW_ACT_FPGA3_PERIPHERAL_FREQMHZ": {
+            "value": "10"
+          },
+          "PCW_ACT_I2C_PERIPHERAL_FREQMHZ": {
+            "value": "50"
+          },
+          "PCW_ACT_PCAP_PERIPHERAL_FREQMHZ": {
+            "value": "198"
+          },
+          "PCW_ACT_QSPI_PERIPHERAL_FREQMHZ": {
+            "value": "198"
+          },
+          "PCW_ACT_SDIO_PERIPHERAL_FREQMHZ": {
+            "value": "49"
+          },
+          "PCW_ACT_SMC_PERIPHERAL_FREQMHZ": {
+            "value": "10"
+          },
+          "PCW_ACT_SPI_PERIPHERAL_FREQMHZ": {
+            "value": "10"
+          },
+          "PCW_ACT_TPIU_PERIPHERAL_FREQMHZ": {
+            "value": "200"
+          },
+          "PCW_ACT_TTC0_CLK0_PERIPHERAL_FREQMHZ": {
+            "value": "110"
+          },
+          "PCW_ACT_TTC0_CLK1_PERIPHERAL_FREQMHZ": {
+            "value": "110"
+          },
+          "PCW_ACT_TTC0_CLK2_PERIPHERAL_FREQMHZ": {
+            "value": "110"
+          },
+          "PCW_ACT_TTC1_CLK0_PERIPHERAL_FREQMHZ": {
+            "value": "110"
+          },
+          "PCW_ACT_TTC1_CLK1_PERIPHERAL_FREQMHZ": {
+            "value": "110"
+          },
+          "PCW_ACT_TTC1_CLK2_PERIPHERAL_FREQMHZ": {
+            "value": "110"
+          },
+          "PCW_ACT_TTC_PERIPHERAL_FREQMHZ": {
+            "value": "50"
+          },
+          "PCW_ACT_UART_PERIPHERAL_FREQMHZ": {
+            "value": "99"
+          },
+          "PCW_ACT_USB0_PERIPHERAL_FREQMHZ": {
+            "value": "60"
+          },
+          "PCW_ACT_USB1_PERIPHERAL_FREQMHZ": {
+            "value": "60"
+          },
+          "PCW_ACT_WDT_PERIPHERAL_FREQMHZ": {
+            "value": "110"
+          },
+          "PCW_APU_CLK_RATIO_ENABLE": {
+            "value": "6:2:1"
+          },
+          "PCW_APU_PERIPHERAL_FREQMHZ": {
+            "value": "667"
+          },
+          "PCW_CAN0_PERIPHERAL_CLKSRC": {
+            "value": "External"
+          },
+          "PCW_CAN0_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_CAN1_PERIPHERAL_CLKSRC": {
+            "value": "External"
+          },
+          "PCW_CAN1_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_CAN_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_CAN_PERIPHERAL_VALID": {
+            "value": "0"
+          },
+          "PCW_CLK0_FREQ": {
+            "value": "49500000"
+          },
+          "PCW_CLK1_FREQ": {
+            "value": "10000000"
+          },
+          "PCW_CLK2_FREQ": {
+            "value": "10000000"
+          },
+          "PCW_CLK3_FREQ": {
+            "value": "10000000"
+          },
+          "PCW_CPU_CPU_6X4X_MAX_RANGE": {
+            "value": "667"
+          },
+          "PCW_CPU_PERIPHERAL_CLKSRC": {
+            "value": "ARM PLL"
+          },
+          "PCW_CRYSTAL_PERIPHERAL_FREQMHZ": {
+            "value": "33.333333"
+          },
+          "PCW_DCI_PERIPHERAL_CLKSRC": {
+            "value": "DDR PLL"
+          },
+          "PCW_DCI_PERIPHERAL_FREQMHZ": {
+            "value": "10.159"
+          },
+          "PCW_DDR_PERIPHERAL_CLKSRC": {
+            "value": "DDR PLL"
+          },
+          "PCW_DDR_RAM_BASEADDR": {
+            "value": "0x00100000"
+          },
+          "PCW_DDR_RAM_HIGHADDR": {
+            "value": "0x3FFFFFFF"
+          },
+          "PCW_DM_WIDTH": {
+            "value": "4"
+          },
+          "PCW_DQS_WIDTH": {
+            "value": "4"
+          },
+          "PCW_DQ_WIDTH": {
+            "value": "32"
+          },
+          "PCW_ENET0_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_ENET0_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_ENET1_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_ENET1_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_ENET_RESET_POLARITY": {
+            "value": "Active Low"
+          },
+          "PCW_EN_4K_TIMER": {
+            "value": "0"
+          },
+          "PCW_EN_CAN0": {
+            "value": "0"
+          },
+          "PCW_EN_CAN1": {
+            "value": "0"
+          },
+          "PCW_EN_CLK0_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_CLK1_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_CLK2_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_CLK3_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_CLKTRIG0_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_CLKTRIG1_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_CLKTRIG2_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_CLKTRIG3_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_DDR": {
+            "value": "1"
+          },
+          "PCW_EN_EMIO_CAN0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_CAN1": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_CD_SDIO0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_CD_SDIO1": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_ENET0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_ENET1": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_GPIO": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_I2C0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_I2C1": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_MODEM_UART0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_MODEM_UART1": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_PJTAG": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_SDIO0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_SDIO1": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_SPI0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_SPI1": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_SRAM_INT": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_TRACE": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_TTC0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_TTC1": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_UART0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_UART1": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_WDT": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_WP_SDIO0": {
+            "value": "0"
+          },
+          "PCW_EN_EMIO_WP_SDIO1": {
+            "value": "0"
+          },
+          "PCW_EN_ENET0": {
+            "value": "0"
+          },
+          "PCW_EN_ENET1": {
+            "value": "0"
+          },
+          "PCW_EN_GPIO": {
+            "value": "1"
+          },
+          "PCW_EN_I2C0": {
+            "value": "0"
+          },
+          "PCW_EN_I2C1": {
+            "value": "0"
+          },
+          "PCW_EN_MODEM_UART0": {
+            "value": "0"
+          },
+          "PCW_EN_MODEM_UART1": {
+            "value": "0"
+          },
+          "PCW_EN_PJTAG": {
+            "value": "0"
+          },
+          "PCW_EN_PTP_ENET0": {
+            "value": "0"
+          },
+          "PCW_EN_PTP_ENET1": {
+            "value": "0"
+          },
+          "PCW_EN_QSPI": {
+            "value": "1"
+          },
+          "PCW_EN_RST0_PORT": {
+            "value": "1"
+          },
+          "PCW_EN_RST1_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_RST2_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_RST3_PORT": {
+            "value": "0"
+          },
+          "PCW_EN_SDIO0": {
+            "value": "1"
+          },
+          "PCW_EN_SDIO1": {
+            "value": "0"
+          },
+          "PCW_EN_SMC": {
+            "value": "0"
+          },
+          "PCW_EN_SPI0": {
+            "value": "0"
+          },
+          "PCW_EN_SPI1": {
+            "value": "0"
+          },
+          "PCW_EN_TRACE": {
+            "value": "0"
+          },
+          "PCW_EN_TTC0": {
+            "value": "0"
+          },
+          "PCW_EN_TTC1": {
+            "value": "0"
+          },
+          "PCW_EN_UART0": {
+            "value": "0"
+          },
+          "PCW_EN_UART1": {
+            "value": "1"
+          },
+          "PCW_EN_USB0": {
+            "value": "1"
+          },
+          "PCW_EN_USB1": {
+            "value": "0"
+          },
+          "PCW_EN_WDT": {
+            "value": "0"
+          },
+          "PCW_FCLK0_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_FCLK1_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_FCLK2_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_FCLK3_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_FPGA0_PERIPHERAL_FREQMHZ": {
+            "value": "50"
+          },
+          "PCW_FPGA1_PERIPHERAL_FREQMHZ": {
+            "value": "50"
+          },
+          "PCW_FPGA2_PERIPHERAL_FREQMHZ": {
+            "value": "50"
+          },
+          "PCW_FPGA3_PERIPHERAL_FREQMHZ": {
+            "value": "50"
+          },
+          "PCW_GP0_EN_MODIFIABLE_TXN": {
+            "value": "1"
+          },
+          "PCW_GP0_NUM_READ_THREADS": {
+            "value": "4"
+          },
+          "PCW_GP0_NUM_WRITE_THREADS": {
+            "value": "4"
+          },
+          "PCW_GP1_EN_MODIFIABLE_TXN": {
+            "value": "1"
+          },
+          "PCW_GP1_NUM_READ_THREADS": {
+            "value": "4"
+          },
+          "PCW_GP1_NUM_WRITE_THREADS": {
+            "value": "4"
+          },
+          "PCW_GPIO_BASEADDR": {
+            "value": "0xE000A000"
+          },
+          "PCW_GPIO_EMIO_GPIO_ENABLE": {
+            "value": "0"
+          },
+          "PCW_GPIO_HIGHADDR": {
+            "value": "0xE000AFFF"
+          },
+          "PCW_GPIO_MIO_GPIO_ENABLE": {
+            "value": "1"
+          },
+          "PCW_GPIO_MIO_GPIO_IO": {
+            "value": "MIO"
+          },
+          "PCW_GPIO_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_I2C0_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_I2C1_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_I2C_RESET_ENABLE": {
+            "value": "1"
+          },
+          "PCW_I2C_RESET_POLARITY": {
+            "value": "Active Low"
+          },
+          "PCW_IMPORT_BOARD_PRESET": {
+            "value": "None"
+          },
+          "PCW_INCLUDE_ACP_TRANS_CHECK": {
+            "value": "0"
+          },
+          "PCW_IRQ_F2P_MODE": {
+            "value": "DIRECT"
+          },
+          "PCW_MIO_0_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_0_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_0_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_10_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_10_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_10_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_11_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_11_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_11_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_12_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_12_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_12_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_13_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_13_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_13_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_14_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_14_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_14_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_15_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_15_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_15_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_16_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_16_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_16_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_17_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_17_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_17_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_18_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_18_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_18_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_19_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_19_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_19_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_1_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_1_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_1_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_20_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_20_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_20_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_21_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_21_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_21_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_22_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_22_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_22_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_23_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_23_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_23_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_24_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_24_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_24_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_25_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_25_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_25_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_26_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_26_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_26_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_27_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_27_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_27_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_28_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_28_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_28_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_29_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_29_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_29_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_2_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_2_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_30_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_30_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_30_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_31_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_31_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_31_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_32_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_32_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_32_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_33_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_33_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_33_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_34_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_34_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_34_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_35_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_35_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_35_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_36_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_36_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_36_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_37_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_37_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_37_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_38_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_38_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_38_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_39_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_39_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_39_SLEW": {
+            "value": "fast"
+          },
+          "PCW_MIO_3_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_3_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_40_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_40_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_40_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_41_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_41_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_41_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_42_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_42_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_42_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_43_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_43_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_43_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_44_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_44_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_44_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_45_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_45_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_45_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_46_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_46_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_46_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_47_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_47_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_47_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_48_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_48_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_48_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_49_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_49_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_49_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_4_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_4_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_50_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_50_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_50_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_51_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_51_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_51_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_52_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_52_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_52_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_53_IOTYPE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_MIO_53_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_53_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_5_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_5_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_6_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_6_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_7_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_7_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_8_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_8_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_9_IOTYPE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_MIO_9_PULLUP": {
+            "value": "enabled"
+          },
+          "PCW_MIO_9_SLEW": {
+            "value": "slow"
+          },
+          "PCW_MIO_PRIMITIVE": {
+            "value": "54"
+          },
+          "PCW_MIO_TREE_PERIPHERALS": {
+            "value": "GPIO#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#Quad SPI Flash#GPIO#Quad SPI Flash#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#GPIO#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#USB 0#SD 0#SD 0#SD 0#SD 0#SD 0#SD 0#USB Reset#SD 0#UART 1#UART 1#GPIO#GPIO#GPIO#GPIO"
+          },
+          "PCW_MIO_TREE_SIGNALS": {
+            "value": "gpio[0]#qspi0_ss_b#qspi0_io[0]#qspi0_io[1]#qspi0_io[2]#qspi0_io[3]/HOLD_B#qspi0_sclk#gpio[7]#qspi_fbclk#gpio[9]#gpio[10]#gpio[11]#gpio[12]#gpio[13]#gpio[14]#gpio[15]#gpio[16]#gpio[17]#gpio[18]#gpio[19]#gpio[20]#gpio[21]#gpio[22]#gpio[23]#gpio[24]#gpio[25]#gpio[26]#gpio[27]#data[4]#dir#stp#nxt#data[0]#data[1]#data[2]#data[3]#clk#data[5]#data[6]#data[7]#clk#cmd#data[0]#data[1]#data[2]#data[3]#reset#cd#tx#rx#gpio[50]#gpio[51]#gpio[52]#gpio[53]"
+          },
+          "PCW_M_AXI_GP0_ENABLE_STATIC_REMAP": {
+            "value": "0"
+          },
+          "PCW_M_AXI_GP0_ID_WIDTH": {
+            "value": "12"
+          },
+          "PCW_M_AXI_GP0_SUPPORT_NARROW_BURST": {
+            "value": "0"
+          },
+          "PCW_M_AXI_GP0_THREAD_ID_WIDTH": {
+            "value": "12"
+          },
+          "PCW_NAND_CYCLES_T_AR": {
+            "value": "1"
+          },
+          "PCW_NAND_CYCLES_T_CLR": {
+            "value": "1"
+          },
+          "PCW_NAND_CYCLES_T_RC": {
+            "value": "11"
+          },
+          "PCW_NAND_CYCLES_T_REA": {
+            "value": "1"
+          },
+          "PCW_NAND_CYCLES_T_RR": {
+            "value": "1"
+          },
+          "PCW_NAND_CYCLES_T_WC": {
+            "value": "11"
+          },
+          "PCW_NAND_CYCLES_T_WP": {
+            "value": "1"
+          },
+          "PCW_NOR_CS0_T_CEOE": {
+            "value": "1"
+          },
+          "PCW_NOR_CS0_T_PC": {
+            "value": "1"
+          },
+          "PCW_NOR_CS0_T_RC": {
+            "value": "11"
+          },
+          "PCW_NOR_CS0_T_TR": {
+            "value": "1"
+          },
+          "PCW_NOR_CS0_T_WC": {
+            "value": "11"
+          },
+          "PCW_NOR_CS0_T_WP": {
+            "value": "1"
+          },
+          "PCW_NOR_CS0_WE_TIME": {
+            "value": "0"
+          },
+          "PCW_NOR_CS1_T_CEOE": {
+            "value": "1"
+          },
+          "PCW_NOR_CS1_T_PC": {
+            "value": "1"
+          },
+          "PCW_NOR_CS1_T_RC": {
+            "value": "11"
+          },
+          "PCW_NOR_CS1_T_TR": {
+            "value": "1"
+          },
+          "PCW_NOR_CS1_T_WC": {
+            "value": "11"
+          },
+          "PCW_NOR_CS1_T_WP": {
+            "value": "1"
+          },
+          "PCW_NOR_CS1_WE_TIME": {
+            "value": "0"
+          },
+          "PCW_NOR_SRAM_CS0_T_CEOE": {
+            "value": "1"
+          },
+          "PCW_NOR_SRAM_CS0_T_PC": {
+            "value": "1"
+          },
+          "PCW_NOR_SRAM_CS0_T_RC": {
+            "value": "11"
+          },
+          "PCW_NOR_SRAM_CS0_T_TR": {
+            "value": "1"
+          },
+          "PCW_NOR_SRAM_CS0_T_WC": {
+            "value": "11"
+          },
+          "PCW_NOR_SRAM_CS0_T_WP": {
+            "value": "1"
+          },
+          "PCW_NOR_SRAM_CS0_WE_TIME": {
+            "value": "0"
+          },
+          "PCW_NOR_SRAM_CS1_T_CEOE": {
+            "value": "1"
+          },
+          "PCW_NOR_SRAM_CS1_T_PC": {
+            "value": "1"
+          },
+          "PCW_NOR_SRAM_CS1_T_RC": {
+            "value": "11"
+          },
+          "PCW_NOR_SRAM_CS1_T_TR": {
+            "value": "1"
+          },
+          "PCW_NOR_SRAM_CS1_T_WC": {
+            "value": "11"
+          },
+          "PCW_NOR_SRAM_CS1_T_WP": {
+            "value": "1"
+          },
+          "PCW_NOR_SRAM_CS1_WE_TIME": {
+            "value": "0"
+          },
+          "PCW_OVERRIDE_BASIC_CLOCK": {
+            "value": "0"
+          },
+          "PCW_PACKAGE_DDR_BOARD_DELAY0": {
+            "value": "0"
+          },
+          "PCW_PACKAGE_DDR_BOARD_DELAY1": {
+            "value": "0"
+          },
+          "PCW_PACKAGE_DDR_BOARD_DELAY2": {
+            "value": "0"
+          },
+          "PCW_PACKAGE_DDR_BOARD_DELAY3": {
+            "value": "0"
+          },
+          "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_0": {
+            "value": "-0"
+          },
+          "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_1": {
+            "value": "-0"
+          },
+          "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_2": {
+            "value": "-0"
+          },
+          "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_3": {
+            "value": "-0"
+          },
+          "PCW_PACKAGE_NAME": {
+            "value": "clg400"
+          },
+          "PCW_PCAP_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_PCAP_PERIPHERAL_FREQMHZ": {
+            "value": "200"
+          },
+          "PCW_PERIPHERAL_BOARD_PRESET": {
+            "value": "part0"
+          },
+          "PCW_PJTAG_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_PLL_BYPASSMODE_ENABLE": {
+            "value": "0"
+          },
+          "PCW_PRESET_BANK0_VOLTAGE": {
+            "value": "LVCMOS 3.3V"
+          },
+          "PCW_PRESET_BANK1_VOLTAGE": {
+            "value": "LVCMOS 1.8V"
+          },
+          "PCW_PS7_SI_REV": {
+            "value": "PRODUCTION"
+          },
+          "PCW_QSPI_GRP_FBCLK_ENABLE": {
+            "value": "1"
+          },
+          "PCW_QSPI_GRP_FBCLK_IO": {
+            "value": "MIO 8"
+          },
+          "PCW_QSPI_GRP_IO1_ENABLE": {
+            "value": "0"
+          },
+          "PCW_QSPI_GRP_SINGLE_SS_ENABLE": {
+            "value": "1"
+          },
+          "PCW_QSPI_GRP_SINGLE_SS_IO": {
+            "value": "MIO 1 .. 6"
+          },
+          "PCW_QSPI_GRP_SS1_ENABLE": {
+            "value": "0"
+          },
+          "PCW_QSPI_INTERNAL_HIGHADDRESS": {
+            "value": "0xFCFFFFFF"
+          },
+          "PCW_QSPI_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_QSPI_PERIPHERAL_ENABLE": {
+            "value": "1"
+          },
+          "PCW_QSPI_PERIPHERAL_FREQMHZ": {
+            "value": "200"
+          },
+          "PCW_QSPI_QSPI_IO": {
+            "value": "MIO 1 .. 6"
+          },
+          "PCW_SD0_GRP_CD_ENABLE": {
+            "value": "1"
+          },
+          "PCW_SD0_GRP_CD_IO": {
+            "value": "MIO 47"
+          },
+          "PCW_SD0_GRP_POW_ENABLE": {
+            "value": "0"
+          },
+          "PCW_SD0_GRP_WP_ENABLE": {
+            "value": "0"
+          },
+          "PCW_SD0_PERIPHERAL_ENABLE": {
+            "value": "1"
+          },
+          "PCW_SD0_SD0_IO": {
+            "value": "MIO 40 .. 45"
+          },
+          "PCW_SD1_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_SDIO0_BASEADDR": {
+            "value": "0xE0100000"
+          },
+          "PCW_SDIO0_HIGHADDR": {
+            "value": "0xE0100FFF"
+          },
+          "PCW_SDIO_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_SDIO_PERIPHERAL_FREQMHZ": {
+            "value": "50"
+          },
+          "PCW_SDIO_PERIPHERAL_VALID": {
+            "value": "1"
+          },
+          "PCW_SINGLE_QSPI_DATA_MODE": {
+            "value": "x4"
+          },
+          "PCW_SMC_CYCLE_T0": {
+            "value": "NA"
+          },
+          "PCW_SMC_CYCLE_T1": {
+            "value": "NA"
+          },
+          "PCW_SMC_CYCLE_T2": {
+            "value": "NA"
+          },
+          "PCW_SMC_CYCLE_T3": {
+            "value": "NA"
+          },
+          "PCW_SMC_CYCLE_T4": {
+            "value": "NA"
+          },
+          "PCW_SMC_CYCLE_T5": {
+            "value": "NA"
+          },
+          "PCW_SMC_CYCLE_T6": {
+            "value": "NA"
+          },
+          "PCW_SMC_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_SMC_PERIPHERAL_VALID": {
+            "value": "0"
+          },
+          "PCW_SPI0_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_SPI1_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_SPI_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_SPI_PERIPHERAL_VALID": {
+            "value": "0"
+          },
+          "PCW_S_AXI_HP0_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP1_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP2_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_S_AXI_HP3_DATA_WIDTH": {
+            "value": "64"
+          },
+          "PCW_TPIU_PERIPHERAL_CLKSRC": {
+            "value": "External"
+          },
+          "PCW_TRACE_INTERNAL_WIDTH": {
+            "value": "2"
+          },
+          "PCW_TRACE_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_TTC0_CLK0_PERIPHERAL_CLKSRC": {
+            "value": "CPU_1X"
+          },
+          "PCW_TTC0_CLK0_PERIPHERAL_DIVISOR0": {
+            "value": "1"
+          },
+          "PCW_TTC0_CLK1_PERIPHERAL_CLKSRC": {
+            "value": "CPU_1X"
+          },
+          "PCW_TTC0_CLK1_PERIPHERAL_DIVISOR0": {
+            "value": "1"
+          },
+          "PCW_TTC0_CLK2_PERIPHERAL_CLKSRC": {
+            "value": "CPU_1X"
+          },
+          "PCW_TTC0_CLK2_PERIPHERAL_DIVISOR0": {
+            "value": "1"
+          },
+          "PCW_TTC0_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_TTC1_CLK0_PERIPHERAL_CLKSRC": {
+            "value": "CPU_1X"
+          },
+          "PCW_TTC1_CLK0_PERIPHERAL_DIVISOR0": {
+            "value": "1"
+          },
+          "PCW_TTC1_CLK1_PERIPHERAL_CLKSRC": {
+            "value": "CPU_1X"
+          },
+          "PCW_TTC1_CLK1_PERIPHERAL_DIVISOR0": {
+            "value": "1"
+          },
+          "PCW_TTC1_CLK2_PERIPHERAL_CLKSRC": {
+            "value": "CPU_1X"
+          },
+          "PCW_TTC1_CLK2_PERIPHERAL_DIVISOR0": {
+            "value": "1"
+          },
+          "PCW_TTC1_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_UART0_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_UART1_BASEADDR": {
+            "value": "0xE0001000"
+          },
+          "PCW_UART1_BAUD_RATE": {
+            "value": "115200"
+          },
+          "PCW_UART1_GRP_FULL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_UART1_HIGHADDR": {
+            "value": "0xE0001FFF"
+          },
+          "PCW_UART1_PERIPHERAL_ENABLE": {
+            "value": "1"
+          },
+          "PCW_UART1_UART1_IO": {
+            "value": "MIO 48 .. 49"
+          },
+          "PCW_UART_PERIPHERAL_CLKSRC": {
+            "value": "IO PLL"
+          },
+          "PCW_UART_PERIPHERAL_FREQMHZ": {
+            "value": "100"
+          },
+          "PCW_UART_PERIPHERAL_VALID": {
+            "value": "1"
+          },
+          "PCW_UIPARAM_ACT_DDR_FREQ_MHZ": {
+            "value": "528"
+          },
+          "PCW_UIPARAM_DDR_ADV_ENABLE": {
+            "value": "0"
+          },
+          "PCW_UIPARAM_DDR_AL": {
+            "value": "0"
+          },
+          "PCW_UIPARAM_DDR_BL": {
+            "value": "8"
+          },
+          "PCW_UIPARAM_DDR_BOARD_DELAY0": {
+            "value": "0.221"
+          },
+          "PCW_UIPARAM_DDR_BOARD_DELAY1": {
+            "value": "0.222"
+          },
+          "PCW_UIPARAM_DDR_BOARD_DELAY2": {
+            "value": "0.217"
+          },
+          "PCW_UIPARAM_DDR_BOARD_DELAY3": {
+            "value": "0.244"
+          },
+          "PCW_UIPARAM_DDR_BUS_WIDTH": {
+            "value": "32 Bit"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_0_LENGTH_MM": {
+            "value": "18.8"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_0_PACKAGE_LENGTH": {
+            "value": "80.4535"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_0_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_1_LENGTH_MM": {
+            "value": "18.8"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_1_PACKAGE_LENGTH": {
+            "value": "80.4535"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_1_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_2_LENGTH_MM": {
+            "value": "18.8"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_2_PACKAGE_LENGTH": {
+            "value": "80.4535"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_2_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_3_LENGTH_MM": {
+            "value": "18.8"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_3_PACKAGE_LENGTH": {
+            "value": "80.4535"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_3_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_STOP_EN": {
+            "value": "0"
+          },
+          "PCW_UIPARAM_DDR_DQS_0_LENGTH_MM": {
+            "value": "22.8"
+          },
+          "PCW_UIPARAM_DDR_DQS_0_PACKAGE_LENGTH": {
+            "value": "105.056"
+          },
+          "PCW_UIPARAM_DDR_DQS_0_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_DQS_1_LENGTH_MM": {
+            "value": "27.9"
+          },
+          "PCW_UIPARAM_DDR_DQS_1_PACKAGE_LENGTH": {
+            "value": "66.904"
+          },
+          "PCW_UIPARAM_DDR_DQS_1_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_DQS_2_LENGTH_MM": {
+            "value": "22.9"
+          },
+          "PCW_UIPARAM_DDR_DQS_2_PACKAGE_LENGTH": {
+            "value": "89.1715"
+          },
+          "PCW_UIPARAM_DDR_DQS_2_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_DQS_3_LENGTH_MM": {
+            "value": "29.4"
+          },
+          "PCW_UIPARAM_DDR_DQS_3_PACKAGE_LENGTH": {
+            "value": "113.63"
+          },
+          "PCW_UIPARAM_DDR_DQS_3_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0": {
+            "value": "-0.050"
+          },
+          "PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1": {
+            "value": "-0.044"
+          },
+          "PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2": {
+            "value": "-0.035"
+          },
+          "PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3": {
+            "value": "-0.100"
+          },
+          "PCW_UIPARAM_DDR_DQ_0_LENGTH_MM": {
+            "value": "22.8"
+          },
+          "PCW_UIPARAM_DDR_DQ_0_PACKAGE_LENGTH": {
+            "value": "98.503"
+          },
+          "PCW_UIPARAM_DDR_DQ_0_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_DQ_1_LENGTH_MM": {
+            "value": "27.9"
+          },
+          "PCW_UIPARAM_DDR_DQ_1_PACKAGE_LENGTH": {
+            "value": "68.5855"
+          },
+          "PCW_UIPARAM_DDR_DQ_1_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_DQ_2_LENGTH_MM": {
+            "value": "22.9"
+          },
+          "PCW_UIPARAM_DDR_DQ_2_PACKAGE_LENGTH": {
+            "value": "90.295"
+          },
+          "PCW_UIPARAM_DDR_DQ_2_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_DQ_3_LENGTH_MM": {
+            "value": "29.4"
+          },
+          "PCW_UIPARAM_DDR_DQ_3_PACKAGE_LENGTH": {
+            "value": "103.977"
+          },
+          "PCW_UIPARAM_DDR_DQ_3_PROPOGATION_DELAY": {
+            "value": "160"
+          },
+          "PCW_UIPARAM_DDR_ENABLE": {
+            "value": "1"
+          },
+          "PCW_UIPARAM_DDR_FREQ_MHZ": {
+            "value": "533.333333"
+          },
+          "PCW_UIPARAM_DDR_HIGH_TEMP": {
+            "value": "Normal (0-85)"
+          },
+          "PCW_UIPARAM_DDR_MEMORY_TYPE": {
+            "value": "DDR 3 (Low Voltage)"
+          },
+          "PCW_UIPARAM_DDR_PARTNO": {
+            "value": "MT41K256M16 RE-125"
+          },
+          "PCW_UIPARAM_DDR_TRAIN_DATA_EYE": {
+            "value": "1"
+          },
+          "PCW_UIPARAM_DDR_TRAIN_READ_GATE": {
+            "value": "1"
+          },
+          "PCW_UIPARAM_DDR_TRAIN_WRITE_LEVEL": {
+            "value": "1"
+          },
+          "PCW_UIPARAM_DDR_USE_INTERNAL_VREF": {
+            "value": "0"
+          },
+          "PCW_UIPARAM_GENERATE_SUMMARY": {
+            "value": "NA"
+          },
+          "PCW_USB0_BASEADDR": {
+            "value": "0xE0102000"
+          },
+          "PCW_USB0_HIGHADDR": {
+            "value": "0xE0102fff"
+          },
+          "PCW_USB0_PERIPHERAL_ENABLE": {
+            "value": "1"
+          },
+          "PCW_USB0_RESET_ENABLE": {
+            "value": "1"
+          },
+          "PCW_USB0_RESET_IO": {
+            "value": "MIO 46"
+          },
+          "PCW_USB0_USB0_IO": {
+            "value": "MIO 28 .. 39"
+          },
+          "PCW_USB1_PERIPHERAL_ENABLE": {
+            "value": "0"
+          },
+          "PCW_USB_RESET_ENABLE": {
+            "value": "1"
+          },
+          "PCW_USB_RESET_POLARITY": {
+            "value": "Active Low"
+          },
+          "PCW_USB_RESET_SELECT": {
+            "value": "Share reset pin"
+          },
+          "PCW_USE_AXI_FABRIC_IDLE": {
+            "value": "0"
+          },
+          "PCW_USE_AXI_NONSECURE": {
+            "value": "0"
+          },
+          "PCW_USE_CORESIGHT": {
+            "value": "0"
+          },
+          "PCW_USE_CROSS_TRIGGER": {
+            "value": "0"
+          },
+          "PCW_USE_CR_FABRIC": {
+            "value": "1"
+          },
+          "PCW_USE_DDR_BYPASS": {
+            "value": "0"
+          },
+          "PCW_USE_DEBUG": {
+            "value": "0"
+          },
+          "PCW_USE_DMA0": {
+            "value": "0"
+          },
+          "PCW_USE_DMA1": {
+            "value": "0"
+          },
+          "PCW_USE_DMA2": {
+            "value": "0"
+          },
+          "PCW_USE_DMA3": {
+            "value": "0"
+          },
+          "PCW_USE_EXPANDED_IOP": {
+            "value": "0"
+          },
+          "PCW_USE_FABRIC_INTERRUPT": {
+            "value": "0"
+          },
+          "PCW_USE_HIGH_OCM": {
+            "value": "0"
+          },
+          "PCW_USE_M_AXI_GP0": {
+            "value": "1"
+          },
+          "PCW_USE_M_AXI_GP1": {
+            "value": "0"
+          },
+          "PCW_USE_PROC_EVENT_BUS": {
+            "value": "0"
+          },
+          "PCW_USE_PS_SLCR_REGISTERS": {
+            "value": "0"
+          },
+          "PCW_USE_S_AXI_ACP": {
+            "value": "0"
+          },
+          "PCW_USE_S_AXI_GP0": {
+            "value": "0"
+          },
+          "PCW_USE_S_AXI_GP1": {
+            "value": "0"
+          },
+          "PCW_USE_S_AXI_HP0": {
+            "value": "0"
+          },
+          "PCW_USE_S_AXI_HP1": {
+            "value": "0"
+          },
+          "PCW_USE_S_AXI_HP2": {
+            "value": "0"
+          },
+          "PCW_USE_S_AXI_HP3": {
+            "value": "0"
+          },
+          "PCW_USE_TRACE": {
+            "value": "0"
+          },
+          "PCW_VALUE_SILVERSION": {
+            "value": "3"
+          },
+          "PCW_WDT_PERIPHERAL_CLKSRC": {
+            "value": "CPU_1X"
+          },
+          "PCW_WDT_PERIPHERAL_DIVISOR0": {
+            "value": "1"
+          },
+          "PCW_WDT_PERIPHERAL_ENABLE": {
+            "value": "0"
+          }
+        }
+      },
+      "smartconnect_0": {
+        "vlnv": "xilinx.com:ip:smartconnect:1.0",
+        "xci_name": "turing_bombe_final_smartconnect_0_0",
+        "parameters": {
+          "NUM_SI": {
+            "value": "1"
+          }
+        },
+        "interface_ports": {
+          "S00_AXI": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "bridges": [
+              "M00_AXI"
+            ]
+          },
+          "M00_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          }
+        }
+      },
+      "turing_bombe_control_0": {
+        "vlnv": "xilinx.com:module_ref:turing_bombe_controller:1.0",
+        "xci_name": "turing_bombe_final_turing_bombe_control_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "turing_bombe_controller",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "BRAM_A": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:bram_rtl:1.0",
+            "parameters": {
+              "MASTER_TYPE": {
+                "value": "BRAM_CTRL",
+                "value_src": "constant"
+              },
+              "MEM_ECC": {
+                "value": "NONE",
+                "value_src": "constant"
+              },
+              "MEM_SIZE": {
+                "value": "8192",
+                "value_src": "constant"
+              },
+              "MEM_WIDTH": {
+                "value": "32",
+                "value_src": "constant"
+              },
+              "READ_LATENCY": {
+                "value": "1",
+                "value_src": "user_prop"
+              },
+              "READ_WRITE_MODE": {
+                "value": "READ_WRITE",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "EN": {
+                "physical_name": "ENABLE_BRAM_A_IN",
+                "direction": "I"
+              },
+              "DOUT": {
+                "physical_name": "DATA_OUT_BRAM_A",
+                "direction": "O",
+                "left": "31",
+                "right": "0"
+              },
+              "DIN": {
+                "physical_name": "DATA_IN_BRAM_A",
+                "direction": "I",
+                "left": "31",
+                "right": "0"
+              },
+              "WE": {
+                "physical_name": "WRITE_ENABLE_BRAM_IN",
+                "direction": "I",
+                "left": "3",
+                "right": "0"
+              },
+              "ADDR": {
+                "physical_name": "ADDRESS_BRAM_A_IN",
+                "direction": "I",
+                "left": "9",
+                "right": "0"
+              },
+              "CLK": {
+                "physical_name": "CLK_BRAM_A_IN",
+                "direction": "I"
+              },
+              "RST": {
+                "physical_name": "RST_BRAM_A_IN",
+                "direction": "I"
+              }
+            }
+          }
+        },
+        "ports": {
+          "CLK_IN": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "turing_bombe_final_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "constant"
+              }
+            }
+          },
+          "RESET_OUT": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "DB_IN_INPUT_VOLTAGE_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_INPUT_REGISTER_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMAS_START_OUT": {
+            "direction": "O"
+          },
+          "DRUM_IMPULS_OUT": {
+            "direction": "O"
+          },
+          "ENIGMAS_DRUM_1_OUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "ENIGMAS_DRUM_2_OUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "ENIGMAS_DRUM_3_OUT": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "POS_1_INDICATOR_DRUM_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "POS_2_INDICATOR_DRUM_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "POS_3_INDICATOR_DRUM_IN": {
+            "direction": "I",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_READY_IN": {
+            "direction": "I"
+          },
+          "DB_OUT_NO_CHANGES_IN": {
+            "direction": "I"
+          },
+          "ENIGMA_1_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_1_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_1_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_1_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_1_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_2_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_2_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_2_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_2_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_2_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_3_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_3_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_3_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_3_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_3_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_4_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_4_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_4_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_4_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_4_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_5_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_5_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_5_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_5_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_5_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_6_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_6_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_6_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_6_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_6_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_7_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_7_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_7_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_7_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_7_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_8_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_8_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_8_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_8_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_8_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_9_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_9_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_9_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_9_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_9_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_10_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_10_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_10_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_10_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_10_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_11_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_11_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_11_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_11_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_11_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_12_CHARACTERS_DB0_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_12_CHARACTERS_DB1_OUT": {
+            "direction": "O",
+            "left": "25",
+            "right": "0"
+          },
+          "ENIGMA_12_DRUMPOS_1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_12_DRUMPOS_2_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "ENIGMA_12_DRUMPOS_3_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_1_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_1_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_2_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_2_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_3_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_3_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_4_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_4_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_5_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_5_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_6_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_6_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_7_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_7_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_8_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_8_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_9_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_9_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_10_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_10_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_11_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_11_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_12_DBCON0_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_IN_ENIGMA_12_DBCON1_OUT": {
+            "direction": "O",
+            "left": "4",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_1_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_1_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_2_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_2_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_3_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_3_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_4_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_4_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_5_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_5_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_6_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_6_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_7_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_7_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_8_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_8_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_9_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_9_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_10_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_10_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_11_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_11_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_12_DB0": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_OUT_ENIGMA_12_DB1": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "DB_RESULT_RESIGER_IN": {
+            "direction": "I",
+            "left": "25",
+            "right": "0"
+          },
+          "LED_FIRST_STOP_OUT": {
+            "direction": "O"
+          },
+          "LED_SECOND_STOP_OUT": {
+            "direction": "O"
+          },
+          "LED_THIRD_STOP_OUT": {
+            "direction": "O"
+          },
+          "LED_FOURTH_STOP_OUT": {
+            "direction": "O"
+          },
+          "LED_START_RED": {
+            "direction": "O"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "turing_bombe_final_xlconstant_0_0"
+      }
+    },
+    "interface_nets": {
+      "processing_system7_0_M_AXI_GP0": {
+        "interface_ports": [
+          "processing_system7_0/M_AXI_GP0",
+          "smartconnect_0/S00_AXI"
+        ]
+      },
+      "axi_bram_ctrl_0_BRAM_PORTA": {
+        "interface_ports": [
+          "turing_bombe_control_0/BRAM_A",
+          "axi_bram_ctrl_0/BRAM_PORTA"
+        ]
+      },
+      "smartconnect_0_M00_AXI": {
+        "interface_ports": [
+          "smartconnect_0/M00_AXI",
+          "axi_bram_ctrl_0/S_AXI"
+        ]
+      },
+      "processing_system7_0_DDR": {
+        "interface_ports": [
+          "DDR",
+          "processing_system7_0/DDR"
+        ]
+      },
+      "processing_system7_0_FIXED_IO": {
+        "interface_ports": [
+          "FIXED_IO",
+          "processing_system7_0/FIXED_IO"
+        ]
+      }
+    },
+    "nets": {
+      "TURBO_enigma_0_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_0/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_1_IN"
+        ]
+      },
+      "TURBO_enigma_0_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_0/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_1_IN"
+        ]
+      },
+      "TURBO_enigma_0_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_0/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_1"
+        ]
+      },
+      "TURBO_enigma_10_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_10/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_10_IN"
+        ]
+      },
+      "TURBO_enigma_10_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_10/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_10_IN"
+        ]
+      },
+      "TURBO_enigma_10_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_10/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_10"
+        ]
+      },
+      "TURBO_enigma_11_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_11/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_11_IN"
+        ]
+      },
+      "TURBO_enigma_11_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_11/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_11_IN"
+        ]
+      },
+      "TURBO_enigma_11_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_11/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_11"
+        ]
+      },
+      "TURBO_enigma_12_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_12/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_12_IN"
+        ]
+      },
+      "TURBO_enigma_12_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_12/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_12_IN"
+        ]
+      },
+      "TURBO_enigma_12_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_12/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_12"
+        ]
+      },
+      "TURBO_enigma_1_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_1/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_2_IN"
+        ]
+      },
+      "TURBO_enigma_1_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_1/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_2_IN"
+        ]
+      },
+      "TURBO_enigma_1_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_1/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_2"
+        ]
+      },
+      "TURBO_enigma_2_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_2/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_3_IN"
+        ]
+      },
+      "TURBO_enigma_2_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_2/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_3_IN"
+        ]
+      },
+      "TURBO_enigma_2_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_2/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_3"
+        ]
+      },
+      "TURBO_enigma_4_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_4/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_5_IN"
+        ]
+      },
+      "TURBO_enigma_4_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_4/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_5_IN"
+        ]
+      },
+      "TURBO_enigma_4_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_4/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_5"
+        ]
+      },
+      "TURBO_enigma_5_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_5/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_6_IN"
+        ]
+      },
+      "TURBO_enigma_5_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_5/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_6_IN"
+        ]
+      },
+      "TURBO_enigma_5_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_5/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_6"
+        ]
+      },
+      "TURBO_enigma_6_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_6/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_7_IN"
+        ]
+      },
+      "TURBO_enigma_6_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_6/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_7_IN"
+        ]
+      },
+      "TURBO_enigma_6_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_6/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_7"
+        ]
+      },
+      "TURBO_enigma_7_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_7/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_8_IN"
+        ]
+      },
+      "TURBO_enigma_7_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_7/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_8_IN"
+        ]
+      },
+      "TURBO_enigma_7_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_7/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_8"
+        ]
+      },
+      "TURBO_enigma_8_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_8/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_9_IN"
+        ]
+      },
+      "TURBO_enigma_8_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_8/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_9_IN"
+        ]
+      },
+      "TURBO_enigma_8_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_8/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_9"
+        ]
+      },
+      "TURBO_enigma_9_CODED_CHARACTERS_OUT_DB0": {
+        "ports": [
+          "TURBO_enigma_9/CODED_CHARACTERS_OUT_DB0",
+          "diagonal_board_0/ACTIVE_OUT_1_ENIGMA_4_IN"
+        ]
+      },
+      "TURBO_enigma_9_CODED_CHARACTERS_OUT_DB1": {
+        "ports": [
+          "TURBO_enigma_9/CODED_CHARACTERS_OUT_DB1",
+          "diagonal_board_0/ACTIVE_OUT_2_ENIGMA_4_IN"
+        ]
+      },
+      "TURBO_enigma_9_READY_OUT": {
+        "ports": [
+          "TURBO_enigma_9/READY_OUT",
+          "diagonal_board_0/READY_ENIGMA_4"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_10_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_10_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_10_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_10_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_10_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_10_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_11_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_11_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_11_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_11_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_11_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_11_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_12_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_12_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_12_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_12_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_12_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_12_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_1_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_1_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_1_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_1_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_1_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_1_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_2_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_2_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_2_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_2_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_2_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_2_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_3_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_3_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_3_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_3_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_3_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_3_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_4_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_4_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_4_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_4_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_4_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_4_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_5_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_5_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_5_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_5_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_5_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_5_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_6_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_6_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_6_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_6_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_6_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_6_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_7_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_7_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_7_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_7_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_7_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_7_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_8_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_8_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_8_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_8_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_8_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_8_DB1"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_9_DB1_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_9_DB1_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_9_DB0"
+        ]
+      },
+      "diagonal_board_0_ENIGMA_9_DB2_OUT": {
+        "ports": [
+          "diagonal_board_0/ENIGMA_9_DB2_OUT",
+          "turing_bombe_control_0/DB_OUT_ENIGMA_9_DB1"
+        ]
+      },
+      "diagonal_board_0_NO_OUTPUT_CHANGE_OUT": {
+        "ports": [
+          "diagonal_board_0/NO_OUTPUT_CHANGE_OUT",
+          "turing_bombe_control_0/DB_OUT_NO_CHANGES_IN"
+        ]
+      },
+      "diagonal_board_0_READY_OUT": {
+        "ports": [
+          "diagonal_board_0/READY_OUT",
+          "turing_bombe_control_0/DB_READY_IN"
+        ]
+      },
+      "diagonal_board_0_RESULT_REGISTER_OUT": {
+        "ports": [
+          "diagonal_board_0/RESULT_REGISTER_OUT",
+          "turing_bombe_control_0/DB_RESULT_RESIGER_IN"
+        ]
+      },
+      "indicator_drum_0_POS_INDICATOR_DRUM_1_OUT": {
+        "ports": [
+          "indicator_drum_0/POS_INDICATOR_DRUM_1_OUT",
+          "turing_bombe_control_0/POS_1_INDICATOR_DRUM_IN"
+        ]
+      },
+      "indicator_drum_0_POS_INDICATOR_DRUM_2_OUT": {
+        "ports": [
+          "indicator_drum_0/POS_INDICATOR_DRUM_2_OUT",
+          "turing_bombe_control_0/POS_2_INDICATOR_DRUM_IN"
+        ]
+      },
+      "indicator_drum_0_POS_INDICATOR_DRUM_3_OUT": {
+        "ports": [
+          "indicator_drum_0/POS_INDICATOR_DRUM_3_OUT",
+          "turing_bombe_control_0/POS_3_INDICATOR_DRUM_IN"
+        ]
+      },
+      "proc_sys_reset_0_peripheral_aresetn": {
+        "ports": [
+          "proc_sys_reset_0/peripheral_aresetn",
+          "indicator_drum_0/RESET_IN",
+          "diagonal_board_0/RESET_IN",
+          "TURBO_enigma_12/SOFT_RESET_N_IN",
+          "TURBO_enigma_11/SOFT_RESET_N_IN",
+          "TURBO_enigma_10/SOFT_RESET_N_IN",
+          "TURBO_enigma_8/SOFT_RESET_N_IN",
+          "TURBO_enigma_7/SOFT_RESET_N_IN",
+          "TURBO_enigma_9/SOFT_RESET_N_IN",
+          "TURBO_enigma_6/SOFT_RESET_N_IN",
+          "TURBO_enigma_5/SOFT_RESET_N_IN",
+          "TURBO_enigma_4/SOFT_RESET_N_IN",
+          "TURBO_enigma_2/SOFT_RESET_N_IN",
+          "TURBO_enigma_1/SOFT_RESET_N_IN",
+          "TURBO_enigma_0/SOFT_RESET_N_IN"
+        ]
+      },
+      "sim_clk_gen_0_clk": {
+        "ports": [
+          "CLK",
+          "proc_sys_reset_0/slowest_sync_clk",
+          "processing_system7_0/M_AXI_GP0_ACLK",
+          "TURBO_enigma_0/UB_CLK_IN",
+          "TURBO_enigma_1/UB_CLK_IN",
+          "TURBO_enigma_2/UB_CLK_IN",
+          "TURBO_enigma_4/UB_CLK_IN",
+          "TURBO_enigma_5/UB_CLK_IN",
+          "TURBO_enigma_7/UB_CLK_IN",
+          "TURBO_enigma_8/UB_CLK_IN",
+          "TURBO_enigma_10/UB_CLK_IN",
+          "TURBO_enigma_9/UB_CLK_IN",
+          "TURBO_enigma_6/UB_CLK_IN",
+          "TURBO_enigma_11/UB_CLK_IN",
+          "TURBO_enigma_12/UB_CLK_IN",
+          "diagonal_board_0/CLK_IN",
+          "indicator_drum_0/CLK_IN",
+          "axi_bram_ctrl_0/s_axi_aclk",
+          "smartconnect_0/aclk",
+          "turing_bombe_control_0/CLK_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_10_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_10_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_10_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_10_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_11_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_11_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_11_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_11_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_11_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_11_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_12_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_12_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_12_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_12_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_12_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_12_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_1_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_1_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_1_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_1_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_1_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_1_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_2_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_2_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_2_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_2_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_2_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_2_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_3_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_3_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_3_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_3_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_3_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_3_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_4_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_4_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_4_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_4_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_4_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_4_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_5_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_5_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_5_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_5_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_5_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_5_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_6_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_6_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_6_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_6_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_6_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_6_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_7_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_7_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_7_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_7_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_7_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_7_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_8_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_8_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_8_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_8_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_8_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_8_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_9_DBCON0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_9_DBCON0_OUT",
+          "diagonal_board_0/ENIGMA_9_DB_CON_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_ENIGMA_9_DBCON1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_ENIGMA_9_DBCON1_OUT",
+          "diagonal_board_0/ENIGMA_9_DB_CON_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_INPUT_REGISTER_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_INPUT_REGISTER_OUT",
+          "diagonal_board_0/TEST_REGISTER_IN"
+        ]
+      },
+      "turing_bombe_control_0_DB_IN_INPUT_VOLTAGE_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DB_IN_INPUT_VOLTAGE_OUT",
+          "diagonal_board_0/INPUT_VOLTAGE_IN"
+        ]
+      },
+      "turing_bombe_control_0_DRUM_IMPULS_OUT": {
+        "ports": [
+          "turing_bombe_control_0/DRUM_IMPULS_OUT",
+          "TURBO_enigma_0/DRUM_IMPULS_IN",
+          "TURBO_enigma_1/DRUM_IMPULS_IN",
+          "TURBO_enigma_2/DRUM_IMPULS_IN",
+          "TURBO_enigma_4/DRUM_IMPULS_IN",
+          "TURBO_enigma_5/DRUM_IMPULS_IN",
+          "TURBO_enigma_7/DRUM_IMPULS_IN",
+          "TURBO_enigma_8/DRUM_IMPULS_IN",
+          "TURBO_enigma_10/DRUM_IMPULS_IN",
+          "TURBO_enigma_9/DRUM_IMPULS_IN",
+          "TURBO_enigma_6/DRUM_IMPULS_IN",
+          "TURBO_enigma_11/DRUM_IMPULS_IN",
+          "TURBO_enigma_12/DRUM_IMPULS_IN",
+          "indicator_drum_0/ROTATE_IMPULS_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMAS_DRUM_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMAS_DRUM_1_OUT",
+          "TURBO_enigma_0/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_1/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_2/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_4/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_5/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_7/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_8/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_10/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_9/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_6/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_11/CONFIG_DRUM_TYP_1_IN",
+          "TURBO_enigma_12/CONFIG_DRUM_TYP_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMAS_DRUM_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMAS_DRUM_2_OUT",
+          "TURBO_enigma_0/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_1/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_2/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_4/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_5/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_7/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_8/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_10/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_9/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_6/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_11/CONFIG_DRUM_TYP_2_IN",
+          "TURBO_enigma_12/CONFIG_DRUM_TYP_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMAS_DRUM_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMAS_DRUM_3_OUT",
+          "TURBO_enigma_0/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_1/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_2/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_4/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_5/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_7/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_8/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_10/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_9/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_6/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_11/CONFIG_DRUM_TYP_3_IN",
+          "TURBO_enigma_12/CONFIG_DRUM_TYP_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMAS_START_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMAS_START_OUT",
+          "TURBO_enigma_0/START_IN",
+          "TURBO_enigma_1/START_IN",
+          "TURBO_enigma_2/START_IN",
+          "TURBO_enigma_4/START_IN",
+          "TURBO_enigma_5/START_IN",
+          "TURBO_enigma_7/START_IN",
+          "TURBO_enigma_8/START_IN",
+          "TURBO_enigma_10/START_IN",
+          "TURBO_enigma_9/START_IN",
+          "TURBO_enigma_6/START_IN",
+          "TURBO_enigma_11/START_IN",
+          "TURBO_enigma_12/START_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_10_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_10_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_10/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_10_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_10_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_10/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_10_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_10_DRUMPOS_1_OUT",
+          "TURBO_enigma_10/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_10_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_10_DRUMPOS_2_OUT",
+          "TURBO_enigma_10/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_10_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_10_DRUMPOS_3_OUT",
+          "TURBO_enigma_10/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_11_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_11_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_11/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_11_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_11_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_11/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_11_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_11_DRUMPOS_1_OUT",
+          "TURBO_enigma_11/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_11_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_11_DRUMPOS_2_OUT",
+          "TURBO_enigma_11/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_11_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_11_DRUMPOS_3_OUT",
+          "TURBO_enigma_11/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_12_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_12_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_12/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_12_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_12_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_12/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_12_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_12_DRUMPOS_1_OUT",
+          "TURBO_enigma_12/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_12_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_12_DRUMPOS_2_OUT",
+          "TURBO_enigma_12/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_12_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_12_DRUMPOS_3_OUT",
+          "TURBO_enigma_12/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_1_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_1_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_0/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_1_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_1_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_0/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_1_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_1_DRUMPOS_1_OUT",
+          "TURBO_enigma_0/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_1_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_1_DRUMPOS_2_OUT",
+          "TURBO_enigma_0/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_1_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_1_DRUMPOS_3_OUT",
+          "TURBO_enigma_0/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_2_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_2_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_1/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_2_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_2_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_1/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_2_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_2_DRUMPOS_1_OUT",
+          "TURBO_enigma_1/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_2_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_2_DRUMPOS_2_OUT",
+          "TURBO_enigma_1/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_2_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_2_DRUMPOS_3_OUT",
+          "TURBO_enigma_1/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_3_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_3_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_2/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_3_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_3_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_2/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_3_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_3_DRUMPOS_1_OUT",
+          "TURBO_enigma_2/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_3_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_3_DRUMPOS_2_OUT",
+          "TURBO_enigma_2/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_3_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_3_DRUMPOS_3_OUT",
+          "TURBO_enigma_2/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_4_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_4_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_9/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_4_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_4_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_9/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_4_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_4_DRUMPOS_1_OUT",
+          "TURBO_enigma_9/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_4_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_4_DRUMPOS_2_OUT",
+          "TURBO_enigma_9/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_4_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_4_DRUMPOS_3_OUT",
+          "TURBO_enigma_9/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_5_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_5_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_4/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_5_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_5_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_4/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_5_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_5_DRUMPOS_1_OUT",
+          "TURBO_enigma_4/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_5_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_5_DRUMPOS_2_OUT",
+          "TURBO_enigma_4/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_5_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_5_DRUMPOS_3_OUT",
+          "TURBO_enigma_4/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_6_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_6_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_5/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_6_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_6_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_5/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_6_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_6_DRUMPOS_1_OUT",
+          "TURBO_enigma_5/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_6_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_6_DRUMPOS_2_OUT",
+          "TURBO_enigma_5/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_6_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_6_DRUMPOS_3_OUT",
+          "TURBO_enigma_5/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_7_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_7_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_6/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_7_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_7_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_6/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_7_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_7_DRUMPOS_1_OUT",
+          "TURBO_enigma_6/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_7_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_7_DRUMPOS_2_OUT",
+          "TURBO_enigma_6/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_7_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_7_DRUMPOS_3_OUT",
+          "TURBO_enigma_6/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_8_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_8_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_7/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_8_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_8_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_7/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_8_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_8_DRUMPOS_1_OUT",
+          "TURBO_enigma_7/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_8_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_8_DRUMPOS_2_OUT",
+          "TURBO_enigma_7/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_8_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_8_DRUMPOS_3_OUT",
+          "TURBO_enigma_7/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_9_CHARACTERS_DB0_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_9_CHARACTERS_DB0_OUT",
+          "TURBO_enigma_8/CHARACTERS_IN_DB0"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_9_CHARACTERS_DB1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_9_CHARACTERS_DB1_OUT",
+          "TURBO_enigma_8/CHARACTERS_IN_DB1"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_9_DRUMPOS_1_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_9_DRUMPOS_1_OUT",
+          "TURBO_enigma_8/CONFIG_START_POS_DRUM_1_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_9_DRUMPOS_2_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_9_DRUMPOS_2_OUT",
+          "TURBO_enigma_8/CONFIG_START_POS_DRUM_2_IN"
+        ]
+      },
+      "turing_bombe_control_0_ENIGMA_9_DRUMPOS_3_OUT": {
+        "ports": [
+          "turing_bombe_control_0/ENIGMA_9_DRUMPOS_3_OUT",
+          "TURBO_enigma_8/CONFIG_START_POS_DRUM_3_IN"
+        ]
+      },
+      "turing_bombe_control_0_LED_FIRST_STOP_OUT": {
+        "ports": [
+          "turing_bombe_control_0/LED_FIRST_STOP_OUT",
+          "LED_FIRST_STOP_OUT"
+        ]
+      },
+      "turing_bombe_control_0_LED_FOURTH_STOP_OUT": {
+        "ports": [
+          "turing_bombe_control_0/LED_FOURTH_STOP_OUT",
+          "LED_FOURTH_STOP_OUT"
+        ]
+      },
+      "turing_bombe_control_0_LED_SECOND_STOP_OUT": {
+        "ports": [
+          "turing_bombe_control_0/LED_SECOND_STOP_OUT",
+          "LED_SECOND_STOP_OUT"
+        ]
+      },
+      "turing_bombe_control_0_LED_THIRD_STOP_OUT": {
+        "ports": [
+          "turing_bombe_control_0/LED_THIRD_STOP_OUT",
+          "LED_THIRD_STOP_OUT"
+        ]
+      },
+      "turing_bombe_control_0_RESET_OUT": {
+        "ports": [
+          "turing_bombe_control_0/RESET_OUT",
+          "proc_sys_reset_0/ext_reset_in"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "smartconnect_0/aresetn",
+          "axi_bram_ctrl_0/s_axi_aresetn"
+        ]
+      }
+    },
+    "addressing": {
+      "/processing_system7_0": {
+        "address_spaces": {
+          "Data": {
+            "range": "4G",
+            "width": "32",
+            "segments": {
+              "SEG_axi_bram_ctrl_0_Mem0": {
+                "address_block": "/axi_bram_ctrl_0/S_AXI/Mem0",
+                "offset": "0x40000000",
+                "range": "8K"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

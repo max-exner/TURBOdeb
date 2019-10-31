@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="39" Path="/homes/mexner/TURBOdeb/turing_bombe_project/vivado/TURBO.xpr">
+<Project Version="7" Minor="39" Path="/homes/mexner/Tdeb_github/turing_bombe_project/vivado/TURBO.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c627cf18f339459286b6ed0a75ed9fea"/>
@@ -38,20 +38,20 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="zybo-z7-20"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="2310"/>
+    <Option Name="WTXSimLaunchSim" Val="2326"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="47"/>
-    <Option Name="WTModelSimExportSim" Val="47"/>
-    <Option Name="WTQuestaExportSim" Val="47"/>
-    <Option Name="WTIesExportSim" Val="47"/>
-    <Option Name="WTVcsExportSim" Val="47"/>
-    <Option Name="WTRivieraExportSim" Val="47"/>
-    <Option Name="WTActivehdlExportSim" Val="47"/>
+    <Option Name="WTXSimExportSim" Val="83"/>
+    <Option Name="WTModelSimExportSim" Val="83"/>
+    <Option Name="WTQuestaExportSim" Val="83"/>
+    <Option Name="WTIesExportSim" Val="83"/>
+    <Option Name="WTVcsExportSim" Val="83"/>
+    <Option Name="WTRivieraExportSim" Val="83"/>
+    <Option Name="WTActivehdlExportSim" Val="83"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -72,6 +72,12 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../src/hdl/diagonal_board.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../src/hdl/indicator_drum.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -84,21 +90,57 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/hdl/diagonal_board.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../src/bd/turing_bombe/turing_bombe.bd">
+      <File Path="$PPRDIR/../src/bd/turing_bombe_final/turing_bombe_final.bd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="turing_bombe_final.bd" FileRelPathName="ip/turing_bombe_final_turing_bombe_control_0_0/turing_bombe_final_turing_bombe_control_0_0.xci">
+          <Proxy FileSetName="turing_bombe_final_turing_bombe_control_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="turing_bombe_final.bd" FileRelPathName="ip/turing_bombe_final_smartconnect_0_0/turing_bombe_final_smartconnect_0_0.xci">
+          <Proxy FileSetName="turing_bombe_final_smartconnect_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="turing_bombe_final.bd" FileRelPathName="ip/turing_bombe_final_processing_system7_0_0/turing_bombe_final_processing_system7_0_0.xci">
+          <Proxy FileSetName="turing_bombe_final_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="turing_bombe_final.bd" FileRelPathName="ip/turing_bombe_final_indicator_drum_0_0/turing_bombe_final_indicator_drum_0_0.xci">
+          <Proxy FileSetName="turing_bombe_final_indicator_drum_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="turing_bombe_final.bd" FileRelPathName="ip/turing_bombe_final_diagonal_board_0_0/turing_bombe_final_diagonal_board_0_0.xci">
+          <Proxy FileSetName="turing_bombe_final_diagonal_board_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="turing_bombe_final.bd" FileRelPathName="ip/turing_bombe_final_axi_bram_ctrl_0_0/turing_bombe_final_axi_bram_ctrl_0_0.xci">
+          <Proxy FileSetName="turing_bombe_final_axi_bram_ctrl_0_0"/>
+        </CompFileExtendedInfo>
       </File>
-      <File Path="$PPRDIR/../src/bd/turing_bombe/hdl/turing_bombe_wrapper.vhd">
+      <File Path="$PPRDIR/../src/bd/turing_bombe_final/hdl/turing_bombe_final_wrapper.vhd">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../src/bd/turing_bombe_without_zynq/turing_bombe_without_zynq.bd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_diagonal_board_0_0/turing_bombe_without_zynq_diagonal_board_0_0.xci">
+          <Proxy FileSetName="turing_bombe_without_zynq_diagonal_board_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_indicator_drum_0_0/turing_bombe_without_zynq_indicator_drum_0_0.xci">
+          <Proxy FileSetName="turing_bombe_without_zynq_indicator_drum_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_turing_bombe_control_0_0/turing_bombe_without_zynq_turing_bombe_control_0_0.xci">
+          <Proxy FileSetName="turing_bombe_without_zynq_turing_bombe_control_0_0"/>
+        </CompFileExtendedInfo>
+      </File>
+      <File Path="$PPRDIR/../src/bd/turing_bombe_without_zynq/hdl/turing_bombe_without_zynq_wrapper.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -156,72 +198,9 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/bd/turing_bombe_without_zynq/turing_bombe_without_zynq.bd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_1_0/turing_bombe_without_zynq_TURBO_enigma_1_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_1_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_proc_sys_reset_0_0/turing_bombe_without_zynq_proc_sys_reset_0_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_proc_sys_reset_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_turing_bombe_control_0_0/turing_bombe_without_zynq_turing_bombe_control_0_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_turing_bombe_control_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_9_0/turing_bombe_without_zynq_TURBO_enigma_9_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_9_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_7_0/turing_bombe_without_zynq_TURBO_enigma_7_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_7_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_6_0/turing_bombe_without_zynq_TURBO_enigma_6_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_6_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_8_0/turing_bombe_without_zynq_TURBO_enigma_8_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_8_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_4_0/turing_bombe_without_zynq_TURBO_enigma_4_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_4_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_2_0/turing_bombe_without_zynq_TURBO_enigma_2_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_2_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_12_0/turing_bombe_without_zynq_TURBO_enigma_12_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_12_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_5_0/turing_bombe_without_zynq_TURBO_enigma_5_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_5_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_diagonal_board_0_0/turing_bombe_without_zynq_diagonal_board_0_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_diagonal_board_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_indicator_drum_0_0/turing_bombe_without_zynq_indicator_drum_0_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_indicator_drum_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_0_0/turing_bombe_without_zynq_TURBO_enigma_0_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_10_0/turing_bombe_without_zynq_TURBO_enigma_10_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_10_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="turing_bombe_without_zynq.bd" FileRelPathName="ip/turing_bombe_without_zynq_TURBO_enigma_11_0/turing_bombe_without_zynq_TURBO_enigma_11_0.xci">
-          <Proxy FileSetName="turing_bombe_without_zynq_TURBO_enigma_11_0"/>
-        </CompFileExtendedInfo>
-      </File>
-      <File Path="$PPRDIR/../src/bd/turing_bombe_without_zynq/hdl/turing_bombe_without_zynq_wrapper.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="turing_bombe_wrapper"/>
+        <Option Name="TopModule" Val="turing_bombe_final_wrapper"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -322,75 +301,39 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_0_0">
+    <FileSet Name="turing_bombe_final_axi_bram_ctrl_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_final_axi_bram_ctrl_0_0">
       <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_0_0"/>
+        <Option Name="TopModule" Val="turing_bombe_final_axi_bram_ctrl_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_1_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_1_0">
+    <FileSet Name="turing_bombe_final_diagonal_board_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_final_diagonal_board_0_0">
       <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_1_0"/>
+        <Option Name="TopModule" Val="turing_bombe_final_diagonal_board_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_10_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_10_0">
+    <FileSet Name="turing_bombe_final_indicator_drum_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_final_indicator_drum_0_0">
       <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_10_0"/>
+        <Option Name="TopModule" Val="turing_bombe_final_indicator_drum_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_11_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_11_0">
+    <FileSet Name="turing_bombe_final_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_final_processing_system7_0_0">
       <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_11_0"/>
+        <Option Name="TopModule" Val="turing_bombe_final_processing_system7_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_12_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_12_0">
+    <FileSet Name="turing_bombe_final_smartconnect_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_final_smartconnect_0_0">
       <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_12_0"/>
+        <Option Name="TopModule" Val="turing_bombe_final_smartconnect_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_2_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_2_0">
+    <FileSet Name="turing_bombe_final_turing_bombe_control_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_final_turing_bombe_control_0_0">
       <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_2_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_4_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_4_0">
-      <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_4_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_5_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_5_0">
-      <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_5_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_6_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_6_0">
-      <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_6_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_7_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_7_0">
-      <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_7_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_8_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_8_0">
-      <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_8_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_TURBO_enigma_9_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_TURBO_enigma_9_0">
-      <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_TURBO_enigma_9_0"/>
+        <Option Name="TopModule" Val="turing_bombe_final_turing_bombe_control_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -403,12 +346,6 @@
     <FileSet Name="turing_bombe_without_zynq_indicator_drum_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_indicator_drum_0_0">
       <Config>
         <Option Name="TopModule" Val="turing_bombe_without_zynq_indicator_drum_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="turing_bombe_without_zynq_proc_sys_reset_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/turing_bombe_without_zynq_proc_sys_reset_0_0">
-      <Config>
-        <Option Name="TopModule" Val="turing_bombe_without_zynq_proc_sys_reset_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -444,12 +381,13 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Performs optimizations which creates alternative logic technology mapping, including disabling LUT combining, forcing F7/F8/F9 to logic, increasing the threshold of shift register inference." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+        <StratHandle Name="Flow_AlternateRoutability" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design">
-          <Option Id="ReTiming">1</Option>
-          <Option Id="RepFanoutThreshold">100</Option>
+          <Option Id="ShregMinSize">10</Option>
+          <Option Id="Directive">3</Option>
+          <Option Id="NoCombineLuts">1</Option>
         </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -465,132 +403,54 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="turing_bombe_final_axi_bram_ctrl_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_final_axi_bram_ctrl_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_axi_bram_ctrl_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_final_axi_bram_ctrl_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_1_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_1_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_1_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_1_0_synth_1" IncludeInArchive="true">
+    <Run Id="turing_bombe_final_diagonal_board_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_final_diagonal_board_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_diagonal_board_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_final_diagonal_board_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_10_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_10_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_10_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_10_0_synth_1" IncludeInArchive="true">
+    <Run Id="turing_bombe_final_indicator_drum_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_final_indicator_drum_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_indicator_drum_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_final_indicator_drum_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_11_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_11_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_11_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_11_0_synth_1" IncludeInArchive="true">
+    <Run Id="turing_bombe_final_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_final_processing_system7_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_processing_system7_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_final_processing_system7_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_12_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_12_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_12_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_12_0_synth_1" IncludeInArchive="true">
+    <Run Id="turing_bombe_final_smartconnect_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_final_smartconnect_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_smartconnect_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_final_smartconnect_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_2_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_2_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_2_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_2_0_synth_1" IncludeInArchive="true">
+    <Run Id="turing_bombe_final_turing_bombe_control_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_final_turing_bombe_control_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_turing_bombe_control_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_final_turing_bombe_control_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_4_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_4_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_4_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_4_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_5_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_5_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_5_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_5_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_6_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_6_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_6_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_6_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_7_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_7_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_7_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_7_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_8_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_8_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_8_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_8_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_9_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_TURBO_enigma_9_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_9_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_TURBO_enigma_9_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -599,9 +459,7 @@
     </Run>
     <Run Id="turing_bombe_without_zynq_diagonal_board_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_diagonal_board_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_diagonal_board_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_diagonal_board_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -610,20 +468,7 @@
     </Run>
     <Run Id="turing_bombe_without_zynq_indicator_drum_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_indicator_drum_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_indicator_drum_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_indicator_drum_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_proc_sys_reset_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_proc_sys_reset_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_proc_sys_reset_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_proc_sys_reset_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -632,9 +477,7 @@
     </Run>
     <Run Id="turing_bombe_without_zynq_turing_bombe_control_0_0_synth_1" Type="Ft3:Synth" SrcSet="turing_bombe_without_zynq_turing_bombe_control_0_0" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_turing_bombe_control_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/turing_bombe_without_zynq_turing_bombe_control_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -674,11 +517,9 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="turing_bombe_final_axi_bram_ctrl_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_axi_bram_ctrl_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_final_axi_bram_ctrl_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -692,11 +533,9 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_1_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_1_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_1_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="turing_bombe_final_diagonal_board_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_diagonal_board_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_final_diagonal_board_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -710,11 +549,9 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_10_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_10_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_10_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="turing_bombe_final_indicator_drum_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_indicator_drum_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_final_indicator_drum_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -728,11 +565,9 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_11_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_11_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_11_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="turing_bombe_final_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_processing_system7_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_final_processing_system7_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -746,11 +581,9 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_12_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_12_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_12_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="turing_bombe_final_smartconnect_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_smartconnect_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_final_smartconnect_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -764,119 +597,9 @@
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_2_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_2_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_2_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="turing_bombe_final_turing_bombe_control_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_final_turing_bombe_control_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_final_turing_bombe_control_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_4_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_4_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_4_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_5_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_5_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_5_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_6_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_6_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_6_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_7_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_7_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_7_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_8_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_8_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_8_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_TURBO_enigma_9_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_TURBO_enigma_9_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_TURBO_enigma_9_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -892,9 +615,7 @@
     </Run>
     <Run Id="turing_bombe_without_zynq_diagonal_board_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_diagonal_board_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_diagonal_board_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -910,27 +631,7 @@
     </Run>
     <Run Id="turing_bombe_without_zynq_indicator_drum_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_indicator_drum_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_indicator_drum_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="turing_bombe_without_zynq_proc_sys_reset_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_proc_sys_reset_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_proc_sys_reset_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -946,9 +647,7 @@
     </Run>
     <Run Id="turing_bombe_without_zynq_turing_bombe_control_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="turing_bombe_without_zynq_turing_bombe_control_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="turing_bombe_without_zynq_turing_bombe_control_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

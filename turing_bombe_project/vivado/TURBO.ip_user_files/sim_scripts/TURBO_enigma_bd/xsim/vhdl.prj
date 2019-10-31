@@ -1,5 +1,5 @@
 vhdl xpm  \
-"/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
+"/home/tobias/bin/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vhdl xil_defaultlib  \
 "../../../bd/TURBO_enigma_bd/ip/TURBO_enigma_bd_enigma_top_0_0/sim/TURBO_enigma_bd_enigma_top_0_0.vhd" \

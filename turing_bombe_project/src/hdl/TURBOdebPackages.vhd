@@ -11,5 +11,5 @@ package turingBombArrays is
         type enigmas_drumPos_array is array (0 to 35) of STD_LOGIC_VECTOR(4 downto 0); 
         type enigmas_drum_array is array (0 to 2) of STD_LOGIC_VECTOR(2 downto 0);
         type possible_testregister_solutions_array is array (0 to 51) of STD_LOGIC_VECTOR(25 downto 0);
-        type result_registers_array is array (0 to 51) of STD_LOGIC_VECTOR(5 downto 0);
+        type result_registers_array is array (0 to 51) of STD_LOGIC_VECTOR(7 downto 0);
 end package;

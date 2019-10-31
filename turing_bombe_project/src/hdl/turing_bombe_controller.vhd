@@ -31,10 +31,10 @@ entity turing_bombe_controller is
     Port    ( 
              -- just for testbench
              ENABLE_BRAM_A_IN             : in STD_LOGIC                            := '0';
-             ADDRESS_BRAM_A_IN            : in STD_LOGIC_VECTOR(5 DOWNTO 0)         := (others => '0');
+             ADDRESS_BRAM_A_IN            : in STD_LOGIC_VECTOR(9 DOWNTO 0)         := (others => '0');
              DATA_IN_BRAM_A               : in STD_LOGIC_VECTOR(31 DOWNTO 0)        := (others => '0');
              DATA_OUT_BRAM_A              : out STD_LOGIC_VECTOR(31 DOWNTO 0)       := (others => '0');
-             WRITE_ENABLE_BRAM_IN         : in STD_LOGIC_VECTOR(0 DOWNTO 0)         := (others => '0');
+             WRITE_ENABLE_BRAM_IN         : in STD_LOGIC_VECTOR(3 DOWNTO 0)         := (others => '0');
              CLK_BRAM_A_IN                : in STD_LOGIC                            ;
              RST_BRAM_A_IN                : in STD_LOGIC                            ;
              --
@@ -140,6 +140,7 @@ entity turing_bombe_controller is
              
                          
              ENIGMA_11_CHARACTERS_DB0_OUT : out STD_LOGIC_VECTOR ( 25 downto 0 )  := (others => '0');
+
              ENIGMA_11_CHARACTERS_DB1_OUT : out STD_LOGIC_VECTOR ( 25 downto 0 )  := (others => '0');
 
              ENIGMA_11_DRUMPOS_1_OUT       : out STD_LOGIC_VECTOR ( 4 downto 0 )  := (others => '0');
@@ -247,7 +248,8 @@ entity turing_bombe_controller is
              LED_FIRST_STOP_OUT           : out STD_LOGIC                               := '0';
              LED_SECOND_STOP_OUT          : out STD_LOGIC                               := '0';
              LED_THIRD_STOP_OUT           : out STD_LOGIC                               := '0';
-             LED_FOURTH_STOP_OUT          : out STD_LOGIC                               := '0'
+             LED_FOURTH_STOP_OUT          : out STD_LOGIC                               := '0';
+             LED_START_RED                 : out STD_LOGIC                               := '0'
 
              
             );                
@@ -300,11 +302,16 @@ architecture HDL of turing_bombe_controller is
                             WRITE_RESULT_TO_BRAM,
                             WAIT_FOR_BRAM_WRITE_RESULT_1,
                             WAIT_FOR_BRAM_WRITE_RESULT_2,
+                            WAIT_FOR_BRAM_WRITE_RESULT_3,
+                            WAIT_FOR_BRAM_WRITE_RESULT_4,
                             WRITE_READY_TO_BRAM,
                             WAIT_FOR_BRAM_WRITE_READY_1,
                             WAIT_FOR_BRAM_WRITE_READY_2, 
                             WAIT_FOR_BRAM_WRITE_READY_3,
-                            RESET
+                            WAIT_FOR_BRAM_WRITE_READY_4,
+                            RESET,
+                            WAIT_MAN_CONTROL_0,
+                            WAIT_MAN_CONTROL_1
                         );
      
     type read_config_fsm_states is (
@@ -321,12 +328,13 @@ architecture HDL of turing_bombe_controller is
                                         READ_ENIGMAS_123_DB_CON,
                                         READ_ENIGMAS_456_DB_CON,
                                         READ_ENIGMAS_789_DB_CON,
-                                        READ_ENIGMAS_101112_DB_CON
+                                        READ_ENIGMAS_101112_DB_CON,
+                                        WAIT_FOR_MAN_CONTROL
                                     );
     --this address addresses the following data
         -- Bit[0] StartBit
         -- Bit[1] ResetBit
-    constant start_reset_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000000";
+    constant start_reset_address : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000000";
        
     --this address addresses the following data
         -- Bit[0-4]   drum position of the first engima first drum
@@ -336,7 +344,7 @@ architecture HDL of turing_bombe_controller is
         -- Bit[15-19] drum position of the second engima first drum
         -- Bit[20-24] drum position of the second engima second drum
         -- Bit[24-29] drum position of the second engima third drum         
-    constant enigmas_12_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000001";
+    constant enigmas_12_drumPos_address : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000001";
     
     --this address addresses the following data
         -- Bit[0-4]   drum position of the third engima first drum
@@ -346,7 +354,7 @@ architecture HDL of turing_bombe_controller is
         -- Bit[15-19] drum position of the fourth engima first drum
         -- Bit[20-24] drum position of the fourth engima second drum
         -- Bit[24-29] drum position of the fourth engima third drum         
-    constant enigmas_34_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000010";
+    constant enigmas_34_drumPos_address : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000010";
     
     --this address addresses the following data
         -- Bit[0-2]   drum position of the fifth engima first drum
@@ -356,7 +364,7 @@ architecture HDL of turing_bombe_controller is
         -- Bit[9-11]  drum position of the sixth engima first drum
         -- Bit[12-14] drum position of the sixth engima second drum
         -- Bit[15-17] drum position of the sixth engima third drum   
-    constant enigmas_56_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000011";
+    constant enigmas_56_drumPos_address : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000011";
     
     --this address addresses the following data
         -- Bit[0-2]   drum position of the seventh engima first drum
@@ -366,7 +374,7 @@ architecture HDL of turing_bombe_controller is
         -- Bit[9-11]  drum position of the eighth engima first drum
         -- Bit[12-14] drum position of the eighth engima second drum
         -- Bit[15-17] drum position of the eighth engima third drum      
-    constant enigmas_78_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000100";
+    constant enigmas_78_drumPos_address : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000100";
 
     --this address addresses the following data
         -- Bit[0-2]   drum position of the ninth engima first drum
@@ -376,7 +384,7 @@ architecture HDL of turing_bombe_controller is
         -- Bit[9-11]  drum position of the tenth engima first drum
         -- Bit[12-14] drum position of the tenth engima second drum
         -- Bit[15-17] drum position of the tenth engima third drum      
-    constant enigmas_910_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000101";
+    constant enigmas_910_drumPos_address : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000101";
 
     --this address addresses the following data
         -- Bit[0-2]   drum position of the eleventh engima first drum
@@ -386,7 +394,7 @@ architecture HDL of turing_bombe_controller is
         -- Bit[9-11]  drum position of the twelfth engima first drum
         -- Bit[12-14] drum position of the twelfth engima second drum
         -- Bit[15-17] drum position of the twelfth engima third drum      
-    constant enigmas_1112_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000110";
+    constant enigmas_1112_drumPos_address : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000110";
        
     --this address addresses the following data
         -- Bit[0-2] first drum of all enigmas
@@ -395,7 +403,7 @@ architecture HDL of turing_bombe_controller is
         
         --Bit[9-13] testregister
         --Bit[14-18] testvoltage      
-    constant enigma_drums_vol_reg_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000111";
+    constant enigma_drums_vol_reg_address : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000111";
 
     --this address addresses the following data
         -- Bit[0-4] first diagonalboard connection of the first enigma
@@ -406,7 +414,7 @@ architecture HDL of turing_bombe_controller is
         
         -- Bit[20-24] first diagonalboard connection of the third enigma     
         -- Bit[25-29] second diagonalboard connection of the third enigma        
-    constant enigmas_123_db_con_addess : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001000";      
+    constant enigmas_123_db_con_addess : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001000";      
 
     --this address addresses the following data
         -- Bit[0-4] first diagonalboard connection of the fourth enigma
@@ -417,7 +425,7 @@ architecture HDL of turing_bombe_controller is
         
         -- Bit[20-24] first diagonalboard connection of the sixth enigma     
         -- Bit[25-29] second diagonalboard connection of the sixth enigma        
-    constant enigmas_456_db_con_addess : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001001";      
+    constant enigmas_456_db_con_addess : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001001";      
 
     --this address addresses the following data
         -- Bit[0-4] first diagonalboard connection of the seventh enigma
@@ -428,7 +436,7 @@ architecture HDL of turing_bombe_controller is
         
         -- Bit[20-24] first diagonalboard connection of the ninth enigma     
         -- Bit[25-29] second diagonalboard connection of the ninth enigma        
-    constant enigmas_789_db_con_addess : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001010";        
+    constant enigmas_789_db_con_addess : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001010";        
  
     --this address addresses the following data
         -- Bit[0-4] first diagonalboard connection of the tenth enigma
@@ -439,7 +447,7 @@ architecture HDL of turing_bombe_controller is
         
         -- Bit[20-24] first diagonalboard connection of the twelfth enigma     
         -- Bit[25-29] second diagonalboard connection of the twelfth enigma        
-    constant enigmas_101112_db_con_addess : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001011"; 
+    constant enigmas_101112_db_con_addess : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00001011"; 
     
     --this address addresses the following data
         -- Bit[0-4] indicator drum one 
@@ -447,58 +455,58 @@ architecture HDL of turing_bombe_controller is
         -- Bit[10-14] indicator drum two    
         -- Bit[15-19] result diagonalboard      
     constant indicator_drum_result_address : result_registers_array :=  (
-                                                                            "000000",
-                                                                            "001100",
-                                                                            "001101",
-                                                                            "001110",
-                                                                            "001111",
-                                                                            "010000",
-                                                                            "010001",
-                                                                            "010010",
-                                                                            "010011",
-                                                                            "010100",
-                                                                            "010101",
-                                                                            "010110",
-                                                                            "010111",
-                                                                            "011000",
-                                                                            "011001",
-                                                                            "011010",
-                                                                            "011011",
-                                                                            "011100",
-                                                                            "011101",
-                                                                            "011110",
-                                                                            "011111",
-                                                                            "100000",
-                                                                            "100001",
-                                                                            "100010",
-                                                                            "100011",
-                                                                            "100100",
-                                                                            "100101",
-                                                                            "100110",
-                                                                            "100111",
-                                                                            "101000",
-                                                                            "101001",
-                                                                            "101010",
-                                                                            "101011",
-                                                                            "101100",
-                                                                            "101101",
-                                                                            "101110",
-                                                                            "101111",
-                                                                            "110000",
-                                                                            "110001",
-                                                                            "110010",
-                                                                            "110011",
-                                                                            "110100",
-                                                                            "110101",
-                                                                            "110110",
-                                                                            "110111",
-                                                                            "111000",
-                                                                            "111001",
-                                                                            "111010",
-                                                                            "111011",
-                                                                            "111100",
-                                                                            "111101",
-                                                                            "111110"
+                                                                            "00000000",
+                                                                            "00001100",
+                                                                            "00001101",
+                                                                            "00001110",
+                                                                            "00001111",
+                                                                            "00010000",
+                                                                            "00010001",
+                                                                            "00010010",
+                                                                            "00010011",
+                                                                            "00010100",
+                                                                            "00010101",
+                                                                            "00010110",
+                                                                            "00010111",
+                                                                            "00011000",
+                                                                            "00011001",
+                                                                            "00011010",
+                                                                            "00011011",
+                                                                            "00011100",
+                                                                            "00011101",
+                                                                            "00011110",
+                                                                            "00011111",
+                                                                            "00100000",
+                                                                            "00100001",
+                                                                            "00100010",
+                                                                            "00100011",
+                                                                            "00100100",
+                                                                            "00100101",
+                                                                            "00100110",
+                                                                            "00100111",
+                                                                            "00101000",
+                                                                            "00101001",
+                                                                            "00101010",
+                                                                            "00101011",
+                                                                            "00101100",
+                                                                            "00101101",
+                                                                            "00101110",
+                                                                            "00101111",
+                                                                            "00110000",
+                                                                            "00110001",
+                                                                            "00110010",
+                                                                            "00110011",
+                                                                            "00110100",
+                                                                            "00110101",
+                                                                            "00110110",
+                                                                            "00110111",
+                                                                            "00111000",
+                                                                            "00111001",
+                                                                            "00111010",
+                                                                            "00111011",
+                                                                            "00111100",
+                                                                            "00111101",
+                                                                            "00111110"
                                                                          );
 
     
@@ -596,8 +604,8 @@ architecture HDL of turing_bombe_controller is
     signal n_read_config_fsm_states : read_config_fsm_states; 
     
 
-    signal c_address_bram_b : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000000";
-    signal n_address_bram_b : STD_LOGIC_VECTOR(5 DOWNTO 0);
+    signal c_address_bram_b : STD_LOGIC_VECTOR(7 DOWNTO 0) := "00000000";
+    signal n_address_bram_b : STD_LOGIC_VECTOR(7 DOWNTO 0);
     
     signal c_data_out_bram_b: STD_LOGIC_VECTOR(31 DOWNTO 0) := "00000000000000000000000000000000";
     signal n_data_out_bram_b : STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -637,8 +645,8 @@ architecture HDL of turing_bombe_controller is
     signal c_result_letter : STD_LOGIC_VECTOR(4 downto 0);
     signal n_result_letter : STD_LOGIC_VECTOR(4 downto 0);
          
-    signal c_bram_reset : STD_LOGIC;
-    signal n_bram_reset : STD_LOGIC;
+    signal c_bram_reset : STD_LOGIC := '1';
+    signal n_bram_reset : STD_LOGIC := '1';
  
     signal c_invers_bram_reset : STD_LOGIC;
     signal n_invers_bram_reset : STD_LOGIC;
@@ -646,8 +654,8 @@ architecture HDL of turing_bombe_controller is
     signal c_pos_indicator_drum_in : indicator_drum_array := (others => (others => '0'));
     signal n_pos_indicator_drum_in : indicator_drum_array;
     
-    signal c_write_enable_bram_b :STD_LOGIC_VECTOR(0 DOWNTO 0)  := (others => '0');
-    signal n_write_enable_bram_b :STD_LOGIC_VECTOR(0 DOWNTO 0);
+    signal c_write_enable_bram_b :STD_LOGIC_VECTOR(3 DOWNTO 0)  := (others => '0');
+    signal n_write_enable_bram_b :STD_LOGIC_VECTOR(3 DOWNTO 0);
     
     signal c_data_in_bram_b      :STD_LOGIC_VECTOR(31 downto 0) := (others=>'0');
     signal n_data_in_bram_b      :STD_LOGIC_VECTOR(31 downto 0);
@@ -683,20 +691,75 @@ begin
 --------------------------------
 --  COMPONENT INSTANTIATIONS  --
 --------------------------------
+
+--	xpm_memory_sdpram_inst : xpm_memory_sdpram
+--		generic map(
+--			-- Common module generics
+--			MEMORY_SIZE             => 8192, --positive integer
+--			MEMORY_PRIMITIVE        => "auto", --string; "auto", "distributed", "block" or "ultra" ;
+--			CLOCKING_MODE           => "common_clock", --string; "common_clock", "independent_clock" 
+--			MEMORY_INIT_FILE        => "none", --string; "none" or "<filename>.mem" 
+--			MEMORY_INIT_PARAM       => "", --string;
+--			USE_MEM_INIT            => 1, --integer; 0,1
+--			WAKEUP_TIME             => "disable_sleep", --string; "disable_sleep" or "use_sleep_pin" 
+--			MESSAGE_CONTROL         => 0, --integer; 0,1
+--			ECC_MODE                => "no_ecc", --string; "no_ecc", "encode_only", "decode_only" or "both_encode_and_decode" 
+--			AUTO_SLEEP_TIME         => 0, --Do not Change
+
+--			-- Port A module generics
+--			WRITE_DATA_WIDTH_A      => 32, --positive integer
+--			BYTE_WRITE_WIDTH_A      => 8, --integer; 8, 9, or WRITE_DATA_WIDTH_A value
+--			ADDR_WIDTH_A            => 8, --positive integer
+
+--			-- Port B module generics
+--			READ_DATA_WIDTH_B       => 32, --positive integer
+--			ADDR_WIDTH_B            => 8, --positive integer
+--			READ_RESET_VALUE_B      => "0", --string
+--			READ_LATENCY_B          => 1, --non-negative integer
+--			WRITE_MODE_B            => "no_change" --string; "write_first", "read_first", "no_change" 
+--		)
+--		port map(
+--			-- Common module ports
+--			sleep          => '0',
+--			-- Port A module ports
+--			clka           => CLK_IN,
+--			ena            => ENABLE_BRAM_A_IN,
+--			wea            => WRITE_ENABLE_BRAM_IN,
+--			addra          => ADDRESS_BRAM_A_IN(9 downto 2),
+--			dina           =>  DATA_IN_BRAM_A,
+--			injectsbiterra => '0',
+--			injectdbiterra => '0',
+--			-- Port B module ports
+--			clkb           => CLK_IN,
+--			rstb           => '0',
+--			enb            => '1',
+--			regceb         => '1',
+--			addrb          => c_address_bram_b,
+--			doutb          => n_data_out_bram_b,
+--			sbiterrb       => open,
+--			dbiterrb       => open
+--		);
+
+
+
+
+
+
+
    -- xpm_memory_tdpram: True Dual Port RAM
    -- Xilinx Parameterized Macro, version 2018.3
 
    xpm_memory_tdpram_inst : xpm_memory_tdpram
    generic map (
-      ADDR_WIDTH_A => 6,               -- DECIMAL
-      ADDR_WIDTH_B => 6,               -- DECIMAL
+      ADDR_WIDTH_A => 8,               -- DECIMAL
+      ADDR_WIDTH_B => 8,               -- DECIMAL
       AUTO_SLEEP_TIME => 0,            -- DECIMAL
-      BYTE_WRITE_WIDTH_A => 32,        -- DECIMAL
-      BYTE_WRITE_WIDTH_B => 32,        -- DECIMAL
+      BYTE_WRITE_WIDTH_A => 8,        -- DECIMAL
+      BYTE_WRITE_WIDTH_B => 8,        -- DECIMAL
       CLOCKING_MODE => "common_clock", -- String
       ECC_MODE => "no_ecc",            -- String
       MEMORY_INIT_FILE => "none",      -- String
-      MEMORY_INIT_PARAM => "0",        -- String
+      MEMORY_INIT_PARAM => "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",        -- String
       MEMORY_OPTIMIZATION => "true",   -- String
       MEMORY_PRIMITIVE => "auto",      -- String
       MEMORY_SIZE => 2048,             -- DECIMAL
@@ -710,7 +773,7 @@ begin
       --RST_MODE_A => "SYNC",            -- String
       --RST_MODE_B => "SYNC",            -- String
       USE_EMBEDDED_CONSTRAINT => 0,    -- DECIMAL
-      USE_MEM_INIT => 1,               -- DECIMAL
+      USE_MEM_INIT => 0,               -- DECIMAL
       WAKEUP_TIME => "disable_sleep",  -- String
       WRITE_DATA_WIDTH_A => 32,        -- DECIMAL
       WRITE_DATA_WIDTH_B => 32,        -- DECIMAL
@@ -732,7 +795,7 @@ begin
       sbiterrb => open,             -- 1-bit output: Status signal to indicate single bit error occurrence
                                         -- on the data output of port B.
 
-      addra => ADDRESS_BRAM_A_IN,                   -- ADDR_WIDTH_A-bit input: Address for port A write and read operations.
+      addra => ADDRESS_BRAM_A_IN(9 downto 2),                   -- ADDR_WIDTH_A-bit input: Address for port A write and read operations.
       addrb => c_address_bram_b,                   -- ADDR_WIDTH_B-bit input: Address for port B write and read operations.
       clka => CLK_IN,                     -- 1-bit input: Clock signal for port A. Also clocks port B when
                                         -- parameter CLOCKING_MODE is "common_clock".
@@ -797,6 +860,8 @@ begin
                                         -- 4'b0010.
 
    );
+
+
 --------------------------------
 --  INPUT/OUTPUT ASSIGNMENTS  --
 --------------------------------
@@ -954,6 +1019,14 @@ begin
 -----------------------------
 --  CONCURRENT STATEMENTS  --
 -----------------------------
+-- light up LED at STARTUP
+    --LED_FOURTH_STOP_OUT      <=      '1' when c_data_out_bram_b(0) = '1' else '0'; --edge detection-
+
+
+
+
+
+
                                ---------------------------
                                --      Process 1        --
 ----------------------------------------------------------------c_stop_leds_out----------------------------------- 
@@ -1016,7 +1089,8 @@ begin
         case c_fsm_state is
 
             when IDLE => 
-                n_write_enable_bram_b <= "0";
+                n_stop_leds_out <= "0001";
+                n_write_enable_bram_b <= "0000";
                 n_address_bram_b <= start_reset_address;
                 --resetbit == 1
                 if(c_data_out_bram_b(1) = '0') then
@@ -1032,7 +1106,8 @@ begin
                 
             
             when  READ_CONFIG =>
-                n_write_enable_bram_b   <= "0";
+                n_stop_leds_out <= "0010";
+                n_write_enable_bram_b   <= "0000";
                 case c_read_config_fsm_states is
                     when IDLE =>
                         n_address_bram_b <= enigmas_12_drumPos_address;
@@ -1157,6 +1232,7 @@ begin
                         n_enigma_db_con(11) <= c_data_out_bram_b(29 downto 25);
                         
                         --n_address_bram_b <= enigmas_101112_db_con_addess;
+                        --n_address_bram_b <= "00111111";
                         
                         n_read_config_fsm_states <= READ_ENIGMAS_789_DB_CON;
                         
@@ -1178,31 +1254,51 @@ begin
                         n_enigma_db_con(22) <= c_data_out_bram_b(24 downto 20);
                         n_enigma_db_con(23) <= c_data_out_bram_b(29 downto 25);
                         
-                        n_read_config_fsm_states <= IDLE;
-                        n_fsm_state <= WAIT_FOR_COMPONENTS_TO_GET_READY;
                         n_reset_all_components <= '1';
+                        n_read_config_fsm_states <= WAIT_FOR_MAN_CONTROL;
+                        
+
+                        
+                    when WAIT_FOR_MAN_CONTROL =>
+                        
+                        --if(c_data_out_bram_b(0) = '1') then
+                        n_fsm_state <= WAIT_FOR_COMPONENTS_TO_GET_READY;
+                        n_read_config_fsm_states <= IDLE;
+                        --else
+                            --n_read_config_fsm_states <= WAIT_FOR_MAN_CONTROL;
+                        --end if;                   
                     when others =>
                 end case;
+                
+                
+                
 
             when WAIT_FOR_COMPONENTS_TO_GET_READY => 
+                 n_stop_leds_out <= "0011";
                  n_fsm_state <= SEND_START_IMPULS_WITHOUT_TURN;
                    
             when SEND_START_IMPULS_WITHOUT_TURN =>
+                n_stop_leds_out <= "0100";
                 --n_enigmas_db_out <= (others => (others => '0'));
                 --n_enigmas_db_out(6)         <= "00000000000000000001000000";
                 --n_enigmas_db_out(0) <= "00000000000000000001000000";
                 n_start_enigma <= '1';
                 n_fsm_state <= START_ENIGMAS_WITHOUT_TURN_IMPULS;
+                
             
             when SEND_START_IMPULS_WITH_TURN =>
+                n_stop_leds_out <= "0101";
                 n_enigmas_db_out <= (others => (others => '0'));
                -- n_enigmas_db_out(6)         <= "00000000000000000001000000";
                 --n_enigmas_db_out(0) <= "00000000000000000001000000";
                 n_start_enigma <= '1';
                 n_enigma_rotate_impuls <= '0';
+                
                 n_fsm_state <= SEND_TURN_IMPULS;
+                
                         
             when START_ENIGMAS_WITHOUT_TURN_IMPULS =>
+                n_stop_leds_out <= "0110";
                 n_start_enigma <= '0';
                 if(c_db_ready_in = '0') then
                      n_fsm_state <= WAIT_FOR_DIAGONALBOARD; 
@@ -1211,6 +1307,7 @@ begin
                 end if;
              
             when SEND_TURN_IMPULS =>
+                n_stop_leds_out <= "0111";
                 n_enigma_rotate_impuls <= '0';
                 n_enigmas_db_out <= (others => (others => '0'));
                 --n_enigmas_db_out(6) <= "00000000000000000001000000";
@@ -1219,6 +1316,7 @@ begin
                 
                 
             when START_ENIGMAS_WITH_TURN_IMPULS =>
+                n_stop_leds_out <= "1000";
                 n_start_enigma <= '0';
                 
                 n_enigmas_db_out <= (others => (others => '0'));
@@ -1232,7 +1330,9 @@ begin
                 end if;
                                
             when WAIT_FOR_DIAGONALBOARD =>
+                n_stop_leds_out <= "1001";
                 n_start_enigma <= '0';
+                
                 if(c_db_ready_in = '1' and c_db_no_output_changes_in = '1') then
                      n_fsm_state <= CHECK_RESULT; 
                 elsif(c_db_ready_in = '1') then
@@ -1240,14 +1340,19 @@ begin
                 else
                     n_fsm_state <= WAIT_FOR_DIAGONALBOARD; 
                 end if;
+
                 
 
                              
             when CHECK_RESULT =>
+                n_stop_leds_out <= "1010";
                 n_fsm_state <= SEND_START_IMPULS_WITH_TURN;
                 n_enigma_rotate_impuls <= '1';
                 
-                    
+                if (c_iteration = "100010010100111") then -- 17575
+                    n_fsm_state <= WRITE_READY_TO_BRAM;
+                end if;
+                   
                 for j in 0 to 51 loop
                     if(c_db_result_register = possible_testregister_solutions(j)) then
                         n_fsm_state <= WRITE_RESULT_TO_BRAM;
@@ -1258,51 +1363,75 @@ begin
                 end loop;
                 
             when WRITE_RESULT_TO_BRAM =>
+                n_stop_leds_out <= "1011";
                 n_data_in_bram_b                  <= (others => '0');
                 n_data_in_bram_b(4 downto 0)      <= c_pos_indicator_drum_in(0);
                 n_data_in_bram_b(9 downto 5)      <= c_pos_indicator_drum_in(1);
                 n_data_in_bram_b(14 downto 10)    <= c_pos_indicator_drum_in(2);
                 n_data_in_bram_b(19 downto 15)    <= c_result_letter;
-                
                 n_address_bram_b                  <= indicator_drum_result_address(to_integer(unsigned(c_vaild_result_counter)));
-                
-                n_write_enable_bram_b             <= "1";
-                
+                n_write_enable_bram_b             <= "1111"; 
+                n_fsm_state <= WAIT_MAN_CONTROL_0;
+            
+            when WAIT_MAN_CONTROL_0 =>               
                 n_fsm_state <= WAIT_FOR_BRAM_WRITE_RESULT_1;
                 
             when WAIT_FOR_BRAM_WRITE_RESULT_1 =>
-                    n_write_enable_bram_b <= "0";
-                    n_fsm_state <= WAIT_FOR_BRAM_WRITE_RESULT_2;
+                n_stop_leds_out <= "1100";
+                n_write_enable_bram_b <= "0000";
+                --n_address_bram_b <= "00111111";
+                n_fsm_state <= WAIT_FOR_BRAM_WRITE_RESULT_2;
                     
             when WAIT_FOR_BRAM_WRITE_RESULT_2 =>
-                n_stop_leds_out <= c_stop_leds_out +1;
+                n_stop_leds_out <= "1101";
+                n_fsm_state <= WAIT_FOR_BRAM_WRITE_RESULT_3;
+
+                
+            when WAIT_FOR_BRAM_WRITE_RESULT_3 =>
+                n_fsm_state <= WAIT_FOR_BRAM_WRITE_RESULT_4;
+            
+            when WAIT_FOR_BRAM_WRITE_RESULT_4 =>
+                n_fsm_state <= WAIT_MAN_CONTROL_1;
+            
+            
+            when WAIT_MAN_CONTROL_1 => 
                 if (c_iteration = "100010010100111") then -- 17575
                     n_fsm_state <= WRITE_READY_TO_BRAM;
                 else
-                    n_fsm_state <= SEND_START_IMPULS_WITH_TURN;
-                end if;
-                  
+                    n_fsm_state <= SEND_START_IMPULS_WITH_TURN;--SEND_START_IMPULS_WITH_TURN;
+                end if;      
+               
+            
             when WRITE_READY_TO_BRAM =>
-                    n_data_in_bram_b                  <= (others => '0');
-                    n_data_in_bram_b(2)               <= '1'; 
-                    
-                    n_address_bram_b                  <= start_reset_address;
-                    
-                    n_write_enable_bram_b             <= "1";
-                          
-                    n_fsm_state                       <= WAIT_FOR_BRAM_WRITE_READY_1;
+                n_stop_leds_out <= "1110";
+                n_data_in_bram_b                  <= (others => '0');
+                n_data_in_bram_b(2)               <= '1'; --set ready flag
+                n_data_in_bram_b(1)               <= '1'; --do not reset
+                n_data_in_bram_b(0)               <= '0'; --do not start again
+                
+                n_address_bram_b                  <= start_reset_address;
+                
+                n_write_enable_bram_b             <= "1111";
+                  
+                   
+                n_fsm_state                       <= WAIT_FOR_BRAM_WRITE_READY_1;
               
             when WAIT_FOR_BRAM_WRITE_READY_1 =>    
-                    n_fsm_state <= WAIT_FOR_BRAM_WRITE_READY_2;
-                    n_write_enable_bram_b             <= "0";
+                n_fsm_state <= WAIT_FOR_BRAM_WRITE_READY_2;
+                n_write_enable_bram_b             <= "0000";              
                     
             when WAIT_FOR_BRAM_WRITE_READY_2 =>     
-                    n_fsm_state <= WAIT_FOR_BRAM_WRITE_READY_3;
+                n_fsm_state <= WAIT_FOR_BRAM_WRITE_READY_3;
                 
             when WAIT_FOR_BRAM_WRITE_READY_3 =>
-                    n_fsm_state <= IDLE;
+                n_fsm_state <= WAIT_FOR_BRAM_WRITE_READY_4;
+                    
+            when WAIT_FOR_BRAM_WRITE_READY_4 =>
+                n_stop_leds_out <= "1111";
+                n_fsm_state <= IDLE;
                     
             when RESET =>
+                n_stop_leds_out <= "1111";
                 n_bram_reset <= '0';
                 n_invers_bram_reset <= '1';
                 if(c_data_out_bram_b(1) = '0') then

@@ -5,22 +5,22 @@
 #  -string -flagsOSRD
 preplace port LED_SECOND_STOP_OUT -pg 1 -y 5480 -defaultsOSRD
 preplace port LED_FOURTH_STOP_OUT -pg 1 -y 5520 -defaultsOSRD
-preplace port CLK -pg 1 -y 2810 -defaultsOSRD
-preplace port ENABLE_BRAM_A -pg 1 -y -3260 -defaultsOSRD
+preplace port CLK -pg 1 -y 2960 -defaultsOSRD
+preplace port ENABLE_BRAM_A -pg 1 -y 2470 -defaultsOSRD
 preplace port LED_FIRST_STOP_OUT -pg 1 -y 5440 -defaultsOSRD
 preplace port LED_THIRD_STOP_OUT -pg 1 -y 5500 -defaultsOSRD
-preplace portBus ADDRESS_BRAM_A -pg 1 -y -3240 -defaultsOSRD
-preplace portBus DATA_OUT_BRAM_A -pg 1 -y -3360 -defaultsOSRD
-preplace portBus DATA_IN_BRAM_A -pg 1 -y -3220 -defaultsOSRD
-preplace portBus WRITE_ENABLE_BRAM_A -pg 1 -y -3200 -defaultsOSRD
+preplace portBus ADDRESS_BRAM_A -pg 1 -y 2490 -defaultsOSRD
+preplace portBus DATA_OUT_BRAM_A -pg 1 -y 1470 -defaultsOSRD
+preplace portBus DATA_IN_BRAM_A -pg 1 -y 2520 -defaultsOSRD
+preplace portBus WRITE_ENABLE_BRAM_A -pg 1 -y 2540 -defaultsOSRD
 preplace inst TURBO_enigma_2 -pg 1 -lvl 4 -y 2350 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 1 -y 2630 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 2 -y 3250 -defaultsOSRD
 preplace inst TURBO_enigma_4 -pg 1 -lvl 4 -y 2670 -defaultsOSRD
 preplace inst TURBO_enigma_5 -pg 1 -lvl 4 -y 2990 -defaultsOSRD
 preplace inst TURBO_enigma_10 -pg 1 -lvl 4 -y 4610 -defaultsOSRD
 preplace inst TURBO_enigma_6 -pg 1 -lvl 4 -y 3310 -defaultsOSRD
 preplace inst TURBO_enigma_11 -pg 1 -lvl 4 -y 4930 -defaultsOSRD
-preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -y 2920 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -y 2900 -defaultsOSRD
 preplace inst TURBO_enigma_7 -pg 1 -lvl 4 -y 3630 -defaultsOSRD
 preplace inst TURBO_enigma_12 -pg 1 -lvl 4 -y 5250 -defaultsOSRD
 preplace inst TURBO_enigma_8 -pg 1 -lvl 4 -y 3950 -defaultsOSRD
@@ -30,177 +30,180 @@ preplace inst diagonal_board_0 -pg 1 -lvl 2 -y 4150 -defaultsOSRD
 preplace inst TURBO_enigma_0 -pg 1 -lvl 4 -y 1710 -defaultsOSRD
 preplace inst turing_bombe_control_0 -pg 1 -lvl 3 -y 3830 -defaultsOSRD
 preplace inst TURBO_enigma_1 -pg 1 -lvl 4 -y 2030 -defaultsOSRD
-preplace netloc turing_bombe_control_0_ENIGMA_8_DRUMPOS_2_OUT 1 3 1 5020J
-preplace netloc turing_bombe_control_0_ENIGMA_7_DRUMPOS_1_OUT 1 3 1 4750J
-preplace netloc turing_bombe_control_0_ENIGMA_11_DRUMPOS_1_OUT 1 3 1 4620J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_7_DBCON1_OUT 1 1 3 2770J 4970 NJ 4970 4370J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_4_DBCON0_OUT 1 1 3 2700J 4900 NJ 4900 4440J
-preplace netloc TURBO_enigma_9_CODED_CHARACTERS_OUT_DB0 1 1 4 2410 5670 N 5670 N 5670 5730
-preplace netloc diagonal_board_0_ENIGMA_4_DB2_OUT 1 2 1 3500
-preplace netloc TURBO_enigma_1_CODED_CHARACTERS_OUT_DB0 1 1 4 2460 5590 N 5590 N 5590 5860
-preplace netloc turing_bombe_control_0_ENIGMA_8_DRUMPOS_1_OUT 1 3 1 5010J
-preplace netloc turing_bombe_control_0_ENIGMAS_DRUM_1_OUT 1 3 1 4900J
-preplace netloc TURBO_enigma_1_CODED_CHARACTERS_OUT_DB1 1 1 4 2470 5600 N 5600 N 5600 5850
-preplace netloc TURBO_enigma_9_CODED_CHARACTERS_OUT_DB1 1 1 4 2550 5540 N 5540 N 5540 5600
-preplace netloc turing_bombe_control_0_ENIGMA_2_DRUMPOS_3_OUT 1 3 1 4690J
-preplace netloc TURBO_enigma_10_READY_OUT 1 1 4 2320 5710 N 5710 N 5710 5670
-preplace netloc diagonal_board_0_ENIGMA_3_DB2_OUT 1 2 1 3480
-preplace netloc TURBO_enigma_8_CODED_CHARACTERS_OUT_DB0 1 1 4 2560 5640 N 5640 N 5640 5760
-preplace netloc TURBO_enigma_12_READY_OUT 1 1 4 2280 5810 N 5810 N 5810 5780
-preplace netloc turing_bombe_control_0_ENIGMA_2_DRUMPOS_2_OUT 1 3 1 4680J
-preplace netloc TURBO_enigma_8_CODED_CHARACTERS_OUT_DB1 1 1 4 2570 5650 N 5650 N 5650 5750
-preplace netloc turing_bombe_control_0_ENIGMA_3_DRUMPOS_3_OUT 1 3 1 4760J
-preplace netloc turing_bombe_control_0_ENIGMA_3_DRUMPOS_1_OUT 1 3 1 4720J
-preplace netloc turing_bombe_control_0_ENIGMAS_DRUM_2_OUT 1 3 1 4910J
-preplace netloc diagonal_board_0_ENIGMA_10_DB2_OUT 1 2 1 3620
-preplace netloc turing_bombe_control_0_LED_THIRD_STOP_OUT 1 3 2 4520 5510 5950
-preplace netloc turing_bombe_control_0_ENIGMA_3_DRUMPOS_2_OUT 1 3 1 4740J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_9_DBCON1_OUT 1 1 3 2810J 5010 NJ 5010 4330J
-preplace netloc TURBO_enigma_5_READY_OUT 1 1 4 2290 5740 N 5740 N 5740 5920
-preplace netloc ENABLE_BRAM_A_IN_1 1 0 3 NJ -3260 NJ -3260 3490
-preplace netloc turing_bombe_control_0_ENIGMA_6_DRUMPOS_2_OUT 1 3 1 4960J
-preplace netloc turing_bombe_control_0_ENIGMAS_DRUM_3_OUT 1 3 1 4920J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_12_DBCON0_OUT 1 1 3 2860J 5060 NJ 5060 4280J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_11_DBCON1_OUT 1 1 3 2850J 5050 NJ 5050 4290J
-preplace netloc turing_bombe_control_0_ENIGMA_4_CHARACTERS_DB0_OUT 1 3 1 4810J
-preplace netloc turing_bombe_control_0_DB_IN_INPUT_VOLTAGE_OUT 1 1 3 2850J 2770 NJ 2770 4490J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_3_DBCON1_OUT 1 1 3 2690J 4890 NJ 4890 4450J
-preplace netloc diagonal_board_0_ENIGMA_8_DB2_OUT 1 2 1 3580
-preplace netloc turing_bombe_control_0_ENIGMA_11_DRUMPOS_2_OUT 1 3 1 4610J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_9_DBCON0_OUT 1 1 3 2800J 5000 NJ 5000 4340J
-preplace netloc turing_bombe_control_0_ENIGMA_9_DRUMPOS_1_OUT 1 3 1 4750J
-preplace netloc turing_bombe_control_0_ENIGMA_5_DRUMPOS_3_OUT 1 3 1 4860J
-preplace netloc turing_bombe_control_0_ENIGMA_10_DRUMPOS_1_OUT 1 3 1 4670J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_2_DBCON1_OUT 1 1 3 2670J 4870 NJ 4870 4470J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_1_DBCON0_OUT 1 1 3 2640J 4840 NJ 4840 4500J
-preplace netloc TURBO_enigma_12_CODED_CHARACTERS_OUT_DB0 1 1 4 2480 5790 N 5790 N 5790 5800
-preplace netloc TURBO_enigma_7_CODED_CHARACTERS_OUT_DB0 1 1 4 2620 5440 N 5440 N 5440 5610
-preplace netloc turing_bombe_control_0_ENIGMA_6_DRUMPOS_3_OUT 1 3 1 4970J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_11_DBCON0_OUT 1 1 3 2840J 5040 NJ 5040 4300J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON0_OUT 1 1 3 2820J 5020 NJ 5020 4320J
-preplace netloc diagonal_board_0_ENIGMA_5_DB1_OUT 1 2 1 3510
-preplace netloc TURBO_enigma_7_CODED_CHARACTERS_OUT_DB1 1 1 4 2590 5530 N 5530 N 5530 5620
-preplace netloc TURBO_enigma_12_CODED_CHARACTERS_OUT_DB1 1 1 4 2490 5800 N 5800 N 5800 5790
-preplace netloc turing_bombe_control_0_ENIGMA_6_DRUMPOS_1_OUT 1 3 1 4950J
-preplace netloc diagonal_board_0_ENIGMA_12_DB1_OUT 1 2 1 3650
-preplace netloc turing_bombe_control_0_ENIGMA_2_CHARACTERS_DB0_OUT 1 3 1 4580J
-preplace netloc TURBO_enigma_8_READY_OUT 1 1 4 2350 5660 N 5660 N 5660 5740
-preplace netloc TURBO_enigma_9_READY_OUT 1 1 4 2310 5680 N 5680 N 5680 5700
-preplace netloc TURBO_enigma_6_READY_OUT 1 1 4 2440 5520 N 5520 N 5520 5630
-preplace netloc WRITE_ENABLE_BRAM_A_1 1 0 3 NJ -3200 NJ -3200 3460
-preplace netloc turing_bombe_control_0_ENIGMA_5_CHARACTERS_DB1_OUT 1 3 1 4800J
-preplace netloc turing_bombe_control_0_ENIGMA_12_CHARACTERS_DB1_OUT 1 3 1 4580J
-preplace netloc turing_bombe_control_0_ENIGMA_10_CHARACTERS_DB1_OUT 1 3 1 4690J
-preplace netloc turing_bombe_control_0_ENIGMA_4_DRUMPOS_2_OUT 1 3 1 4720J
-preplace netloc turing_bombe_control_0_ENIGMA_11_CHARACTERS_DB1_OUT 1 3 1 4630J
-preplace netloc TURBO_enigma_10_CODED_CHARACTERS_OUT_DB0 1 1 4 2530 5690 N 5690 N 5690 5690
-preplace netloc turing_bombe_control_0_ENIGMA_5_DRUMPOS_2_OUT 1 3 1 4840J
-preplace netloc turing_bombe_control_0_ENIGMA_12_DRUMPOS_3_OUT 1 3 1 4550J
-preplace netloc turing_bombe_control_0_ENIGMA_11_CHARACTERS_DB0_OUT 1 3 1 4640J
-preplace netloc turing_bombe_control_0_ENIGMA_10_DRUMPOS_2_OUT 1 3 1 4660J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON1_OUT 1 1 3 2830J 5030 NJ 5030 4310J
-preplace netloc TURBO_enigma_10_CODED_CHARACTERS_OUT_DB1 1 1 4 2540 5700 N 5700 N 5700 5680
-preplace netloc diagonal_board_0_ENIGMA_1_DB2_OUT 1 2 1 3440
-preplace netloc turing_bombe_control_0_DB_IN_INPUT_REGISTER_OUT 1 1 3 2860J 2790 NJ 2790 4480J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_8_DBCON0_OUT 1 1 3 2780J 4980 NJ 4980 4360J
-preplace netloc diagonal_board_0_ENIGMA_7_DB1_OUT 1 2 1 3550
-preplace netloc turing_bombe_control_0_ENIGMA_12_DRUMPOS_1_OUT 1 3 1 4570J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_7_DBCON0_OUT 1 1 3 2760J 4960 NJ 4960 4380J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_12_DBCON1_OUT 1 1 3 2870J 5070 NJ 5070 4270J
-preplace netloc diagonal_board_0_ENIGMA_9_DB1_OUT 1 2 1 3590
-preplace netloc turing_bombe_control_0_RESET_ENIGMAS_OUT 1 1 3 2290 2800 N 2800 4930
-preplace netloc turing_bombe_control_0_ENIGMA_2_CHARACTERS_DB1_OUT 1 3 1 4660J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_6_DBCON0_OUT 1 1 3 2740J 4940 NJ 4940 4400J
-preplace netloc TURBO_enigma_2_CODED_CHARACTERS_OUT_DB0 1 1 4 2450 5620 N 5620 N 5620 5830
-preplace netloc indicator_drum_0_POS_INDICATOR_DRUM_2_OUT 1 2 1 3420
-preplace netloc DATA_IN_BRAM_A_1 1 0 3 NJ -3220 NJ -3220 3480
-preplace netloc turing_bombe_control_0_RESET_OUT 1 0 4 -1460 2810 NJ 2810 NJ 2810 4470J
-preplace netloc turing_bombe_control_0_ENIGMA_1_DRUMPOS_1_OUT 1 3 1 4550J
-preplace netloc TURBO_enigma_2_CODED_CHARACTERS_OUT_DB1 1 1 4 2580 5460 N 5460 N 5460 5720
-preplace netloc diagonal_board_0_ENIGMA_11_DB1_OUT 1 2 1 3630
-preplace netloc diagonal_board_0_ENIGMA_6_DB1_OUT 1 2 1 3530
-preplace netloc TURBO_enigma_4_READY_OUT 1 1 4 2430 5480 N 5480 N 5480 5660
-preplace netloc diagonal_board_0_ENIGMA_1_DB1_OUT 1 2 1 3430
-preplace netloc turing_bombe_control_0_LED_FIRST_STOP_OUT 1 3 2 4540 5450 5950
-preplace netloc turing_bombe_control_0_ENIGMA_10_CHARACTERS_DB0_OUT 1 3 1 4680J
-preplace netloc diagonal_board_0_RESULT_REGISTER_OUT 1 2 1 3670
-preplace netloc diagonal_board_0_ENIGMA_5_DB2_OUT 1 2 1 3520
-preplace netloc turing_bombe_control_0_ENIGMA_6_CHARACTERS_DB0_OUT 1 3 1 4870J
-preplace netloc turing_bombe_control_0_ENIGMAS_START_OUT 1 3 1 4850J
-preplace netloc diagonal_board_0_ENIGMA_4_DB1_OUT 1 2 1 3490
-preplace netloc diagonal_board_0_READY_OUT 1 2 1 3410
-preplace netloc turing_bombe_control_0_LED_SECOND_STOP_OUT 1 3 2 4530 5490 5950
-preplace netloc turing_bombe_control_0_ENIGMA_7_DRUMPOS_3_OUT 1 3 1 4830J
-preplace netloc turing_bombe_control_0_ENIGMA_4_DRUMPOS_1_OUT 1 3 1 4740J
-preplace netloc turing_bombe_control_0_ENIGMA_11_DRUMPOS_3_OUT 1 3 1 4600J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_8_DBCON1_OUT 1 1 3 2790J 4990 NJ 4990 4350J
-preplace netloc diagonal_board_0_ENIGMA_9_DB2_OUT 1 2 1 3600
-preplace netloc TURBO_enigma_6_CODED_CHARACTERS_OUT_DB0 1 1 4 2370 5750 N 5750 N 5750 5910
-preplace netloc TURBO_enigma_11_READY_OUT 1 1 4 2300 5780 N 5780 N 5780 5810
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_3_DBCON0_OUT 1 1 3 2680J 4880 NJ 4880 4460J
-preplace netloc TURBO_enigma_6_CODED_CHARACTERS_OUT_DB1 1 1 4 2380 5760 N 5760 N 5760 5900
-preplace netloc turing_bombe_control_0_LED_FOURTH_STOP_OUT 1 3 2 4510 5550 5950
-preplace netloc turing_bombe_control_0_ENIGMA_3_CHARACTERS_DB0_OUT 1 3 1 4700J
-preplace netloc TURBO_enigma_5_CODED_CHARACTERS_OUT_DB0 1 1 4 2390 5720 N 5720 N 5720 5940
-preplace netloc turing_bombe_control_0_ENIGMA_9_DRUMPOS_2_OUT 1 3 1 4730J
-preplace netloc turing_bombe_control_0_ENIGMA_9_CHARACTERS_DB0_OUT 1 3 1 NJ
-preplace netloc turing_bombe_control_0_ENIGMA_8_CHARACTERS_DB0_OUT 1 3 1 4880J
-preplace netloc TURBO_enigma_5_CODED_CHARACTERS_OUT_DB1 1 1 4 2400 5730 N 5730 N 5730 5930
-preplace netloc turing_bombe_control_0_ENIGMA_7_CHARACTERS_DB0_OUT 1 3 1 4980J
-preplace netloc turing_bombe_control_0_ENIGMA_3_CHARACTERS_DB1_OUT 1 3 1 4710J
-preplace netloc turing_bombe_control_0_ENIGMA_6_CHARACTERS_DB1_OUT 1 3 1 4890J
-preplace netloc turing_bombe_control_0_ENIGMA_1_DRUMPOS_2_OUT 1 3 1 4560J
-preplace netloc sim_clk_gen_0_clk 1 0 4 -1470 2820 2280 2820 3450 2820 4940
-preplace netloc diagonal_board_0_ENIGMA_11_DB2_OUT 1 2 1 3640
-preplace netloc TURBO_enigma_2_READY_OUT 1 1 4 2420 5470 N 5470 N 5470 5710
-preplace netloc TURBO_enigma_4_CODED_CHARACTERS_OUT_DB0 1 1 4 2600 5420 N 5420 N 5420 5650
-preplace netloc turing_bombe_control_0_ENIGMA_1_DRUMPOS_3_OUT 1 3 1 4570J
-preplace netloc turing_bombe_control_0_ENIGMA_1_CHARACTERS_DB0_OUT 1 3 1 4500J
-preplace netloc diagonal_board_0_ENIGMA_3_DB1_OUT 1 2 1 3470
-preplace netloc TURBO_enigma_4_CODED_CHARACTERS_OUT_DB1 1 1 4 2610 5430 N 5430 N 5430 5640
-preplace netloc TURBO_enigma_0_READY_OUT 1 1 4 2340 5580 N 5580 N 5580 5870
-preplace netloc TURBO_enigma_1_READY_OUT 1 1 4 2330 5610 N 5610 N 5610 5840
-preplace netloc TURBO_enigma_11_CODED_CHARACTERS_OUT_DB0 1 1 4 2630 5500 N 5500 N 5500 5590
-preplace netloc ADDRESS_BRAM_A_1 1 0 3 NJ -3240 NJ -3240 3470
-preplace netloc turing_bombe_control_0_ENIGMA_9_DRUMPOS_3_OUT 1 3 1 4710J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_4_DBCON1_OUT 1 1 3 2710J 4910 NJ 4910 4430J
-preplace netloc diagonal_board_0_NO_OUTPUT_CHANGE_OUT 1 2 1 3420
-preplace netloc TURBO_enigma_11_CODED_CHARACTERS_OUT_DB1 1 1 4 2520 5770 N 5770 N 5770 5820
-preplace netloc turing_bombe_control_0_ENIGMA_8_CHARACTERS_DB1_OUT 1 3 1 5000J
+preplace netloc turing_bombe_control_0_ENIGMA_8_DRUMPOS_2_OUT 1 3 1 5090J
+preplace netloc turing_bombe_control_0_ENIGMA_7_DRUMPOS_1_OUT 1 3 1 5010J
+preplace netloc turing_bombe_control_0_ENIGMA_11_DRUMPOS_1_OUT 1 3 1 4780J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_7_DBCON1_OUT 1 1 3 2720J 4990 NJ 4990 4580J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_4_DBCON0_OUT 1 1 3 2700J 4980 NJ 4980 4600J
+preplace netloc TURBO_enigma_9_CODED_CHARACTERS_OUT_DB0 1 1 4 2450 5620 N 5620 N 5620 5820
+preplace netloc diagonal_board_0_ENIGMA_4_DB2_OUT 1 2 1 3660
+preplace netloc TURBO_enigma_1_CODED_CHARACTERS_OUT_DB0 1 1 4 2470 5570 N 5570 N 5570 5900
+preplace netloc turing_bombe_control_0_ENIGMA_8_DRUMPOS_1_OUT 1 3 1 5080J
+preplace netloc turing_bombe_control_0_ENIGMAS_DRUM_1_OUT 1 3 1 4860J
+preplace netloc TURBO_enigma_1_CODED_CHARACTERS_OUT_DB1 1 1 4 2480 5580 N 5580 N 5580 5890
+preplace netloc TURBO_enigma_9_CODED_CHARACTERS_OUT_DB1 1 1 4 2460 5630 N 5630 N 5630 5810
+preplace netloc turing_bombe_control_0_ENIGMA_2_DRUMPOS_3_OUT 1 3 1 4580J
+preplace netloc TURBO_enigma_10_READY_OUT 1 1 4 2300 5800 N 5800 N 5800 5880
+preplace netloc diagonal_board_0_ENIGMA_3_DB2_OUT 1 2 1 3640
+preplace netloc TURBO_enigma_8_CODED_CHARACTERS_OUT_DB0 1 1 4 2630 5420 N 5420 N 5420 5670
+preplace netloc TURBO_enigma_12_READY_OUT 1 1 4 2320 5810 N 5810 N 5810 5840
+preplace netloc turing_bombe_control_0_ENIGMA_2_DRUMPOS_2_OUT 1 3 1 4570J
+preplace netloc TURBO_enigma_8_CODED_CHARACTERS_OUT_DB1 1 1 4 2620 5490 N 5490 N 5490 5680
+preplace netloc turing_bombe_control_0_ENIGMA_3_DRUMPOS_3_OUT 1 3 1 4710J
+preplace netloc turing_bombe_control_0_ENIGMA_3_DRUMPOS_1_OUT 1 3 1 4630J
+preplace netloc turing_bombe_control_0_ENIGMAS_DRUM_2_OUT 1 3 1 4870J
+preplace netloc diagonal_board_0_ENIGMA_10_DB2_OUT 1 2 1 3780
+preplace netloc turing_bombe_control_0_LED_THIRD_STOP_OUT 1 3 2 4680 5500 N
+preplace netloc turing_bombe_control_0_ENIGMA_3_DRUMPOS_2_OUT 1 3 1 4640J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_9_DBCON1_OUT 1 1 3 2760J 5030 NJ 5030 4540J
+preplace netloc TURBO_enigma_5_READY_OUT 1 1 4 2380 5600 N 5600 N 5600 5850
+preplace netloc ENABLE_BRAM_A_IN_1 1 0 3 NJ 2470 NJ 2470 3650
+preplace netloc turing_bombe_control_0_ENIGMA_6_DRUMPOS_2_OUT 1 3 1 4940J
+preplace netloc turing_bombe_control_0_ENIGMAS_DRUM_3_OUT 1 3 1 4880J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_12_DBCON0_OUT 1 1 3 2800J 5070 NJ 5070 4500J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_11_DBCON1_OUT 1 1 3 2790J 5060 NJ 5060 4510J
+preplace netloc turing_bombe_control_0_ENIGMA_4_CHARACTERS_DB0_OUT 1 3 1 5040J
+preplace netloc turing_bombe_control_0_DB_IN_INPUT_VOLTAGE_OUT 1 1 3 2860J 2770 NJ 2770 4430J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_3_DBCON1_OUT 1 1 3 2690J 4970 NJ 4970 4610J
+preplace netloc diagonal_board_0_ENIGMA_8_DB2_OUT 1 2 1 3740
+preplace netloc turing_bombe_control_0_ENIGMA_11_DRUMPOS_2_OUT 1 3 1 4770J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_9_DBCON0_OUT 1 1 3 2750J 5020 NJ 5020 4550J
+preplace netloc turing_bombe_control_0_ENIGMA_9_DRUMPOS_1_OUT 1 3 1 4990J
+preplace netloc turing_bombe_control_0_ENIGMA_5_DRUMPOS_3_OUT 1 3 1 4830J
+preplace netloc turing_bombe_control_0_ENIGMA_10_DRUMPOS_1_OUT 1 3 1 4830J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_2_DBCON1_OUT 1 1 3 2670J 4950 NJ 4950 4630J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_1_DBCON0_OUT 1 1 3 2640J 4920 NJ 4920 4660J
+preplace netloc TURBO_enigma_12_CODED_CHARACTERS_OUT_DB0 1 1 4 2530 5690 N 5690 N 5690 5730
+preplace netloc TURBO_enigma_7_CODED_CHARACTERS_OUT_DB0 1 1 4 2420 5790 N 5790 N 5790 5930
+preplace netloc turing_bombe_control_0_ENIGMA_6_DRUMPOS_3_OUT 1 3 1 4950J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_11_DBCON0_OUT 1 1 3 2710J 5080 NJ 5080 4590J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON0_OUT 1 1 3 2770J 5040 NJ 5040 4530J
+preplace netloc diagonal_board_0_ENIGMA_5_DB1_OUT 1 2 1 3670
+preplace netloc TURBO_enigma_7_CODED_CHARACTERS_OUT_DB1 1 1 4 2600 5530 N 5530 N 5530 5710
+preplace netloc TURBO_enigma_12_CODED_CHARACTERS_OUT_DB1 1 1 4 2540 5700 N 5700 N 5700 5720
+preplace netloc turing_bombe_control_0_ENIGMA_6_DRUMPOS_1_OUT 1 3 1 4930J
+preplace netloc diagonal_board_0_ENIGMA_12_DB1_OUT 1 2 1 3810
+preplace netloc turing_bombe_control_0_ENIGMA_2_CHARACTERS_DB0_OUT 1 3 1 4520J
+preplace netloc TURBO_enigma_8_READY_OUT 1 1 4 2410 5610 N 5610 N 5610 5830
+preplace netloc TURBO_enigma_9_READY_OUT 1 1 4 2440 5430 N 5430 N 5430 5660
+preplace netloc TURBO_enigma_6_READY_OUT 1 1 4 2430 5520 N 5520 N 5520 5770
+preplace netloc WRITE_ENABLE_BRAM_A_1 1 0 3 NJ 2540 NJ 2540 3620
+preplace netloc turing_bombe_control_0_ENIGMA_5_CHARACTERS_DB1_OUT 1 3 1 4730J
+preplace netloc turing_bombe_control_0_ENIGMA_12_CHARACTERS_DB1_OUT 1 3 1 4740J
+preplace netloc turing_bombe_control_0_ENIGMA_10_CHARACTERS_DB1_OUT 1 3 1 4840J
+preplace netloc turing_bombe_control_0_ENIGMA_4_DRUMPOS_2_OUT 1 3 1 4980J
+preplace netloc turing_bombe_control_0_ENIGMA_11_CHARACTERS_DB1_OUT 1 3 1 4790J
+preplace netloc TURBO_enigma_10_CODED_CHARACTERS_OUT_DB0 1 1 4 2550 5640 N 5640 N 5640 5800
+preplace netloc turing_bombe_control_0_ENIGMA_5_DRUMPOS_2_OUT 1 3 1 4820J
+preplace netloc turing_bombe_control_0_ENIGMA_12_DRUMPOS_3_OUT 1 3 1 4710J
+preplace netloc turing_bombe_control_0_ENIGMA_11_CHARACTERS_DB0_OUT 1 3 1 4800J
+preplace netloc turing_bombe_control_0_ENIGMA_10_DRUMPOS_2_OUT 1 3 1 4820J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON1_OUT 1 1 3 2780J 5050 NJ 5050 4520J
+preplace netloc TURBO_enigma_10_CODED_CHARACTERS_OUT_DB1 1 1 4 2560 5650 N 5650 N 5650 5790
+preplace netloc diagonal_board_0_ENIGMA_1_DB2_OUT 1 2 1 3600
+preplace netloc turing_bombe_control_0_DB_IN_INPUT_REGISTER_OUT 1 1 3 2300J 2760 NJ 2760 4450J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_8_DBCON0_OUT 1 1 3 2730J 5000 NJ 5000 4570J
+preplace netloc diagonal_board_0_ENIGMA_7_DB1_OUT 1 2 1 3710
+preplace netloc turing_bombe_control_0_ENIGMA_12_DRUMPOS_1_OUT 1 3 1 4730J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_7_DBCON0_OUT 1 1 3 2850J 4880 3590J 4900 4450J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_12_DBCON1_OUT 1 1 3 2870J 4910 NJ 4910 4430J
+preplace netloc diagonal_board_0_ENIGMA_9_DB1_OUT 1 2 1 3750
+preplace netloc turing_bombe_control_0_RESET_ENIGMAS_OUT 1 1 3 2290 2790 N 2790 4900
+preplace netloc turing_bombe_control_0_ENIGMA_2_CHARACTERS_DB1_OUT 1 3 1 4530J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_6_DBCON0_OUT 1 1 3 2860J 4840 3750J 4880 4470J
+preplace netloc TURBO_enigma_2_CODED_CHARACTERS_OUT_DB0 1 1 4 2350 5720 N 5720 N 5720 6000
+preplace netloc indicator_drum_0_POS_INDICATOR_DRUM_2_OUT 1 2 1 3580
+preplace netloc DATA_IN_BRAM_A_1 1 0 3 NJ 2520 NJ 2520 3640
+preplace netloc turing_bombe_control_0_RESET_OUT 1 0 4 -1460J 2800 NJ 2800 NJ 2800 4440J
+preplace netloc turing_bombe_control_0_ENIGMA_1_DRUMPOS_1_OUT 1 3 1 4480J
+preplace netloc TURBO_enigma_2_CODED_CHARACTERS_OUT_DB1 1 1 4 2360 5730 N 5730 N 5730 5990
+preplace netloc diagonal_board_0_ENIGMA_11_DB1_OUT 1 2 1 3790
+preplace netloc diagonal_board_0_ENIGMA_6_DB1_OUT 1 2 1 3690
+preplace netloc TURBO_enigma_4_READY_OUT 1 1 4 2280 5770 N 5770 N 5770 5950
+preplace netloc diagonal_board_0_ENIGMA_1_DB1_OUT 1 2 1 3590
+preplace netloc turing_bombe_control_0_LED_FIRST_STOP_OUT 1 3 2 4700 5440 N
+preplace netloc turing_bombe_control_0_ENIGMA_10_CHARACTERS_DB0_OUT 1 3 1 4850J
+preplace netloc diagonal_board_0_RESULT_REGISTER_OUT 1 2 1 3830
+preplace netloc diagonal_board_0_ENIGMA_5_DB2_OUT 1 2 1 3680
+preplace netloc turing_bombe_control_0_ENIGMA_6_CHARACTERS_DB0_OUT 1 3 1 4840J
+preplace netloc turing_bombe_control_0_ENIGMAS_START_OUT 1 3 1 4910J
+preplace netloc diagonal_board_0_ENIGMA_4_DB1_OUT 1 2 1 3650
+preplace netloc diagonal_board_0_READY_OUT 1 2 1 3570
+preplace netloc turing_bombe_control_0_LED_SECOND_STOP_OUT 1 3 2 4690 5480 N
+preplace netloc turing_bombe_control_0_ENIGMA_7_DRUMPOS_3_OUT 1 3 1 5050J
+preplace netloc turing_bombe_control_0_ENIGMA_4_DRUMPOS_1_OUT 1 3 1 5000J
+preplace netloc turing_bombe_control_0_ENIGMA_11_DRUMPOS_3_OUT 1 3 1 4760J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_8_DBCON1_OUT 1 1 3 2740J 5010 NJ 5010 4560J
+preplace netloc diagonal_board_0_ENIGMA_9_DB2_OUT 1 2 1 3760
+preplace netloc TURBO_enigma_6_CODED_CHARACTERS_OUT_DB0 1 1 4 2610 5450 N 5450 N 5450 5700
+preplace netloc TURBO_enigma_11_READY_OUT 1 1 4 2330 5680 N 5680 N 5680 5740
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_3_DBCON0_OUT 1 1 3 2680J 4960 NJ 4960 4620J
+preplace netloc TURBO_enigma_6_CODED_CHARACTERS_OUT_DB1 1 1 4 2590 5510 N 5510 N 5510 5780
+preplace netloc turing_bombe_control_0_LED_FOURTH_STOP_OUT 1 3 2 4670 5540 6020
+preplace netloc turing_bombe_control_0_ENIGMA_3_CHARACTERS_DB0_OUT 1 3 1 4610J
+preplace netloc TURBO_enigma_5_CODED_CHARACTERS_OUT_DB0 1 1 4 2370 5780 N 5780 N 5780 5940
+preplace netloc turing_bombe_control_0_ENIGMA_9_DRUMPOS_2_OUT 1 3 1 4970J
+preplace netloc turing_bombe_control_0_ENIGMA_9_CHARACTERS_DB0_OUT 1 3 1 5030J
+preplace netloc turing_bombe_control_0_ENIGMA_8_CHARACTERS_DB0_OUT 1 3 1 5060J
+preplace netloc TURBO_enigma_5_CODED_CHARACTERS_OUT_DB1 1 1 4 2520 5590 N 5590 N 5590 5860
+preplace netloc turing_bombe_control_0_ENIGMA_7_CHARACTERS_DB0_OUT 1 3 1 4970J
+preplace netloc turing_bombe_control_0_ENIGMA_3_CHARACTERS_DB1_OUT 1 3 1 4620J
+preplace netloc turing_bombe_control_0_ENIGMA_6_CHARACTERS_DB1_OUT 1 3 1 4850J
+preplace netloc turing_bombe_control_0_ENIGMA_1_DRUMPOS_2_OUT 1 3 1 4490J
+preplace netloc sim_clk_gen_0_clk 1 0 4 -1470 3010 2280 3010 3610 2810 4920
+preplace netloc diagonal_board_0_ENIGMA_11_DB2_OUT 1 2 1 3800
+preplace netloc TURBO_enigma_2_READY_OUT 1 1 4 2290 5740 N 5740 N 5740 5980
+preplace netloc TURBO_enigma_4_CODED_CHARACTERS_OUT_DB0 1 1 4 2390 5750 N 5750 N 5750 5970
+preplace netloc turing_bombe_control_0_ENIGMA_1_DRUMPOS_3_OUT 1 3 1 4510J
+preplace netloc turing_bombe_control_0_ENIGMA_1_CHARACTERS_DB0_OUT 1 3 1 4460J
+preplace netloc diagonal_board_0_ENIGMA_3_DB1_OUT 1 2 1 3630
+preplace netloc TURBO_enigma_4_CODED_CHARACTERS_OUT_DB1 1 1 4 2400 5760 N 5760 N 5760 5960
+preplace netloc TURBO_enigma_0_READY_OUT 1 1 4 2340 5560 N 5560 N 5560 5910
+preplace netloc TURBO_enigma_1_READY_OUT 1 1 4 2310 5710 N 5710 N 5710 6010
+preplace netloc TURBO_enigma_11_CODED_CHARACTERS_OUT_DB0 1 1 4 2570 5660 N 5660 N 5660 5760
+preplace netloc turing_bombe_control_0_ENIGMA_9_DRUMPOS_3_OUT 1 3 1 4950J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_4_DBCON1_OUT 1 1 3 2810J 4860 NJ 4860 4490J
+preplace netloc diagonal_board_0_NO_OUTPUT_CHANGE_OUT 1 2 1 3580
+preplace netloc TURBO_enigma_11_CODED_CHARACTERS_OUT_DB1 1 1 4 2580 5670 N 5670 N 5670 5750
+preplace netloc turing_bombe_control_0_ENIGMA_8_CHARACTERS_DB1_OUT 1 3 1 5070J
 preplace netloc turing_bombe_control_0_ENIGMA_7_CHARACTERS_DB1_OUT 1 3 1 4990J
-preplace netloc turing_bombe_control_0_ENIGMA_4_CHARACTERS_DB1_OUT 1 3 1 4760J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_6_DBCON1_OUT 1 1 3 2750J 4950 NJ 4950 4390J
-preplace netloc indicator_drum_0_POS_INDICATOR_DRUM_1_OUT 1 2 1 3430
-preplace netloc turing_bombe_control_0_DATA_OUT_BRAM_A 1 2 3 3500 -3360 NJ -3360 NJ
-preplace netloc turing_bombe_control_0_ENIGMA_12_CHARACTERS_DB0_OUT 1 3 1 4590J
-preplace netloc indicator_drum_0_POS_INDICATOR_DRUM_3_OUT 1 2 1 3410
-preplace netloc diagonal_board_0_ENIGMA_6_DB2_OUT 1 2 1 3540
-preplace netloc turing_bombe_control_0_ENIGMA_5_DRUMPOS_1_OUT 1 3 1 4820J
-preplace netloc turing_bombe_control_0_ENIGMA_2_DRUMPOS_1_OUT 1 3 1 4670J
-preplace netloc turing_bombe_control_0_ENIGMA_10_DRUMPOS_3_OUT 1 3 1 4650J
-preplace netloc diagonal_board_0_ENIGMA_12_DB2_OUT 1 2 1 3660
-preplace netloc TURBO_enigma_7_READY_OUT 1 1 4 2360 5630 N 5630 N 5630 5770
-preplace netloc diagonal_board_0_ENIGMA_2_DB1_OUT 1 2 1 3450
-preplace netloc diagonal_board_0_ENIGMA_7_DB2_OUT 1 2 1 3560
-preplace netloc diagonal_board_0_ENIGMA_10_DB1_OUT 1 2 1 3610
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_1_DBCON1_OUT 1 1 3 2650J 4850 NJ 4850 4490J
-preplace netloc TURBO_enigma_0_CODED_CHARACTERS_OUT_DB0 1 1 4 2500 5560 N 5560 N 5560 5890
-preplace netloc xlconstant_0_dout 1 1 2 NJ 2630 3440
-preplace netloc TURBO_enigma_0_CODED_CHARACTERS_OUT_DB1 1 1 4 2510 5570 N 5570 N 5570 5880
-preplace netloc turing_bombe_control_0_ENIGMA_5_CHARACTERS_DB0_OUT 1 3 1 4770J
-preplace netloc turing_bombe_control_0_ENIGMA_1_CHARACTERS_DB1_OUT 1 3 1 4510J
-preplace netloc diagonal_board_0_ENIGMA_8_DB1_OUT 1 2 1 3570
-preplace netloc turing_bombe_control_0_ENIGMA_4_DRUMPOS_3_OUT 1 3 1 4700J
-preplace netloc turing_bombe_control_0_ENIGMA_12_DRUMPOS_2_OUT 1 3 1 4560J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_5_DBCON1_OUT 1 1 3 2730J 4930 NJ 4930 4410J
-preplace netloc turing_bombe_control_0_ENIGMA_8_DRUMPOS_3_OUT 1 3 1 5030J
-preplace netloc turing_bombe_control_0_ENIGMA_7_DRUMPOS_2_OUT 1 3 1 4780J
-preplace netloc turing_bombe_control_0_DRUM_IMPULS_OUT 1 1 3 2870J 2780 NJ 2780 4790J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_5_DBCON0_OUT 1 1 3 2720J 4920 NJ 4920 4420J
-preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_2_DBCON0_OUT 1 1 3 2660J 4860 NJ 4860 4480J
-preplace netloc turing_bombe_control_0_ENIGMA_9_CHARACTERS_DB1_OUT 1 3 1 NJ
-preplace netloc diagonal_board_0_ENIGMA_2_DB2_OUT 1 2 1 3460
-levelinfo -pg 1 -1490 2100 3140 3970 5310 5970 -top -3380 -bot 6670
+preplace netloc turing_bombe_control_0_ENIGMA_4_CHARACTERS_DB1_OUT 1 3 1 5020J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_6_DBCON1_OUT 1 1 3 2830J 4890 NJ 4890 4460J
+preplace netloc indicator_drum_0_POS_INDICATOR_DRUM_1_OUT 1 2 1 3590
+preplace netloc turing_bombe_control_0_DATA_OUT_BRAM_A 1 2 3 3660 1470 NJ 1470 NJ
+preplace netloc turing_bombe_control_0_ENIGMA_12_CHARACTERS_DB0_OUT 1 3 1 4750J
+preplace netloc indicator_drum_0_POS_INDICATOR_DRUM_3_OUT 1 2 1 3570
+preplace netloc diagonal_board_0_ENIGMA_6_DB2_OUT 1 2 1 3700
+preplace netloc turing_bombe_control_0_ENIGMA_5_DRUMPOS_1_OUT 1 3 1 4810J
+preplace netloc turing_bombe_control_0_ENIGMA_2_DRUMPOS_1_OUT 1 3 1 4560J
+preplace netloc turing_bombe_control_0_ENIGMA_10_DRUMPOS_3_OUT 1 3 1 4810J
+preplace netloc diagonal_board_0_ENIGMA_12_DB2_OUT 1 2 1 3820
+preplace netloc TURBO_enigma_7_READY_OUT 1 1 4 2490 5460 N 5460 N 5460 5690
+preplace netloc diagonal_board_0_ENIGMA_2_DB1_OUT 1 2 1 3610
+preplace netloc diagonal_board_0_ENIGMA_7_DB2_OUT 1 2 1 3720
+preplace netloc diagonal_board_0_ENIGMA_10_DB1_OUT 1 2 1 3770
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_1_DBCON1_OUT 1 1 3 2650J 4930 NJ 4930 4650J
+preplace netloc TURBO_enigma_0_CODED_CHARACTERS_OUT_DB0 1 1 4 2510 5470 N 5470 N 5470 5870
+preplace netloc xlconstant_0_dout 1 2 1 3600
+preplace netloc TURBO_enigma_0_CODED_CHARACTERS_OUT_DB1 1 1 4 2500 5550 N 5550 N 5550 5920
+preplace netloc ADRESS_BRAM_A_1 1 0 3 NJ 2490 NJ 2490 3630
+preplace netloc turing_bombe_control_0_ENIGMA_5_CHARACTERS_DB0_OUT 1 3 1 4720J
+preplace netloc turing_bombe_control_0_ENIGMA_1_CHARACTERS_DB1_OUT 1 3 1 4470J
+preplace netloc diagonal_board_0_ENIGMA_8_DB1_OUT 1 2 1 3730
+preplace netloc turing_bombe_control_0_ENIGMA_4_DRUMPOS_3_OUT 1 3 1 4960J
+preplace netloc turing_bombe_control_0_ENIGMA_12_DRUMPOS_2_OUT 1 3 1 4720J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_5_DBCON1_OUT 1 1 3 2820J 4870 NJ 4870 4480J
+preplace netloc turing_bombe_control_0_ENIGMA_8_DRUMPOS_3_OUT 1 3 1 5100J
+preplace netloc turing_bombe_control_0_ENIGMA_7_DRUMPOS_2_OUT 1 3 1 5030J
+preplace netloc turing_bombe_control_0_DRUM_IMPULS_OUT 1 1 3 2870J 2780 NJ 2780 4890J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_5_DBCON0_OUT 1 1 3 2840J 4850 NJ 4850 4440J
+preplace netloc turing_bombe_control_0_DB_IN_ENIGMA_2_DBCON0_OUT 1 1 3 2660J 4940 NJ 4940 4640J
+preplace netloc turing_bombe_control_0_ENIGMA_9_CHARACTERS_DB1_OUT 1 3 1 5010J
+preplace netloc diagonal_board_0_ENIGMA_2_DB2_OUT 1 2 1 3620
+levelinfo -pg 1 -1490 2100 3300 4130 5380 6040 -top -3460 -bot 6670
 "
 }
-
+{
+   "da_board_cnt":"1",
+   "da_clkrst_cnt":"1"
+}

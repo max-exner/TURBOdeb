@@ -136,8 +136,8 @@ proc ps7_mio_init_data_3_0 {} {
     mask_write 0XF8000B70 0x00000001 0x00000001
     mask_write 0XF8000B70 0x00000021 0x00000020
     mask_write 0XF8000B70 0x07FEFFFF 0x00000823
-    mask_write 0XF80007C0 0x00003FFF 0x000016E0
-    mask_write 0XF80007C4 0x00003FFF 0x000016E1
+    mask_write 0XF80007C0 0x00003FFF 0x000012E0
+    mask_write 0XF80007C4 0x00003FFF 0x000012E1
     mwr -force 0XF8000004 0x0000767B
 }
 proc ps7_peripherals_init_data_3_0 {} {
@@ -304,8 +304,8 @@ proc ps7_mio_init_data_2_0 {} {
     mask_write 0XF8000B70 0x00000021 0x00000021
     mask_write 0XF8000B70 0x00000021 0x00000020
     mask_write 0XF8000B70 0x07FFFFFF 0x00000823
-    mask_write 0XF80007C0 0x00003FFF 0x000016E0
-    mask_write 0XF80007C4 0x00003FFF 0x000016E1
+    mask_write 0XF80007C0 0x00003FFF 0x000012E0
+    mask_write 0XF80007C4 0x00003FFF 0x000012E1
     mwr -force 0XF8000004 0x0000767B
 }
 proc ps7_peripherals_init_data_2_0 {} {
@@ -470,8 +470,8 @@ proc ps7_mio_init_data_1_0 {} {
     mask_write 0XF8000B70 0x00000021 0x00000021
     mask_write 0XF8000B70 0x00000021 0x00000020
     mask_write 0XF8000B70 0x07FFFFFF 0x00000823
-    mask_write 0XF80007C0 0x00003FFF 0x000016E0
-    mask_write 0XF80007C4 0x00003FFF 0x000016E1
+    mask_write 0XF80007C0 0x00003FFF 0x000012E0
+    mask_write 0XF80007C4 0x00003FFF 0x000012E1
     mwr -force 0XF8000004 0x0000767B
 }
 proc ps7_peripherals_init_data_1_0 {} {

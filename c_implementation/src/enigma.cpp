@@ -244,7 +244,7 @@ bool Enigma::b_adjustPBConnections(
         
         
     }
-    if(this->f_checkCoverage(c_decryptedCrib,c_clearCrib, i_cribSize,i_errorIndicator) == 100)
+    if(this->f_checkCoverage(c_decryptedCrib,c_clearCrib, i_cribSize,i_errorIndicator) > 90)
     {
         return true;
     }

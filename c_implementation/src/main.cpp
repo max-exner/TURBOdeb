@@ -22,10 +22,10 @@
 using namespace std;
 
 #define MAX_ROTORS 5
-//#define FPGA_CALC
+#define FPGA_CALC           //ToDo: CMD Parameter
 #undef FPGA_CALC
 
-#define BAUDRATE B19200
+#define BAUDRATE B115200
 
 
 using namespace std;
@@ -40,11 +40,37 @@ void print_runtime(chrono::high_resolution_clock::time_point t_start);
 
 int main(int argc, char **argv) 
 
-{  
-    #ifdef FPGA_CALC
+{    
+    //********************************  
+    // Check the Parameter
+    //********************************   
+
+    string s_file_path;
+    string s_mode = "CPU";
+    int serial_port;    
+
+    for(int i = 0; i < argc; i++)
+    {        
+        if (strcmp(argv[i], "-m")==0)
+        {
+            s_file_path = argv[i+1];
+        } 
+        else if (strcmp(argv[i], "-p")==0) 
+        {
+            s_mode = argv[i+1];
+        }
+    }
+    if(s_file_path.empty()){
+        cerr << "Wrong Parameter! Please give me the message that should be encrypted!" << endl;
+        return 99;
+    }
+
+    
+    if (strcmp(s_mode.c_str(), "CPU")!=0)
+    {
         //https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/
         //setup serial connection
-        int serial_port = open("/dev/ttyUSB0", O_RDWR);
+        serial_port = open(s_mode.c_str(), O_RDWR);  // CMD Parameter: "/dev/ttyUSB1"
 
         //Check for errors
         if (serial_port < 0) 
@@ -59,7 +85,7 @@ int main(int argc, char **argv)
         if(tcgetattr(serial_port, &tty) != 0) {
             printf("Error %i from tcgetattr: %s\n", errno, strerror(errno));
         }
-        tty.c_cflag = BAUDRATE | CRTSCTS | CS8 | CLOCAL | CREAD;
+        tty.c_cflag = BAUDRATE | CS8 | CLOCAL | CREAD; // | CRTSCTS
         tty.c_iflag = IGNPAR | ICRNL;
         tty.c_oflag = 0;
         tty.c_lflag = ICANON;
@@ -104,16 +130,10 @@ int main(int argc, char **argv)
         if (tcsetattr(serial_port, TCSANOW, &tty) != 0) {
             printf("Error %i from tcsetattr: %s\n", errno, strerror(errno));
         }
-    #endif
+    }
 
   chrono::high_resolution_clock::time_point t_start = chrono::high_resolution_clock::now();
-  // Check the Parameter
-  if (argc!=2){
-      cerr << "Wrong Parameter! Please give me the message that should be encrypted!" << endl;
-      return 99;
-  }
 
-  string s_file_path = argv[1];
   string s_cry_msg,s_clear_crib;
 
   try
@@ -173,6 +193,7 @@ int main(int argc, char **argv)
           cout << preparison.get_posible_crib_position(j)[i];
       }
       cout <<endl;
+      
       if (TURBOmenu.generate_tabel())
       {
           for(int i=0; i<preparison.get_count_rotor_variations();i++)
@@ -198,10 +219,19 @@ int main(int argc, char **argv)
             ob_firstEnigma.b_setReflector(st_my_menu.c_reflector);
             ob_firstEnigma.b_setDrums(st_my_menu.i_rotors);
             ob_firstEnigma.b_setCoreOffset(i_coreOffset);
-            t_start = chrono::high_resolution_clock::now();
             cout << "Start" << endl;
-            #ifdef FPGA_CALC
+            t_start = chrono::high_resolution_clock::now();
+            //***********************************
+            //FPGA RUN
+            //***********************************
+            if (strcmp(s_mode.c_str(), "CPU")!=0){
                 unsigned char return_msg[] = {'\r'};
+
+                // send reset to BRAM
+                unsigned char reset_instruction_msg[] = {'R','S','E','T'};
+                write(serial_port, reset_instruction_msg, sizeof(reset_instruction_msg)); 
+                write(serial_port, return_msg, sizeof(return_msg)); 
+
                 //send drum possition
                 unsigned char drum_instruction_msg[] = {'D','R','U','M'};
                 write(serial_port, drum_instruction_msg, sizeof(drum_instruction_msg));
@@ -227,7 +257,7 @@ int main(int argc, char **argv)
 
 
                 //send DB-Connections
-                unsigned char dbcon_instruction_msg[] = {'I','O','D','B'};
+                unsigned char dbcon_instruction_msg[] = {'I','O','D','B',';',st_my_menu.c_test_register,st_my_menu.c_input_voltage};
                 write(serial_port, dbcon_instruction_msg, sizeof(dbcon_instruction_msg));
                 char c_enigmaDBConnections[2];
                 char c_test[2];
@@ -279,7 +309,10 @@ int main(int argc, char **argv)
                 }   
                 write(serial_port, return_msg, sizeof(return_msg)); 
 
-
+                //test if everything is written to BRAM
+                // cout << "Close Port" << endl;
+                // close(serial_port);
+                // exit(0);
 
                 //send solution request
                 unsigned char solutionrequest_instruction_msg[] = {'R','Q','S','T'};
@@ -292,6 +325,10 @@ int main(int argc, char **argv)
                 char msg_buffer_c[9];
                 while(true)
                 {
+                    //send solution request
+                    unsigned char solutionrequest_instruction_msg[] = {'R','Q','S','T'};
+                    write(serial_port, solutionrequest_instruction_msg, sizeof(solutionrequest_instruction_msg)); 
+                    write(serial_port, return_msg, sizeof(return_msg)); 
                     read(serial_port, &read_buf, sizeof(read_buf));
                     cout << read_buf << endl; 
                     if(read_buf[0] == 'S' && read_buf[1] == 'O' && read_buf[2] == 'L' && read_buf[3] == 'U' && read_buf[8] != '\0') 
@@ -338,6 +375,10 @@ int main(int argc, char **argv)
                         cout << "Stop" << endl;
                         break;
                     }
+                    else if(read_buf[0] == 'N' && read_buf[1] == 'S' && read_buf[2] == 'O' && read_buf[3] == 'L')
+                    {
+                        //no sulution in BRAM .... try again!
+                    }
                     //
 
                 }  
@@ -345,7 +386,12 @@ int main(int argc, char **argv)
 
 
                 
-            #else
+            }
+            //***********************************
+            // CPU RUN
+            //*********************************** 
+            else 
+            {
 
                 while(ob_fistTuringBomb.b_findNextStop(c_stopResult))
                 {
@@ -355,10 +401,10 @@ int main(int argc, char **argv)
                         //c_stopResult[2] = 'X';//read_buf[7];
                         //c_stopResult[3] = 'D';//read_buf[8];
                         //cout << st_my_menu.i_rotors[0] << st_my_menu.i_rotors[1] << st_my_menu.i_rotors[2] << endl;
-                        cout << c_stopResult[0] << c_stopResult[1] << c_stopResult[2] << endl;//c_stopResult[3] << endl;
+                        //cout << c_stopResult[0] << c_stopResult[1] << c_stopResult[2] << endl;//c_stopResult[3] << endl;
                         //ob_fistTuringBomb.printDB();
                         //getchar();
-                        print_runtime(t_start);
+                        //print_runtime(t_start);
                         if(ob_CheckingMachine.calcPlugBoardConnections(st_my_menu,c_stopResult,c_plugBoardSetting))
                         {
                         c_ringSetting[0] = c_stopResult[0];
@@ -371,14 +417,14 @@ int main(int argc, char **argv)
                         {
                             //DKXB
                             cout << "Ring settings : " << c_ringSetting[0] << c_ringSetting[1] << c_ringSetting[2] << endl;
-                            cout << "Diagonalboard solutuion : " << c_ringSetting[3] << endl;
+                            cout << "Diagonalboard solutuion : " << c_stopResult[3] << endl;
                             cout << "Plugboard setting : " << c_plugBoardSetting << endl;
                             print_runtime(t_start);
                             exit(0);
                         }
                     }
                 }
-            #endif
+            }
             
          }
       

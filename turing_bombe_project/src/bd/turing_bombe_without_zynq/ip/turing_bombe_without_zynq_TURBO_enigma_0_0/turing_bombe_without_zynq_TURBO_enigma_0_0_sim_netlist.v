@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Fri Jun 28 15:44:00 2019
+// Date        : Fri Jun 28 15:43:56 2019
 // Host        : marchena running 64-bit Ubuntu 16.04.6 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /homes/mexner/TURBOdeb/turing_bombe_project/src/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_TURBO_enigma_0_0/turing_bombe_without_zynq_TURBO_enigma_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top turing_bombe_without_zynq_TURBO_enigma_0_0 -prefix
+//               turing_bombe_without_zynq_TURBO_enigma_0_0_ turing_bombe_without_zynq_TURBO_enigma_0_0_sim_netlist.v
 // Design      : turing_bombe_without_zynq_TURBO_enigma_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,77 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "turing_bombe_without_zynq_TURBO_enigma_0_0,TURBO_enigma_bd,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "IPI" *) 
-(* x_core_info = "TURBO_enigma_bd,Vivado 2018.3" *) 
-(* NotValidForBitStream *)
-module turing_bombe_without_zynq_TURBO_enigma_0_0
-   (CHARACTERS_IN_DB0,
-    CHARACTERS_IN_DB1,
-    CODED_CHARACTERS_OUT_DB0,
-    CODED_CHARACTERS_OUT_DB1,
-    CONFIG_DRUM_TYP_1_IN,
-    CONFIG_DRUM_TYP_2_IN,
-    CONFIG_DRUM_TYP_3_IN,
-    CONFIG_START_POS_DRUM_1_IN,
-    CONFIG_START_POS_DRUM_2_IN,
-    CONFIG_START_POS_DRUM_3_IN,
-    DRUM_IMPULS_IN,
-    READY_OUT,
-    SOFT_RESET_N_IN,
-    START_IN,
-    UB_CLK_IN);
-  input [25:0]CHARACTERS_IN_DB0;
-  input [25:0]CHARACTERS_IN_DB1;
-  output [25:0]CODED_CHARACTERS_OUT_DB0;
-  output [25:0]CODED_CHARACTERS_OUT_DB1;
-  input [2:0]CONFIG_DRUM_TYP_1_IN;
-  input [2:0]CONFIG_DRUM_TYP_2_IN;
-  input [2:0]CONFIG_DRUM_TYP_3_IN;
-  input [4:0]CONFIG_START_POS_DRUM_1_IN;
-  input [4:0]CONFIG_START_POS_DRUM_2_IN;
-  input [4:0]CONFIG_START_POS_DRUM_3_IN;
-  input DRUM_IMPULS_IN;
-  output READY_OUT;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.SOFT_RESET_N_IN RST" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.SOFT_RESET_N_IN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input SOFT_RESET_N_IN;
-  input START_IN;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK.UB_CLK_IN CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK.UB_CLK_IN, FREQ_HZ 50000000, PHASE 0.000, ASSOCIATED_RESET SOFT_RESET_N_IN, ASSOCIATED_BUSIF CLK.UB_CLK_IN, CLK_DOMAIN turing_bombe_without_zynq_CLK, INSERT_VIP 0" *) input UB_CLK_IN;
-
-  wire [25:0]CHARACTERS_IN_DB0;
-  wire [25:0]CHARACTERS_IN_DB1;
-  wire [25:0]CODED_CHARACTERS_OUT_DB0;
-  wire [25:0]CODED_CHARACTERS_OUT_DB1;
-  wire [2:0]CONFIG_DRUM_TYP_1_IN;
-  wire [2:0]CONFIG_DRUM_TYP_2_IN;
-  wire [2:0]CONFIG_DRUM_TYP_3_IN;
-  wire [4:0]CONFIG_START_POS_DRUM_1_IN;
-  wire [4:0]CONFIG_START_POS_DRUM_2_IN;
-  wire [4:0]CONFIG_START_POS_DRUM_3_IN;
-  wire DRUM_IMPULS_IN;
-  wire READY_OUT;
-  wire SOFT_RESET_N_IN;
-  wire START_IN;
-  wire UB_CLK_IN;
-
-  (* hw_handoff = "TURBO_enigma_bd.hwdef" *) 
-  turing_bombe_without_zynq_TURBO_enigma_0_0_TURBO_enigma_bd U0
-       (.CHARACTERS_IN_DB0(CHARACTERS_IN_DB0),
-        .CHARACTERS_IN_DB1(CHARACTERS_IN_DB1),
-        .CODED_CHARACTERS_OUT_DB0(CODED_CHARACTERS_OUT_DB0),
-        .CODED_CHARACTERS_OUT_DB1(CODED_CHARACTERS_OUT_DB1),
-        .CONFIG_DRUM_TYP_1_IN(CONFIG_DRUM_TYP_1_IN),
-        .CONFIG_DRUM_TYP_2_IN(CONFIG_DRUM_TYP_2_IN),
-        .CONFIG_DRUM_TYP_3_IN(CONFIG_DRUM_TYP_3_IN),
-        .CONFIG_START_POS_DRUM_1_IN(CONFIG_START_POS_DRUM_1_IN),
-        .CONFIG_START_POS_DRUM_2_IN(CONFIG_START_POS_DRUM_2_IN),
-        .CONFIG_START_POS_DRUM_3_IN(CONFIG_START_POS_DRUM_3_IN),
-        .DRUM_IMPULS_IN(DRUM_IMPULS_IN),
-        .READY_OUT(READY_OUT),
-        .SOFT_RESET_N_IN(SOFT_RESET_N_IN),
-        .START_IN(START_IN),
-        .UB_CLK_IN(UB_CLK_IN));
-endmodule
-
-(* ORIG_REF_NAME = "TURBO_enigma_bd" *) (* hw_handoff = "TURBO_enigma_bd.hwdef" *) 
+(* hw_handoff = "TURBO_enigma_bd.hwdef" *) 
 module turing_bombe_without_zynq_TURBO_enigma_0_0_TURBO_enigma_bd
    (CHARACTERS_IN_DB0,
     CHARACTERS_IN_DB1,
@@ -149,7 +79,6 @@ module turing_bombe_without_zynq_TURBO_enigma_0_0_TURBO_enigma_bd
         .UB_CLK_IN(UB_CLK_IN));
 endmodule
 
-(* ORIG_REF_NAME = "TURBO_enigma_bd_enigma_top_0_0" *) 
 module turing_bombe_without_zynq_TURBO_enigma_0_0_TURBO_enigma_bd_enigma_top_0_0
    (CODED_CHARACTERS_OUT_DB0,
     CODED_CHARACTERS_OUT_DB1,
@@ -355,7 +284,6 @@ module turing_bombe_without_zynq_TURBO_enigma_0_0_TURBO_enigma_bd_enigma_top_0_0
         .O(c_start_to_first_drum_i_1_n_0));
 endmodule
 
-(* ORIG_REF_NAME = "drum" *) 
 module turing_bombe_without_zynq_TURBO_enigma_0_0_drum
    (c_ready_out_fwd_reg_0,
     c_ready_out_bwd_reg_0,
@@ -6334,7 +6262,6 @@ module turing_bombe_without_zynq_TURBO_enigma_0_0_drum_1
         .R(c_ready_out_fwd_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "drum_ukw" *) 
 module turing_bombe_without_zynq_TURBO_enigma_0_0_drum_ukw
    (c_status,
     Q,
@@ -6760,7 +6687,6 @@ module turing_bombe_without_zynq_TURBO_enigma_0_0_drum_ukw
         .R(c_request_to_lut_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "enigma_control" *) 
 module turing_bombe_without_zynq_TURBO_enigma_0_0_enigma_control
    (c_ready_from_drum_in_reg_0,
     c_start_to_first_drum_reg_0,
@@ -7915,7 +7841,6 @@ module turing_bombe_without_zynq_TURBO_enigma_0_0_enigma_control
         .R(c_ready_out_reg_0));
 endmodule
 
-(* ORIG_REF_NAME = "enigma_top" *) 
 module turing_bombe_without_zynq_TURBO_enigma_0_0_enigma_top
    (c_ready_from_drum_in,
     ready_out_drum_1_bwd,
@@ -8595,7 +8520,6 @@ module turing_bombe_without_zynq_TURBO_enigma_0_0_enigma_top
         .start_to_drum_1(start_to_drum_1));
 endmodule
 
-(* ORIG_REF_NAME = "pseudo_lut" *) 
 module turing_bombe_without_zynq_TURBO_enigma_0_0_pseudo_lut
    (c_busy_reg_0,
     c_busy_reg_1,
@@ -20308,6 +20232,76 @@ module turing_bombe_without_zynq_TURBO_enigma_0_0_pseudo_lut
         .D(\c_table[9][4]_i_1_n_0 ),
         .Q(\c_table_reg[9]__0 [4]),
         .S(c_busy_reg_5));
+endmodule
+
+(* CHECK_LICENSE_TYPE = "turing_bombe_without_zynq_TURBO_enigma_0_0,TURBO_enigma_bd,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "IPI" *) 
+(* x_core_info = "TURBO_enigma_bd,Vivado 2018.3" *) 
+(* NotValidForBitStream *)
+module turing_bombe_without_zynq_TURBO_enigma_0_0
+   (CHARACTERS_IN_DB0,
+    CHARACTERS_IN_DB1,
+    CODED_CHARACTERS_OUT_DB0,
+    CODED_CHARACTERS_OUT_DB1,
+    CONFIG_DRUM_TYP_1_IN,
+    CONFIG_DRUM_TYP_2_IN,
+    CONFIG_DRUM_TYP_3_IN,
+    CONFIG_START_POS_DRUM_1_IN,
+    CONFIG_START_POS_DRUM_2_IN,
+    CONFIG_START_POS_DRUM_3_IN,
+    DRUM_IMPULS_IN,
+    READY_OUT,
+    SOFT_RESET_N_IN,
+    START_IN,
+    UB_CLK_IN);
+  input [25:0]CHARACTERS_IN_DB0;
+  input [25:0]CHARACTERS_IN_DB1;
+  output [25:0]CODED_CHARACTERS_OUT_DB0;
+  output [25:0]CODED_CHARACTERS_OUT_DB1;
+  input [2:0]CONFIG_DRUM_TYP_1_IN;
+  input [2:0]CONFIG_DRUM_TYP_2_IN;
+  input [2:0]CONFIG_DRUM_TYP_3_IN;
+  input [4:0]CONFIG_START_POS_DRUM_1_IN;
+  input [4:0]CONFIG_START_POS_DRUM_2_IN;
+  input [4:0]CONFIG_START_POS_DRUM_3_IN;
+  input DRUM_IMPULS_IN;
+  output READY_OUT;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 RST.SOFT_RESET_N_IN RST" *) (* x_interface_parameter = "XIL_INTERFACENAME RST.SOFT_RESET_N_IN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input SOFT_RESET_N_IN;
+  input START_IN;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 CLK.UB_CLK_IN CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME CLK.UB_CLK_IN, FREQ_HZ 50000000, PHASE 0.000, ASSOCIATED_RESET SOFT_RESET_N_IN, ASSOCIATED_BUSIF CLK.UB_CLK_IN, CLK_DOMAIN turing_bombe_without_zynq_CLK, INSERT_VIP 0" *) input UB_CLK_IN;
+
+  wire [25:0]CHARACTERS_IN_DB0;
+  wire [25:0]CHARACTERS_IN_DB1;
+  wire [25:0]CODED_CHARACTERS_OUT_DB0;
+  wire [25:0]CODED_CHARACTERS_OUT_DB1;
+  wire [2:0]CONFIG_DRUM_TYP_1_IN;
+  wire [2:0]CONFIG_DRUM_TYP_2_IN;
+  wire [2:0]CONFIG_DRUM_TYP_3_IN;
+  wire [4:0]CONFIG_START_POS_DRUM_1_IN;
+  wire [4:0]CONFIG_START_POS_DRUM_2_IN;
+  wire [4:0]CONFIG_START_POS_DRUM_3_IN;
+  wire DRUM_IMPULS_IN;
+  wire READY_OUT;
+  wire SOFT_RESET_N_IN;
+  wire START_IN;
+  wire UB_CLK_IN;
+
+  (* hw_handoff = "TURBO_enigma_bd.hwdef" *) 
+  turing_bombe_without_zynq_TURBO_enigma_0_0_TURBO_enigma_bd U0
+       (.CHARACTERS_IN_DB0(CHARACTERS_IN_DB0),
+        .CHARACTERS_IN_DB1(CHARACTERS_IN_DB1),
+        .CODED_CHARACTERS_OUT_DB0(CODED_CHARACTERS_OUT_DB0),
+        .CODED_CHARACTERS_OUT_DB1(CODED_CHARACTERS_OUT_DB1),
+        .CONFIG_DRUM_TYP_1_IN(CONFIG_DRUM_TYP_1_IN),
+        .CONFIG_DRUM_TYP_2_IN(CONFIG_DRUM_TYP_2_IN),
+        .CONFIG_DRUM_TYP_3_IN(CONFIG_DRUM_TYP_3_IN),
+        .CONFIG_START_POS_DRUM_1_IN(CONFIG_START_POS_DRUM_1_IN),
+        .CONFIG_START_POS_DRUM_2_IN(CONFIG_START_POS_DRUM_2_IN),
+        .CONFIG_START_POS_DRUM_3_IN(CONFIG_START_POS_DRUM_3_IN),
+        .DRUM_IMPULS_IN(DRUM_IMPULS_IN),
+        .READY_OUT(READY_OUT),
+        .SOFT_RESET_N_IN(SOFT_RESET_N_IN),
+        .START_IN(START_IN),
+        .UB_CLK_IN(UB_CLK_IN));
 endmodule
 `ifndef GLBL
 `define GLBL

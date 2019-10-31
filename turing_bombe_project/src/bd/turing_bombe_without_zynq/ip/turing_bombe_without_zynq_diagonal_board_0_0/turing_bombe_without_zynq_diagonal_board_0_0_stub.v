@@ -1,8 +1,8 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Fri Jun 28 15:45:07 2019
-// Host        : marchena running 64-bit Ubuntu 16.04.6 LTS
+// Date        : Mon Oct 28 16:55:59 2019
+// Host        : rabida running 64-bit Ubuntu 16.04.6 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /homes/mexner/TURBOdeb/turing_bombe_project/src/bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_diagonal_board_0_0/turing_bombe_without_zynq_diagonal_board_0_0_stub.v
 // Design      : turing_bombe_without_zynq_diagonal_board_0_0

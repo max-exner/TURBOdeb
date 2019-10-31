@@ -42,12 +42,12 @@ architecture BEH of turing_bombe_wrapper_TB is
 ------------------------------
 component turing_bombe_without_zynq_wrapper is
   port (
-    ADDRESS_BRAM_A : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    ADDRESS_BRAM_A : in STD_LOGIC_VECTOR ( 9 downto 0 );
     CLK : in STD_LOGIC;
     DATA_IN_BRAM_A : in STD_LOGIC_VECTOR ( 31 downto 0 );
     DATA_OUT_BRAM_A : out STD_LOGIC_VECTOR ( 31 downto 0 );
     ENABLE_BRAM_A : in STD_LOGIC;
-    WRITE_ENABLE_BRAM_A : in STD_LOGIC_VECTOR ( 0 to 0 )
+    WRITE_ENABLE_BRAM_A : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
 end component turing_bombe_without_zynq_wrapper;
 -----------------
@@ -57,7 +57,7 @@ end component turing_bombe_without_zynq_wrapper;
     --this address addresses the following data
         -- Bit[0] StartBit
         -- Bit[1] ResetBit
-    constant start_reset_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000000";
+    constant start_reset_address : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000000000";
        
     --this address addresses the following data
         -- Bit[0-4]   drum position of the first engima first drum
@@ -67,7 +67,7 @@ end component turing_bombe_without_zynq_wrapper;
         -- Bit[15-19] drum position of the second engima first drum
         -- Bit[20-24] drum position of the second engima second drum
         -- Bit[24-29] drum position of the second engima third drum         
-    constant enigmas_12_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000001";
+    constant enigmas_12_drumPos_address : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000000100";
     
     --this address addresses the following data
         -- Bit[0-4]   drum position of the third engima first drum
@@ -77,7 +77,7 @@ end component turing_bombe_without_zynq_wrapper;
         -- Bit[15-19] drum position of the fourth engima first drum
         -- Bit[20-24] drum position of the fourth engima second drum
         -- Bit[24-29] drum position of the fourth engima third drum         
-    constant enigmas_34_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000010";
+    constant enigmas_34_drumPos_address : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000001000";
     
     --this address addresses the following data
         -- Bit[0-2]   drum position of the fifth engima first drum
@@ -87,7 +87,7 @@ end component turing_bombe_without_zynq_wrapper;
         -- Bit[9-11]  drum position of the sixth engima first drum
         -- Bit[12-14] drum position of the sixth engima second drum
         -- Bit[15-17] drum position of the sixth engima third drum   
-    constant enigmas_56_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000011";
+    constant enigmas_56_drumPos_address : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000001100";
     
     --this address addresses the following data
         -- Bit[0-2]   drum position of the seventh engima first drum
@@ -97,7 +97,7 @@ end component turing_bombe_without_zynq_wrapper;
         -- Bit[9-11]  drum position of the eighth engima first drum
         -- Bit[12-14] drum position of the eighth engima second drum
         -- Bit[15-17] drum position of the eighth engima third drum      
-    constant enigmas_78_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000100";
+    constant enigmas_78_drumPos_address : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000010000";
 
     --this address addresses the following data
         -- Bit[0-2]   drum position of the ninth engima first drum
@@ -107,7 +107,7 @@ end component turing_bombe_without_zynq_wrapper;
         -- Bit[9-11]  drum position of the tenth engima first drum
         -- Bit[12-14] drum position of the tenth engima second drum
         -- Bit[15-17] drum position of the tenth engima third drum      
-    constant enigmas_910_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000101";
+    constant enigmas_910_drumPos_address : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000010100";
 
     --this address addresses the following data
         -- Bit[0-2]   drum position of the eleventh engima first drum
@@ -117,7 +117,7 @@ end component turing_bombe_without_zynq_wrapper;
         -- Bit[9-11]  drum position of the twelfth engima first drum
         -- Bit[12-14] drum position of the twelfth engima second drum
         -- Bit[15-17] drum position of the twelfth engima third drum      
-    constant enigmas_1112_drumPos_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000110";
+    constant enigmas_1112_drumPos_address : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000011000";
        
     --this address addresses the following data
         -- Bit[0-2] first drum of all enigmas
@@ -126,7 +126,7 @@ end component turing_bombe_without_zynq_wrapper;
         
         --Bit[9-13] testregister
         --Bit[14-18] testvoltage      
-    constant enigma_drums_vol_reg_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "000111";
+    constant enigma_drums_vol_reg_address : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000011100";
 
     --this address addresses the following data
         -- Bit[0-4] first diagonalboard connection of the first enigma
@@ -137,7 +137,7 @@ end component turing_bombe_without_zynq_wrapper;
         
         -- Bit[20-24] first diagonalboard connection of the third enigma     
         -- Bit[25-29] second diagonalboard connection of the third enigma        
-    constant enigmas_123_db_con_addess : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001000";      
+    constant enigmas_123_db_con_addess : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000100000";      
 
     --this address addresses the following data
         -- Bit[0-4] first diagonalboard connection of the fourth enigma
@@ -148,7 +148,7 @@ end component turing_bombe_without_zynq_wrapper;
         
         -- Bit[20-24] first diagonalboard connection of the sixth enigma     
         -- Bit[25-29] second diagonalboard connection of the sixth enigma        
-    constant enigmas_456_db_con_addess : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001001";      
+    constant enigmas_456_db_con_addess : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000100100";      
 
     --this address addresses the following data
         -- Bit[0-4] first diagonalboard connection of the seventh enigma
@@ -159,7 +159,7 @@ end component turing_bombe_without_zynq_wrapper;
         
         -- Bit[20-24] first diagonalboard connection of the ninth enigma     
         -- Bit[25-29] second diagonalboard connection of the ninth enigma        
-    constant enigmas_789_db_con_addess : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001010";        
+    constant enigmas_789_db_con_addess : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000101000";        
  
     --this address addresses the following data
         -- Bit[0-4] first diagonalboard connection of the tenth enigma
@@ -170,14 +170,14 @@ end component turing_bombe_without_zynq_wrapper;
         
         -- Bit[20-24] first diagonalboard connection of the twelfth enigma     
         -- Bit[25-29] second diagonalboard connection of the twelfth enigma        
-    constant enigmas_101112_db_con_addess : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001011"; 
+    constant enigmas_101112_db_con_addess : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000101100"; 
     
     --this address addresses the following data
         -- Bit[0-4] indicator drum one 
         -- Bit[5-9] indicator drum two     
         -- Bit[10-14] indicator drum two    
         -- Bit[15-19] result diagonalboard      
-    constant indicator_drum_result_address : STD_LOGIC_VECTOR(5 DOWNTO 0) := "001110"; 
+    constant indicator_drum_result_address : STD_LOGIC_VECTOR(9 DOWNTO 0) := "0000111000"; 
 ---------------------------
 --  SIGNAL DECLARATIONS  --
 ---------------------------
@@ -193,10 +193,10 @@ end component turing_bombe_without_zynq_wrapper;
   signal tb_controller_out_enigma_start_tb      : STD_LOGIC;
   
   signal enable_bram_a_in_tb            : STD_LOGIC;
-  signal address_bram_a_in_tb           : STD_LOGIC_VECTOR(5 DOWNTO 0);
+  signal address_bram_a_in_tb           : STD_LOGIC_VECTOR(9 DOWNTO 0);
   signal data_in_bram_a_tb              : STD_LOGIC_VECTOR(31 DOWNTO 0);
   signal data_out_bram_a_tb              : STD_LOGIC_VECTOR(31 DOWNTO 0);
-  signal write_enable_bram_in_tb        : STD_LOGIC_VECTOR(0 DOWNTO 0);
+  signal write_enable_bram_in_tb        : STD_LOGIC_VECTOR(3 DOWNTO 0) ;
   
 begin
 -------------------------------
@@ -241,7 +241,7 @@ turing_bombe_inst: turing_bombe_without_zynq_wrapper
    
     -- reset the system trought blockram
     enable_bram_a_in_tb <= '1';  
-    write_enable_bram_in_tb <= "1";
+    write_enable_bram_in_tb <= "1111";
     address_bram_a_in_tb <= start_reset_address;
     data_in_bram_a_tb <= "00000000000000000000000000000000";
     wait for 100 ns;
@@ -322,7 +322,7 @@ turing_bombe_inst: turing_bombe_without_zynq_wrapper
     
     --we need ca. 35ns to enter the READ_CONFIG state and than we have to read 13 storages which taktes 130 ns additional 5ns to get a save result!
     wait for 300 ns; 
-    write_enable_bram_in_tb <= "0";
+    write_enable_bram_in_tb <= "0000";
     
     
     address_bram_a_in_tb <= indicator_drum_result_address;

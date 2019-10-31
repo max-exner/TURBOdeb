@@ -11,6 +11,7 @@ bool CheckingMachine::calcPlugBoardConnections  (
     char c_PBConnection;
     char c_TBPBConnection = c_TBStopResult[3];
     char cc_plugBoardConnection[2][ROUTENARRAY_XSIZE];
+    int i_countPlugboardCombinations = 0;
 
     //just create the turing bomb because of laziness =D it holds all the menu connections (no additional calculation needed)
     TuringBomb ob_TBWhichFoundTheStop(st_messageRelatedMenu);
@@ -18,6 +19,7 @@ bool CheckingMachine::calcPlugBoardConnections  (
     c_CMDrumPos[0] = c_TBStopResult[0];
     c_CMDrumPos[1] = c_TBStopResult[1];
     c_CMDrumPos[2] = c_TBStopResult[2];
+    i_countPlugboardCombinations = 0;
     //first get the letter of the menu into the cc_plugBoardConnection matrix
     for(int i_letter = 0; i_letter<ROUTENARRAY_XSIZE;i_letter=i_letter+1)
     {
@@ -43,8 +45,14 @@ bool CheckingMachine::calcPlugBoardConnections  (
     }
 
     //search for the connections made to the already found menu letters
+
     while(!this->b_checkPlugBoardIntegity(cc_plugBoardConnection))
     {
+        if(i_countPlugboardCombinations == 3051)
+        {
+            break;
+        }
+
         for(int i_conCount = 0; i_conCount<ROUTENARRAY_XSIZE;i_conCount = i_conCount+1)
         {
             if(cc_plugBoardConnection[1][i_conCount] != '\0')
@@ -89,6 +97,7 @@ bool CheckingMachine::calcPlugBoardConnections  (
                 }
             }    
         }
+        i_countPlugboardCombinations++;
     }
     
     this->b_fillUpPlugBoardConnections(cc_plugBoardConnection,cc_plugBoardSettings);

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# 
+# Start of session at: Mon Oct 28 15:28:28 2019
+# Process ID: 7382
+# Current directory: /homes/mexner/TURBOdeb/turing_bombe_project/xsdk/workspace/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /homes/mexner/TURBOdeb/turing_bombe_project/xsdk/workspace/webtalk/webtalk.log
+# Journal file: /homes/mexner/TURBOdeb/turing_bombe_project/xsdk/workspace/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

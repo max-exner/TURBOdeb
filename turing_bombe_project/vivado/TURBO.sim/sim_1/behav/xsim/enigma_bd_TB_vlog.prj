@@ -10,7 +10,7 @@ sv xilinx_vip  --include "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/in
 "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/clk_vip_if.sv" \
 "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/hdl/rst_vip_if.sv" \
 
-sv xil_defaultlib  --include "../../../../../src/bd/turing_bombe/ipshared/979d/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/b2d0/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/ec67/hdl" --include "../../../../../src/bd/turing_bombe/ipshared/70cf/hdl" --include "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/include" \
+sv xil_defaultlib  --include "../../../../../src/bd/turing_bombe_final/ipshared/ec67/hdl" --include "../../../../../src/bd/turing_bombe_final/ipshared/70cf/hdl" --include "../../../../../src/bd/turing_bombe_final/ipshared/979d/hdl/verilog" --include "../../../../../src/bd/turing_bombe_final/ipshared/b2d0/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/ec67/hdl" --include "../../../../../src/bd/turing_bombe/ipshared/70cf/hdl" --include "../../../../../src/bd/turing_bombe/ipshared/979d/hdl/verilog" --include "../../../../../src/bd/turing_bombe/ipshared/b2d0/hdl/verilog" --include "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/xilinx_vip/include" \
 "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
 "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
 "/ks/eda/xilinx_2018.3/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \

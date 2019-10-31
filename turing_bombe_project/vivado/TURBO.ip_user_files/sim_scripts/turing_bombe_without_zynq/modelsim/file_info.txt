@@ -36,7 +36,7 @@ lib_cdc_v1_0_rfs.vhd,vhdl,lib_cdc_v1_0_2,../../../../../src/bd/turing_bombe_with
 proc_sys_reset_v5_0_vh_rfs.vhd,vhdl,proc_sys_reset_v5_0_13,../../../../../src/bd/turing_bombe_without_zynq/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd,
 turing_bombe_without_zynq_proc_sys_reset_0_0.vhd,vhdl,xil_defaultlib,../../../bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_proc_sys_reset_0_0/sim/turing_bombe_without_zynq_proc_sys_reset_0_0.vhd,
 turing_bombe_without_zynq_turing_bombe_control_0_0.vhd,vhdl,xil_defaultlib,../../../bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_turing_bombe_control_0_0/sim/turing_bombe_without_zynq_turing_bombe_control_0_0.vhd,
-turing_bombe_without_zynq.vhd,vhdl,xil_defaultlib,../../../bd/turing_bombe_without_zynq/sim/turing_bombe_without_zynq.vhd,
 xlconstant_v1_1_vl_rfs.v,verilog,xlconstant_v1_1_5,../../../../../src/bd/turing_bombe_without_zynq/ipshared/4649/hdl/xlconstant_v1_1_vl_rfs.v,
 turing_bombe_without_zynq_xlconstant_0_0.v,verilog,xil_defaultlib,../../../bd/turing_bombe_without_zynq/ip/turing_bombe_without_zynq_xlconstant_0_0/sim/turing_bombe_without_zynq_xlconstant_0_0.v,
+turing_bombe_without_zynq.vhd,vhdl,xil_defaultlib,../../../bd/turing_bombe_without_zynq/sim/turing_bombe_without_zynq.vhd,
 glbl.v,Verilog,xil_defaultlib,glbl.v

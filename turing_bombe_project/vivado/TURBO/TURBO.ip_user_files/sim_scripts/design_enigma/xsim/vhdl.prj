@@ -1,0 +1,10 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_enigma/ip/design_enigma_pseudo_lut_0_0/sim/design_enigma_pseudo_lut_0_0.vhd" \
+"../../../bd/design_enigma/ip/design_enigma_drum_0_0/sim/design_enigma_drum_0_0.vhd" \
+"../../../bd/design_enigma/ip/design_enigma_drum_1_0/sim/design_enigma_drum_1_0.vhd" \
+"../../../bd/design_enigma/ip/design_enigma_drum_2_0/sim/design_enigma_drum_2_0.vhd" \
+"../../../bd/design_enigma/ip/design_enigma_drum_ukw_0_0/sim/design_enigma_drum_ukw_0_0.vhd" \
+"../../../bd/design_enigma/ip/design_enigma_enigma_control_0_0/sim/design_enigma_enigma_control_0_0.vhd" \
+"../../../bd/design_enigma/sim/design_enigma.vhd" \
+
+nosort

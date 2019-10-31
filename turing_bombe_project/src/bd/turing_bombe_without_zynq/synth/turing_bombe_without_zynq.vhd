@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Fri Jun 28 15:47:59 2019
---Host        : marchena running 64-bit Ubuntu 16.04.6 LTS
+--Date        : Mon Oct 28 17:03:37 2019
+--Host        : rabida running 64-bit Ubuntu 16.04.6 LTS
 --Command     : generate_target turing_bombe_without_zynq.bd
 --Design      : turing_bombe_without_zynq
 --Purpose     : IP block netlist
@@ -13,7 +13,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity turing_bombe_without_zynq is
   port (
-    ADDRESS_BRAM_A : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    ADDRESS_BRAM_A : in STD_LOGIC_VECTOR ( 9 downto 0 );
     CLK : in STD_LOGIC;
     DATA_IN_BRAM_A : in STD_LOGIC_VECTOR ( 31 downto 0 );
     DATA_OUT_BRAM_A : out STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -22,10 +22,10 @@ entity turing_bombe_without_zynq is
     LED_FOURTH_STOP_OUT : out STD_LOGIC;
     LED_SECOND_STOP_OUT : out STD_LOGIC;
     LED_THIRD_STOP_OUT : out STD_LOGIC;
-    WRITE_ENABLE_BRAM_A : in STD_LOGIC_VECTOR ( 0 to 0 )
+    WRITE_ENABLE_BRAM_A : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of turing_bombe_without_zynq : entity is "turing_bombe_without_zynq,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=turing_bombe_without_zynq,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=17,numNonXlnxBlks=12,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=12,bdsource=USER,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of turing_bombe_without_zynq : entity is "turing_bombe_without_zynq,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=turing_bombe_without_zynq,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=17,numReposBlks=17,numNonXlnxBlks=12,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=12,bdsource=USER,da_board_cnt=1,da_clkrst_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of turing_bombe_without_zynq : entity is "turing_bombe_without_zynq.hwdef";
 end turing_bombe_without_zynq;
@@ -259,6 +259,20 @@ architecture STRUCTURE of turing_bombe_without_zynq is
     UB_CLK_IN : in STD_LOGIC
   );
   end component turing_bombe_without_zynq_TURBO_enigma_9_0;
+  component turing_bombe_without_zynq_proc_sys_reset_0_0 is
+  port (
+    slowest_sync_clk : in STD_LOGIC;
+    ext_reset_in : in STD_LOGIC;
+    aux_reset_in : in STD_LOGIC;
+    mb_debug_sys_rst : in STD_LOGIC;
+    dcm_locked : in STD_LOGIC;
+    mb_reset : out STD_LOGIC;
+    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component turing_bombe_without_zynq_proc_sys_reset_0_0;
   component turing_bombe_without_zynq_diagonal_board_0_0 is
   port (
     CLK_IN : in STD_LOGIC;
@@ -364,27 +378,13 @@ architecture STRUCTURE of turing_bombe_without_zynq is
     CLK_IN : in STD_LOGIC
   );
   end component turing_bombe_without_zynq_indicator_drum_0_0;
-  component turing_bombe_without_zynq_proc_sys_reset_0_0 is
-  port (
-    slowest_sync_clk : in STD_LOGIC;
-    ext_reset_in : in STD_LOGIC;
-    aux_reset_in : in STD_LOGIC;
-    mb_debug_sys_rst : in STD_LOGIC;
-    dcm_locked : in STD_LOGIC;
-    mb_reset : out STD_LOGIC;
-    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
-    interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component turing_bombe_without_zynq_proc_sys_reset_0_0;
   component turing_bombe_without_zynq_turing_bombe_control_0_0 is
   port (
     ENABLE_BRAM_A_IN : in STD_LOGIC;
-    ADDRESS_BRAM_A_IN : in STD_LOGIC_VECTOR ( 5 downto 0 );
+    ADDRESS_BRAM_A_IN : in STD_LOGIC_VECTOR ( 9 downto 0 );
     DATA_IN_BRAM_A : in STD_LOGIC_VECTOR ( 31 downto 0 );
     DATA_OUT_BRAM_A : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    WRITE_ENABLE_BRAM_IN : in STD_LOGIC_VECTOR ( 0 to 0 );
+    WRITE_ENABLE_BRAM_IN : in STD_LOGIC_VECTOR ( 3 downto 0 );
     CLK_BRAM_A_IN : in STD_LOGIC;
     RST_BRAM_A_IN : in STD_LOGIC;
     DB_IN_INPUT_VOLTAGE_OUT : out STD_LOGIC_VECTOR ( 4 downto 0 );
@@ -513,7 +513,8 @@ architecture STRUCTURE of turing_bombe_without_zynq is
     LED_FIRST_STOP_OUT : out STD_LOGIC;
     LED_SECOND_STOP_OUT : out STD_LOGIC;
     LED_THIRD_STOP_OUT : out STD_LOGIC;
-    LED_FOURTH_STOP_OUT : out STD_LOGIC
+    LED_FOURTH_STOP_OUT : out STD_LOGIC;
+    LED_START_RED : out STD_LOGIC
   );
   end component turing_bombe_without_zynq_turing_bombe_control_0_0;
   component turing_bombe_without_zynq_xlconstant_0_0 is
@@ -521,7 +522,7 @@ architecture STRUCTURE of turing_bombe_without_zynq is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component turing_bombe_without_zynq_xlconstant_0_0;
-  signal ADDRESS_BRAM_A_1 : STD_LOGIC_VECTOR ( 5 downto 0 );
+  signal ADRESS_BRAM_A_1 : STD_LOGIC_VECTOR ( 9 downto 0 );
   signal DATA_IN_BRAM_A_1 : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal ENABLE_BRAM_A_IN_1 : STD_LOGIC;
   signal TURBO_enigma_0_CODED_CHARACTERS_OUT_DB0 : STD_LOGIC_VECTOR ( 25 downto 0 );
@@ -560,7 +561,7 @@ architecture STRUCTURE of turing_bombe_without_zynq is
   signal TURBO_enigma_9_CODED_CHARACTERS_OUT_DB0 : STD_LOGIC_VECTOR ( 25 downto 0 );
   signal TURBO_enigma_9_CODED_CHARACTERS_OUT_DB1 : STD_LOGIC_VECTOR ( 25 downto 0 );
   signal TURBO_enigma_9_READY_OUT : STD_LOGIC;
-  signal WRITE_ENABLE_BRAM_A_1 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal WRITE_ENABLE_BRAM_A_1 : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal diagonal_board_0_ENIGMA_10_DB1_OUT : STD_LOGIC_VECTOR ( 25 downto 0 );
   signal diagonal_board_0_ENIGMA_10_DB2_OUT : STD_LOGIC_VECTOR ( 25 downto 0 );
   signal diagonal_board_0_ENIGMA_11_DB1_OUT : STD_LOGIC_VECTOR ( 25 downto 0 );
@@ -695,12 +696,15 @@ architecture STRUCTURE of turing_bombe_without_zynq is
   signal NLW_proc_sys_reset_0_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_proc_sys_reset_0_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_proc_sys_reset_0_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_turing_bombe_control_0_LED_START_RED_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of CLK : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of CLK : signal is "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN turing_bombe_without_zynq_CLK, FREQ_HZ 50000000, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_INFO of WRITE_ENABLE_BRAM_A : signal is "xilinx.com:signal:data:1.0 DATA.WRITE_ENABLE_BRAM_A DATA";
+  attribute X_INTERFACE_PARAMETER of WRITE_ENABLE_BRAM_A : signal is "XIL_INTERFACENAME DATA.WRITE_ENABLE_BRAM_A, LAYERED_METADATA undef";
 begin
-  ADDRESS_BRAM_A_1(5 downto 0) <= ADDRESS_BRAM_A(5 downto 0);
+  ADRESS_BRAM_A_1(9 downto 0) <= ADDRESS_BRAM_A(9 downto 0);
   DATA_IN_BRAM_A_1(31 downto 0) <= DATA_IN_BRAM_A(31 downto 0);
   DATA_OUT_BRAM_A(31 downto 0) <= turing_bombe_control_0_DATA_OUT_BRAM_A(31 downto 0);
   ENABLE_BRAM_A_IN_1 <= ENABLE_BRAM_A;
@@ -708,7 +712,7 @@ begin
   LED_FOURTH_STOP_OUT <= turing_bombe_control_0_LED_FOURTH_STOP_OUT;
   LED_SECOND_STOP_OUT <= turing_bombe_control_0_LED_SECOND_STOP_OUT;
   LED_THIRD_STOP_OUT <= turing_bombe_control_0_LED_THIRD_STOP_OUT;
-  WRITE_ENABLE_BRAM_A_1(0) <= WRITE_ENABLE_BRAM_A(0);
+  WRITE_ENABLE_BRAM_A_1(3 downto 0) <= WRITE_ENABLE_BRAM_A(3 downto 0);
   sim_clk_gen_0_clk <= CLK;
 TURBO_enigma_0: component turing_bombe_without_zynq_TURBO_enigma_0_0
      port map (
@@ -1044,7 +1048,7 @@ proc_sys_reset_0: component turing_bombe_without_zynq_proc_sys_reset_0_0
     );
 turing_bombe_control_0: component turing_bombe_without_zynq_turing_bombe_control_0_0
      port map (
-      ADDRESS_BRAM_A_IN(5 downto 0) => ADDRESS_BRAM_A_1(5 downto 0),
+      ADDRESS_BRAM_A_IN(9 downto 0) => ADRESS_BRAM_A_1(9 downto 0),
       CLK_BRAM_A_IN => sim_clk_gen_0_clk,
       CLK_IN => sim_clk_gen_0_clk,
       DATA_IN_BRAM_A(31 downto 0) => DATA_IN_BRAM_A_1(31 downto 0),
@@ -1171,13 +1175,14 @@ turing_bombe_control_0: component turing_bombe_without_zynq_turing_bombe_control
       LED_FIRST_STOP_OUT => turing_bombe_control_0_LED_FIRST_STOP_OUT,
       LED_FOURTH_STOP_OUT => turing_bombe_control_0_LED_FOURTH_STOP_OUT,
       LED_SECOND_STOP_OUT => turing_bombe_control_0_LED_SECOND_STOP_OUT,
+      LED_START_RED => NLW_turing_bombe_control_0_LED_START_RED_UNCONNECTED,
       LED_THIRD_STOP_OUT => turing_bombe_control_0_LED_THIRD_STOP_OUT,
       POS_1_INDICATOR_DRUM_IN(4 downto 0) => indicator_drum_0_POS_INDICATOR_DRUM_1_OUT(4 downto 0),
       POS_2_INDICATOR_DRUM_IN(4 downto 0) => indicator_drum_0_POS_INDICATOR_DRUM_2_OUT(4 downto 0),
       POS_3_INDICATOR_DRUM_IN(4 downto 0) => indicator_drum_0_POS_INDICATOR_DRUM_3_OUT(4 downto 0),
       RESET_OUT => turing_bombe_control_0_RESET_OUT,
       RST_BRAM_A_IN => xlconstant_0_dout(0),
-      WRITE_ENABLE_BRAM_IN(0) => WRITE_ENABLE_BRAM_A_1(0)
+      WRITE_ENABLE_BRAM_IN(3 downto 0) => WRITE_ENABLE_BRAM_A_1(3 downto 0)
     );
 xlconstant_0: component turing_bombe_without_zynq_xlconstant_0_0
      port map (

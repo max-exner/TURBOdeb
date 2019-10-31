@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# 
+# Start of session at: Wed Jul 24 11:29:25 2019
+# Process ID: 9274
+# Current directory: /homes/tniggemeyer/Development/TURBOdeb/repar_turing_bombe/turing_bombe_project/vivado/TURBO.sdk/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /homes/tniggemeyer/Development/TURBOdeb/repar_turing_bombe/turing_bombe_project/vivado/TURBO.sdk/webtalk/webtalk.log
+# Journal file: /homes/tniggemeyer/Development/TURBOdeb/repar_turing_bombe/turing_bombe_project/vivado/TURBO.sdk/webtalk/webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

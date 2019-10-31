@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.cdt.ui.OPEN_ACTION_SELECTION_DIALOG_SECTION">
-		<item value="510" key="DIALOG_WIDTH"/>
-		<item value="1|Comic Sans MS|11.0|1|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="582" key="DIALOG_HEIGHT"/>
+		<item value="446" key="DIALOG_WIDTH"/>
+		<item value="1|Droid Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="430" key="DIALOG_HEIGHT"/>
 		<item value="706" key="DIALOG_X_ORIGIN"/>
 		<item value="196" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration.internal">
+		<item value="144" key="size.height"/>
+		<item value="517" key="size.width"/>
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>

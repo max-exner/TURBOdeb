@@ -1,0 +1,4 @@
+turing_bombe_indicator_drum_0_0.vhd,vhdl,xil_defaultlib,../../../bd/turing_bombe/ip/turing_bombe_indicator_drum_0_0/sim/turing_bombe_indicator_drum_0_0.vhd,
+turing_bombe_turing_bombe_control_0_0.vhd,vhdl,xil_defaultlib,../../../bd/turing_bombe/ip/turing_bombe_turing_bombe_control_0_0/sim/turing_bombe_turing_bombe_control_0_0.vhd,
+turing_bombe_diagonal_board_0_0.vhd,vhdl,xil_defaultlib,../../../bd/turing_bombe/ip/turing_bombe_diagonal_board_0_0/sim/turing_bombe_diagonal_board_0_0.vhd,
+turing_bombe.vhd,vhdl,xil_defaultlib,../../../bd/turing_bombe/sim/turing_bombe.vhd,

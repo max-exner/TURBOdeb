@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xA2CDC1BE765AD2B8",
+      "boundary_crc": "0xCC393851D980043D",
       "device": "xc7z020clg400-1",
       "name": "turing_bombe_without_zynq",
       "synth_flow_mode": "Hierarchical",
@@ -21,9 +21,9 @@
       "TURBO_enigma_7": "",
       "TURBO_enigma_8": "",
       "TURBO_enigma_9": "",
+      "proc_sys_reset_0": "",
       "diagonal_board_0": "",
       "indicator_drum_0": "",
-      "proc_sys_reset_0": "",
       "turing_bombe_control_0": "",
       "xlconstant_0": ""
     },
@@ -64,24 +64,31 @@
       "ENABLE_BRAM_A": {
         "direction": "I"
       },
-      "ADDRESS_BRAM_A": {
-        "direction": "I",
-        "left": "5",
-        "right": "0"
-      },
       "DATA_IN_BRAM_A": {
         "direction": "I",
         "left": "31",
         "right": "0"
       },
-      "WRITE_ENABLE_BRAM_A": {
-        "direction": "I",
-        "left": "0",
-        "right": "0"
-      },
       "DATA_OUT_BRAM_A": {
         "direction": "O",
         "left": "31",
+        "right": "0"
+      },
+      "WRITE_ENABLE_BRAM_A": {
+        "type": "data",
+        "direction": "I",
+        "left": "3",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "ADDRESS_BRAM_A": {
+        "direction": "I",
+        "left": "9",
         "right": "0"
       }
     },
@@ -133,6 +140,10 @@
       "TURBO_enigma_9": {
         "vlnv": "user.org:user:TURBO_enigma:1.1",
         "xci_name": "turing_bombe_without_zynq_TURBO_enigma_9_0"
+      },
+      "proc_sys_reset_0": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "turing_bombe_without_zynq_proc_sys_reset_0_0"
       },
       "diagonal_board_0": {
         "vlnv": "xilinx.com:module_ref:diagonal_board:1.0",
@@ -647,10 +658,6 @@
           }
         }
       },
-      "proc_sys_reset_0": {
-        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "xci_name": "turing_bombe_without_zynq_proc_sys_reset_0_0"
-      },
       "turing_bombe_control_0": {
         "vlnv": "xilinx.com:module_ref:turing_bombe_controller:1.0",
         "xci_name": "turing_bombe_without_zynq_turing_bombe_control_0_0",
@@ -705,13 +712,13 @@
               "WE": {
                 "physical_name": "WRITE_ENABLE_BRAM_IN",
                 "direction": "I",
-                "left": "0",
+                "left": "3",
                 "right": "0"
               },
               "ADDR": {
                 "physical_name": "ADDRESS_BRAM_A_IN",
                 "direction": "I",
-                "left": "5",
+                "left": "9",
                 "right": "0"
               },
               "CLK": {
@@ -1352,6 +1359,9 @@
           },
           "LED_FOURTH_STOP_OUT": {
             "direction": "O"
+          },
+          "LED_START_RED": {
+            "direction": "O"
           }
         }
       },
@@ -1779,9 +1789,9 @@
           "TURBO_enigma_11/UB_CLK_IN",
           "TURBO_enigma_12/UB_CLK_IN",
           "diagonal_board_0/CLK_IN",
-          "turing_bombe_control_0/CLK_IN",
           "indicator_drum_0/CLK_IN",
-          "turing_bombe_control_0/CLK_BRAM_A_IN"
+          "turing_bombe_control_0/CLK_BRAM_A_IN",
+          "turing_bombe_control_0/CLK_IN"
         ]
       },
       "turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON0_OUT": {
@@ -2441,16 +2451,16 @@
           "turing_bombe_control_0/ENABLE_BRAM_A_IN"
         ]
       },
-      "ADDRESS_BRAM_A_1": {
-        "ports": [
-          "ADDRESS_BRAM_A",
-          "turing_bombe_control_0/ADDRESS_BRAM_A_IN"
-        ]
-      },
       "DATA_IN_BRAM_A_1": {
         "ports": [
           "DATA_IN_BRAM_A",
           "turing_bombe_control_0/DATA_IN_BRAM_A"
+        ]
+      },
+      "turing_bombe_control_0_DATA_OUT_BRAM_A": {
+        "ports": [
+          "turing_bombe_control_0/DATA_OUT_BRAM_A",
+          "DATA_OUT_BRAM_A"
         ]
       },
       "WRITE_ENABLE_BRAM_A_1": {
@@ -2465,10 +2475,10 @@
           "turing_bombe_control_0/RST_BRAM_A_IN"
         ]
       },
-      "turing_bombe_control_0_DATA_OUT_BRAM_A": {
+      "ADRESS_BRAM_A_1": {
         "ports": [
-          "turing_bombe_control_0/DATA_OUT_BRAM_A",
-          "DATA_OUT_BRAM_A"
+          "ADDRESS_BRAM_A",
+          "turing_bombe_control_0/ADDRESS_BRAM_A_IN"
         ]
       }
     }

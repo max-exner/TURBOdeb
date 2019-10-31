@@ -1,0 +1,18 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../../src/hdl/pseudo_lut.vhd" \
+"../../../../../../src/hdl/drum.vhd" \
+"../../../../../../src/hdl/drum_ukw.vhd" \
+"../../../../../../src/hdl/enigma_contol.vhd" \
+"../../../../TURBO.ip_user_files/bd/design_enigma/ip/design_enigma_pseudo_lut_0_0/sim/design_enigma_pseudo_lut_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/design_enigma/ip/design_enigma_drum_0_0/sim/design_enigma_drum_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/design_enigma/ip/design_enigma_drum_1_0/sim/design_enigma_drum_1_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/design_enigma/ip/design_enigma_drum_2_0/sim/design_enigma_drum_2_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/design_enigma/ip/design_enigma_drum_ukw_0_0/sim/design_enigma_drum_ukw_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/design_enigma/ip/design_enigma_enigma_control_0_0/sim/design_enigma_enigma_control_0_0.vhd" \
+"../../../../TURBO.ip_user_files/bd/design_enigma/sim/design_enigma.vhd" \
+"../../../../../../src/bd/design_enigma/hdl/design_enigma_wrapper.vhd" \
+"../../../../../../src/sim/enigma_bd_TB.vhd" \
+
+# Do not sort compile order
+nosort

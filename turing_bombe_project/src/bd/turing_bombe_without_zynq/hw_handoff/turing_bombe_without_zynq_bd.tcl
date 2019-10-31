@@ -163,7 +163,7 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
-  set ADDRESS_BRAM_A [ create_bd_port -dir I -from 5 -to 0 ADDRESS_BRAM_A ]
+  set ADDRESS_BRAM_A [ create_bd_port -dir I -from 9 -to 0 ADDRESS_BRAM_A ]
   set CLK [ create_bd_port -dir I -type clk CLK ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {50000000} \
@@ -175,7 +175,7 @@ proc create_root_design { parentCell } {
   set LED_FOURTH_STOP_OUT [ create_bd_port -dir O LED_FOURTH_STOP_OUT ]
   set LED_SECOND_STOP_OUT [ create_bd_port -dir O LED_SECOND_STOP_OUT ]
   set LED_THIRD_STOP_OUT [ create_bd_port -dir O LED_THIRD_STOP_OUT ]
-  set WRITE_ENABLE_BRAM_A [ create_bd_port -dir I -from 0 -to 0 WRITE_ENABLE_BRAM_A ]
+  set WRITE_ENABLE_BRAM_A [ create_bd_port -dir I -from 3 -to 0 -type data WRITE_ENABLE_BRAM_A ]
 
   # Create instance: TURBO_enigma_0, and set properties
   set TURBO_enigma_0 [ create_bd_cell -type ip -vlnv user.org:user:TURBO_enigma:1.1 TURBO_enigma_0 ]
@@ -256,7 +256,7 @@ proc create_root_design { parentCell } {
  ] $xlconstant_0
 
   # Create port connections
-  connect_bd_net -net ADDRESS_BRAM_A_1 [get_bd_ports ADDRESS_BRAM_A] [get_bd_pins turing_bombe_control_0/ADDRESS_BRAM_A_IN]
+  connect_bd_net -net ADRESS_BRAM_A_1 [get_bd_ports ADDRESS_BRAM_A] [get_bd_pins turing_bombe_control_0/ADDRESS_BRAM_A_IN]
   connect_bd_net -net DATA_IN_BRAM_A_1 [get_bd_ports DATA_IN_BRAM_A] [get_bd_pins turing_bombe_control_0/DATA_IN_BRAM_A]
   connect_bd_net -net ENABLE_BRAM_A_IN_1 [get_bd_ports ENABLE_BRAM_A] [get_bd_pins turing_bombe_control_0/ENABLE_BRAM_A_IN]
   connect_bd_net -net TURBO_enigma_0_CODED_CHARACTERS_OUT_DB0 [get_bd_pins TURBO_enigma_0/CODED_CHARACTERS_OUT_DB0] [get_bd_pins diagonal_board_0/ACTIVE_OUT_1_ENIGMA_1_IN]

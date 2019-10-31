@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="" key="turing_bombe_wrapper_hw_platform_1-bmmFile"/>
+	<item value="Local" key="turing_bombe_wrapper_hw_platform_1-target"/>
+	<item value="turing_bombe_wrapper.bit" key="turing_bombe_wrapper_hw_platform_0-bitFile"/>
+	<item value="" key="turing_bombe_wrapper_hw_platform_0-bmmFile"/>
+	<item value="turing_bombe_wrapper_hw_platform_0" key="programfpga.hwplatform"/>
+	<item value="turing_bombe_wrapper.bit" key="turing_bombe_wrapper_hw_platform_1-bitFile"/>
+	<item value="false" key="turing_bombe_wrapper_hw_platform_0-partial_bit"/>
+	<item value="Auto Detect" key="turing_bombe_wrapper_hw_platform_0-device"/>
+	<item value="Local" key="turing_bombe_wrapper_hw_platform_0-target"/>
+	<item value="Auto Detect" key="turing_bombe_wrapper_hw_platform_1-device"/>
+	<item value="false" key="turing_bombe_wrapper_hw_platform_1-partial_bit"/>
+</section>

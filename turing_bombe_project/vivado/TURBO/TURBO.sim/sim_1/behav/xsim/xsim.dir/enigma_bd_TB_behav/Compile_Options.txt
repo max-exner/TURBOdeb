@@ -1,0 +1,1 @@
+-wto "4cc64f6b9b8c48c1b3a9c6d7faacfa54" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "xlconstant_v1_1_5" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -L "xpm" --snapshot "enigma_bd_TB_behav" "xil_defaultlib.enigma_bd_TB" "xil_defaultlib.glbl" -log "elaborate.log" 
