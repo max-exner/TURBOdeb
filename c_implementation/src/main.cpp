@@ -1,8 +1,12 @@
+/* CMD Parameter:
+*       -m <Path to the Message JSON>
+*       -p /dev/ttyUSB1 (Port for the FPGA comunication)
+*/
+
 #include "global.hpp"
 #include "jsonHandling.hpp"
 #include "menuPreparison.hpp"
 #include "menu.hpp"
-#include <chrono>
 #include "turingBomb.hpp"
 #include "checkingMachine.hpp"
 #include "enigma.hpp"
@@ -11,7 +15,7 @@
 // C library headers
 #include <stdio.h>
 #include <string.h>
-
+#include <chrono>
 // Linux headers
 #include <fcntl.h> // Contains file controls like O_RDWR
 #include <errno.h> // Error integer and strerror() function
@@ -22,8 +26,6 @@
 using namespace std;
 
 #define MAX_ROTORS 5
-#define FPGA_CALC           //ToDo: CMD Parameter
-#undef FPGA_CALC
 
 #define BAUDRATE B115200
 
@@ -31,6 +33,7 @@ using namespace std;
 using namespace std;
 
 void print_runtime(chrono::high_resolution_clock::time_point t_start);
+double add_time(chrono::high_resolution_clock::time_point t_start, double d_t_total);
 
 /**This is the main function
  * @brief In the main all aplication function are called
@@ -48,7 +51,8 @@ int main(int argc, char **argv)
     string s_file_path;
     string s_mode = "CPU";
     int serial_port;    
-
+    double d_t_total = 0.0;
+    uint ui_run_count = 0;
     for(int i = 0; i < argc; i++)
     {        
         if (strcmp(argv[i], "-m")==0)
@@ -107,32 +111,13 @@ int main(int argc, char **argv)
         tty.c_cc[VLNEXT]   = 0;     /* Ctrl-v */
         tty.c_cc[VEOL2]    = 0;     /* '\0' */        
 
-        /*tty.c_cflag &= ~PARENB; // Clear parity bit, disabling parity (most common)
-        tty.c_cflag &= ~CSTOPB; // Clear stop field, only one stop bit used in communication (most common)
-        tty.c_cflag |= CS8; // 8 bits per byte (most common)
-        tty.c_cflag &= ~CRTSCTS; // Disable RTS/CTS hardware flow control (most common)
-        tty.c_cflag |= CREAD | CLOCAL; // Turn on READ & ignore ctrl lines (CLOCAL = 1)
-        tty.c_lflag &= ICANON;
-        tty.c_lflag &= ~ECHO; // Disable echo
-        tty.c_lflag &= ~ECHOE; // Disable erasure
-        tty.c_lflag &= ~ECHONL; // Disable new-line echo
-        tty.c_lflag &= ~ISIG; // Disable interpretation of INTR, QUIT and SUSP
-        tty.c_iflag &= ~(IXON | IXOFF | IXANY); // Turn off s/w flow ctrl
-        tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL); // Disable any special handling of received bytes
-        tty.c_oflag &= ~OPOST; // Prevent special interpretation of output bytes (e.g. newline chars)
-        tty.c_oflag &= ~ONLCR; // Prevent conversion of newline to carriage return/line feed
-        tty.c_cc[VTIME] = 0;    // Wait for up to 1s (10 deciseconds), returning as soon as any data is received.
-        tty.c_cc[VMIN] = 1;
-        cfsetispeed(&tty, B19200);
-        cfsetospeed(&tty, B19200);*/
-
         // Save tty settings, also checking for error
         if (tcsetattr(serial_port, TCSANOW, &tty) != 0) {
             printf("Error %i from tcsetattr: %s\n", errno, strerror(errno));
         }
     }
-
-  chrono::high_resolution_clock::time_point t_start = chrono::high_resolution_clock::now();
+chrono::high_resolution_clock::time_point t_real_start = chrono::high_resolution_clock::now();
+chrono::high_resolution_clock::time_point t_start = chrono::high_resolution_clock::now();
 
   string s_cry_msg,s_clear_crib;
 
@@ -174,13 +159,11 @@ int main(int argc, char **argv)
 
    int i_messageSize = preparison.get_msg_size();
 
-  //for loop that checks all rotor variations         
+        
       //cout << "I will check this rotor variation: " << iv_rotors[0]  << iv_rotors[1]  << iv_rotors[2]  << endl;
       //for loop that checks all posible crib positions
   for(int j=0; j<i_stock_count;j++)
   {    
-      //TODO getter Methode!!!
-      //char c_crib[MAX_CRIB_SIZE] = {'S','N','M','K','G','G','S','T','Z','Z','U','G','A','R','L','V'};
       char * c_crib = preparison.get_posible_crib_position_as_array(j);
       int i_cribPos = preparison.get_crib_pos(j);
       cout << "The current crib is at position: " << i_cribPos << endl; 
@@ -193,9 +176,10 @@ int main(int argc, char **argv)
           cout << preparison.get_posible_crib_position(j)[i];
       }
       cout <<endl;
-      
+      // if the generation of a menu is posible run the TURBO
       if (TURBOmenu.generate_tabel())
       {
+          //for loop that checks all rotor variations   
           for(int i=0; i<preparison.get_count_rotor_variations();i++)
           {
             vector<int> vi_current_rotor_variation = preparison.get_rotor_variation(i);
@@ -210,9 +194,9 @@ int main(int argc, char **argv)
             char c_ringSetting[DRUMARRAY_YSIZE];
 
             //just for testing
-            st_my_menu.i_rotors[0] = 2;
-            st_my_menu.i_rotors[1] = 5;
-            st_my_menu.i_rotors[2] = 3;
+            // st_my_menu.i_rotors[0] = 2;
+            // st_my_menu.i_rotors[1] = 5;
+            // st_my_menu.i_rotors[2] = 3;
             TuringBomb ob_fistTuringBomb(st_my_menu);
             CheckingMachine ob_CheckingMachine;
             Enigma ob_firstEnigma;
@@ -351,7 +335,12 @@ int main(int argc, char **argv)
                             ob_firstEnigma.b_setPlugBoard(c_plugBoardSetting);
                             if(ob_firstEnigma.b_decryptMessage(c_message,i_messageSize,c_crib,c_clearCrib,i_cribSize,i_cribPos,c_plugBoardSetting, st_my_menu, c_ringSetting))
                             {
-                                print_runtime(t_start);
+                                //print_runtime(t_start);
+                                ui_run_count ++;
+                                d_t_total = add_time(t_start, d_t_total);
+                                cout << "The TURBO run " << ui_run_count << " times" << endl; 
+                                cout << "The TURBO runs needed " << d_t_total << " seconds"<< endl;
+                                print_runtime(t_real_start);
                                 //send reset
                                 unsigned char reset_instruction_msg[] = {'R','S','E','T'};
                                 write(serial_port, reset_instruction_msg, sizeof(reset_instruction_msg)); 
@@ -380,9 +369,10 @@ int main(int argc, char **argv)
                         //no sulution in BRAM .... try again!
                     }
                     //
-
+                    
                 }  
-
+                ui_run_count ++;
+                d_t_total = add_time(t_start, d_t_total);
 
 
                 
@@ -396,17 +386,17 @@ int main(int argc, char **argv)
                 while(ob_fistTuringBomb.b_findNextStop(c_stopResult))
                 {
                     //DKXD
-                        //c_stopResult[0] = 'D';//read_buf[5];
-                        //c_stopResult[1] = 'K';//read_buf[6];
-                        //c_stopResult[2] = 'X';//read_buf[7];
-                        //c_stopResult[3] = 'D';//read_buf[8];
-                        //cout << st_my_menu.i_rotors[0] << st_my_menu.i_rotors[1] << st_my_menu.i_rotors[2] << endl;
-                        //cout << c_stopResult[0] << c_stopResult[1] << c_stopResult[2] << endl;//c_stopResult[3] << endl;
-                        //ob_fistTuringBomb.printDB();
-                        //getchar();
-                        //print_runtime(t_start);
-                        if(ob_CheckingMachine.calcPlugBoardConnections(st_my_menu,c_stopResult,c_plugBoardSetting))
-                        {
+                    //c_stopResult[0] = 'D';//read_buf[5];
+                    //c_stopResult[1] = 'K';//read_buf[6];
+                    //c_stopResult[2] = 'X';//read_buf[7];
+                    //c_stopResult[3] = 'D';//read_buf[8];
+                    //cout << st_my_menu.i_rotors[0] << st_my_menu.i_rotors[1] << st_my_menu.i_rotors[2] << endl;
+                    //cout << c_stopResult[0] << c_stopResult[1] << c_stopResult[2] << endl;//c_stopResult[3] << endl;
+                    //ob_fistTuringBomb.printDB();
+                    //getchar();
+                    //print_runtime(t_start);
+                    if(ob_CheckingMachine.calcPlugBoardConnections(st_my_menu,c_stopResult,c_plugBoardSetting))
+                    {
                         c_ringSetting[0] = c_stopResult[0];
                         c_ringSetting[1] = c_stopResult[1];
                         c_ringSetting[2] = c_stopResult[2];
@@ -416,14 +406,20 @@ int main(int argc, char **argv)
                         if(ob_firstEnigma.b_decryptMessage(c_message,i_messageSize,c_crib,c_clearCrib,i_cribSize,i_cribPos,c_plugBoardSetting, st_my_menu, c_ringSetting))
                         {
                             //DKXB
+                            ui_run_count ++;
+                            d_t_total = add_time(t_start, d_t_total);
                             cout << "Ring settings : " << c_ringSetting[0] << c_ringSetting[1] << c_ringSetting[2] << endl;
                             cout << "Diagonalboard solutuion : " << c_stopResult[3] << endl;
                             cout << "Plugboard setting : " << c_plugBoardSetting << endl;
-                            print_runtime(t_start);
+                            cout << "The TURBO runs " << ui_run_count << " times" << endl; 
+                            cout << "The TURBO runs needed " << d_t_total << " seconds"<< endl;
+                            print_runtime(t_real_start);
                             exit(0);
                         }
                     }
                 }
+                ui_run_count ++;
+                d_t_total = add_time(t_start, d_t_total);
             }
             
          }
@@ -438,5 +434,11 @@ int main(int argc, char **argv)
 void print_runtime(chrono::high_resolution_clock::time_point t_start){
     chrono::high_resolution_clock::time_point t_end = chrono::high_resolution_clock::now();
     chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(t_end - t_start);
-    cout << "I need " << time_span.count() << " seconds for the computation"<< endl;
+    cout << "I need " << time_span.count() << " seconds for the whole computation"<< endl;
+}
+
+double add_time(chrono::high_resolution_clock::time_point t_start, double d_t_total){
+    chrono::high_resolution_clock::time_point t_end = chrono::high_resolution_clock::now();
+    chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(t_end - t_start);
+    return d_t_total + time_span.count();
 }
