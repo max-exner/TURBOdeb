@@ -11,6 +11,12 @@
 The "Turing Bomb Dependent Benchmark Project" is an elaboration of a comparison between a CPU and an FPGA. The aim of this project is to show the advantages and disadvantages of a CPU and
 an FPGA using the solution algorithm of the Turing Bombe. The Turing Bombe is an electro-mechanical machine that was used to decrypt messages which were encrypted by the Enigma.
 
+## Project Architecture
+
+![alt text](https://github.com/max-exner/TURBOdeb/blob/master/README_DEP/TURBOdeb_Architecture.png)
+
+
+
 ## Instructions To Test The Design
 
 ### CPU Implementation
