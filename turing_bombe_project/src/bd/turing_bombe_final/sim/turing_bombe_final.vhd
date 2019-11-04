@@ -1,8 +1,8 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
---Date        : Mon Oct 28 15:43:40 2019
---Host        : rabida running 64-bit Ubuntu 16.04.6 LTS
+--Date        : Mon Nov  4 17:47:51 2019
+--Host        : TobisLinux running 64-bit Ubuntu 16.04.6 LTS
 --Command     : generate_target turing_bombe_final.bd
 --Design      : turing_bombe_final
 --Purpose     : IP block netlist
@@ -506,83 +506,6 @@ architecture STRUCTURE of turing_bombe_final is
     PS_PORB : inout STD_LOGIC
   );
   end component turing_bombe_final_processing_system7_0_0;
-  component turing_bombe_final_smartconnect_0_0 is
-  port (
-    aclk : in STD_LOGIC;
-    aresetn : in STD_LOGIC;
-    S00_AXI_awid : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    S00_AXI_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S00_AXI_awlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S00_AXI_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    S00_AXI_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    S00_AXI_awlock : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    S00_AXI_awcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S00_AXI_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    S00_AXI_awqos : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S00_AXI_awvalid : in STD_LOGIC;
-    S00_AXI_awready : out STD_LOGIC;
-    S00_AXI_wid : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    S00_AXI_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S00_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S00_AXI_wlast : in STD_LOGIC;
-    S00_AXI_wvalid : in STD_LOGIC;
-    S00_AXI_wready : out STD_LOGIC;
-    S00_AXI_bid : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    S00_AXI_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    S00_AXI_bvalid : out STD_LOGIC;
-    S00_AXI_bready : in STD_LOGIC;
-    S00_AXI_arid : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    S00_AXI_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    S00_AXI_arlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S00_AXI_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    S00_AXI_arburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    S00_AXI_arlock : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    S00_AXI_arcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S00_AXI_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    S00_AXI_arqos : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    S00_AXI_arvalid : in STD_LOGIC;
-    S00_AXI_arready : out STD_LOGIC;
-    S00_AXI_rid : out STD_LOGIC_VECTOR ( 11 downto 0 );
-    S00_AXI_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    S00_AXI_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    S00_AXI_rlast : out STD_LOGIC;
-    S00_AXI_rvalid : out STD_LOGIC;
-    S00_AXI_rready : in STD_LOGIC;
-    M00_AXI_awaddr : out STD_LOGIC_VECTOR ( 12 downto 0 );
-    M00_AXI_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    M00_AXI_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M00_AXI_awburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    M00_AXI_awlock : out STD_LOGIC_VECTOR ( 0 to 0 );
-    M00_AXI_awcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M00_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M00_AXI_awqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M00_AXI_awvalid : out STD_LOGIC;
-    M00_AXI_awready : in STD_LOGIC;
-    M00_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    M00_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M00_AXI_wlast : out STD_LOGIC;
-    M00_AXI_wvalid : out STD_LOGIC;
-    M00_AXI_wready : in STD_LOGIC;
-    M00_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M00_AXI_bvalid : in STD_LOGIC;
-    M00_AXI_bready : out STD_LOGIC;
-    M00_AXI_araddr : out STD_LOGIC_VECTOR ( 12 downto 0 );
-    M00_AXI_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    M00_AXI_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M00_AXI_arburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    M00_AXI_arlock : out STD_LOGIC_VECTOR ( 0 to 0 );
-    M00_AXI_arcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M00_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
-    M00_AXI_arqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    M00_AXI_arvalid : out STD_LOGIC;
-    M00_AXI_arready : in STD_LOGIC;
-    M00_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    M00_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    M00_AXI_rlast : in STD_LOGIC;
-    M00_AXI_rvalid : in STD_LOGIC;
-    M00_AXI_rready : out STD_LOGIC
-  );
-  end component turing_bombe_final_smartconnect_0_0;
   component turing_bombe_final_turing_bombe_control_0_0 is
   port (
     ENABLE_BRAM_A_IN : in STD_LOGIC;
@@ -727,6 +650,83 @@ architecture STRUCTURE of turing_bombe_final is
     dout : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component turing_bombe_final_xlconstant_0_0;
+  component turing_bombe_final_smartconnect_1_0 is
+  port (
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    S00_AXI_awid : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    S00_AXI_awaddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S00_AXI_awlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S00_AXI_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    S00_AXI_awburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    S00_AXI_awlock : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    S00_AXI_awcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S00_AXI_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    S00_AXI_awqos : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S00_AXI_awvalid : in STD_LOGIC;
+    S00_AXI_awready : out STD_LOGIC;
+    S00_AXI_wid : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    S00_AXI_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S00_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S00_AXI_wlast : in STD_LOGIC;
+    S00_AXI_wvalid : in STD_LOGIC;
+    S00_AXI_wready : out STD_LOGIC;
+    S00_AXI_bid : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    S00_AXI_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    S00_AXI_bvalid : out STD_LOGIC;
+    S00_AXI_bready : in STD_LOGIC;
+    S00_AXI_arid : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    S00_AXI_araddr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    S00_AXI_arlen : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S00_AXI_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    S00_AXI_arburst : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    S00_AXI_arlock : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    S00_AXI_arcache : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S00_AXI_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    S00_AXI_arqos : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    S00_AXI_arvalid : in STD_LOGIC;
+    S00_AXI_arready : out STD_LOGIC;
+    S00_AXI_rid : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    S00_AXI_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    S00_AXI_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    S00_AXI_rlast : out STD_LOGIC;
+    S00_AXI_rvalid : out STD_LOGIC;
+    S00_AXI_rready : in STD_LOGIC;
+    M00_AXI_awaddr : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    M00_AXI_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    M00_AXI_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M00_AXI_awburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    M00_AXI_awlock : out STD_LOGIC_VECTOR ( 0 to 0 );
+    M00_AXI_awcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M00_AXI_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M00_AXI_awqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M00_AXI_awvalid : out STD_LOGIC;
+    M00_AXI_awready : in STD_LOGIC;
+    M00_AXI_wdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M00_AXI_wstrb : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M00_AXI_wlast : out STD_LOGIC;
+    M00_AXI_wvalid : out STD_LOGIC;
+    M00_AXI_wready : in STD_LOGIC;
+    M00_AXI_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M00_AXI_bvalid : in STD_LOGIC;
+    M00_AXI_bready : out STD_LOGIC;
+    M00_AXI_araddr : out STD_LOGIC_VECTOR ( 12 downto 0 );
+    M00_AXI_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    M00_AXI_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M00_AXI_arburst : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    M00_AXI_arlock : out STD_LOGIC_VECTOR ( 0 to 0 );
+    M00_AXI_arcache : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M00_AXI_arprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    M00_AXI_arqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    M00_AXI_arvalid : out STD_LOGIC;
+    M00_AXI_arready : in STD_LOGIC;
+    M00_AXI_rdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    M00_AXI_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    M00_AXI_rlast : in STD_LOGIC;
+    M00_AXI_rvalid : in STD_LOGIC;
+    M00_AXI_rready : out STD_LOGIC
+  );
+  end component turing_bombe_final_smartconnect_1_0;
   signal TURBO_enigma_0_CODED_CHARACTERS_OUT_DB0 : STD_LOGIC_VECTOR ( 25 downto 0 );
   signal TURBO_enigma_0_CODED_CHARACTERS_OUT_DB1 : STD_LOGIC_VECTOR ( 25 downto 0 );
   signal TURBO_enigma_0_READY_OUT : STD_LOGIC;
@@ -861,37 +861,37 @@ architecture STRUCTURE of turing_bombe_final is
   signal processing_system7_0_M_AXI_GP0_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal processing_system7_0_M_AXI_GP0_WVALID : STD_LOGIC;
   signal sim_clk_gen_0_clk : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
-  signal smartconnect_0_M00_AXI_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal smartconnect_0_M00_AXI_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal smartconnect_0_M00_AXI_ARLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal smartconnect_0_M00_AXI_ARLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal smartconnect_0_M00_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal smartconnect_0_M00_AXI_ARREADY : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_ARSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal smartconnect_0_M00_AXI_ARVALID : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_AWADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
-  signal smartconnect_0_M00_AXI_AWBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal smartconnect_0_M00_AXI_AWCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal smartconnect_0_M00_AXI_AWLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal smartconnect_0_M00_AXI_AWLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal smartconnect_0_M00_AXI_AWPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal smartconnect_0_M00_AXI_AWREADY : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_AWSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal smartconnect_0_M00_AXI_AWVALID : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_BREADY : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal smartconnect_0_M00_AXI_BVALID : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal smartconnect_0_M00_AXI_RLAST : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_RREADY : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal smartconnect_0_M00_AXI_RVALID : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal smartconnect_0_M00_AXI_WLAST : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_WREADY : STD_LOGIC;
-  signal smartconnect_0_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal smartconnect_0_M00_AXI_WVALID : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_ARADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal smartconnect_1_M00_AXI_ARBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal smartconnect_1_M00_AXI_ARCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal smartconnect_1_M00_AXI_ARLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal smartconnect_1_M00_AXI_ARLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal smartconnect_1_M00_AXI_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal smartconnect_1_M00_AXI_ARREADY : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_ARSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal smartconnect_1_M00_AXI_ARVALID : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_AWADDR : STD_LOGIC_VECTOR ( 12 downto 0 );
+  signal smartconnect_1_M00_AXI_AWBURST : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal smartconnect_1_M00_AXI_AWCACHE : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal smartconnect_1_M00_AXI_AWLEN : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal smartconnect_1_M00_AXI_AWLOCK : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal smartconnect_1_M00_AXI_AWPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal smartconnect_1_M00_AXI_AWREADY : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_AWSIZE : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal smartconnect_1_M00_AXI_AWVALID : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_BREADY : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_BRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal smartconnect_1_M00_AXI_BVALID : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_RDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal smartconnect_1_M00_AXI_RLAST : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_RREADY : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_RRESP : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal smartconnect_1_M00_AXI_RVALID : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_WDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal smartconnect_1_M00_AXI_WLAST : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_WREADY : STD_LOGIC;
+  signal smartconnect_1_M00_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal smartconnect_1_M00_AXI_WVALID : STD_LOGIC;
   signal turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON0_OUT : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON1_OUT : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal turing_bombe_control_0_DB_IN_ENIGMA_11_DBCON0_OUT : STD_LOGIC_VECTOR ( 4 downto 0 );
@@ -996,8 +996,8 @@ architecture STRUCTURE of turing_bombe_final is
   signal NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
-  signal NLW_smartconnect_0_M00_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal NLW_smartconnect_0_M00_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_smartconnect_1_M00_AXI_arqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_smartconnect_1_M00_AXI_awqos_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_turing_bombe_control_0_LED_START_RED_UNCONNECTED : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of CLK : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
@@ -1258,38 +1258,38 @@ axi_bram_ctrl_0: component turing_bombe_final_axi_bram_ctrl_0_0
       bram_we_a(3 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_WE(3 downto 0),
       bram_wrdata_a(31 downto 0) => axi_bram_ctrl_0_BRAM_PORTA_DIN(31 downto 0),
       s_axi_aclk => sim_clk_gen_0_clk,
-      s_axi_araddr(12 downto 0) => smartconnect_0_M00_AXI_ARADDR(12 downto 0),
-      s_axi_arburst(1 downto 0) => smartconnect_0_M00_AXI_ARBURST(1 downto 0),
-      s_axi_arcache(3 downto 0) => smartconnect_0_M00_AXI_ARCACHE(3 downto 0),
+      s_axi_araddr(12 downto 0) => smartconnect_1_M00_AXI_ARADDR(12 downto 0),
+      s_axi_arburst(1 downto 0) => smartconnect_1_M00_AXI_ARBURST(1 downto 0),
+      s_axi_arcache(3 downto 0) => smartconnect_1_M00_AXI_ARCACHE(3 downto 0),
       s_axi_aresetn => xlconstant_0_dout(0),
-      s_axi_arlen(7 downto 0) => smartconnect_0_M00_AXI_ARLEN(7 downto 0),
-      s_axi_arlock => smartconnect_0_M00_AXI_ARLOCK(0),
-      s_axi_arprot(2 downto 0) => smartconnect_0_M00_AXI_ARPROT(2 downto 0),
-      s_axi_arready => smartconnect_0_M00_AXI_ARREADY,
-      s_axi_arsize(2 downto 0) => smartconnect_0_M00_AXI_ARSIZE(2 downto 0),
-      s_axi_arvalid => smartconnect_0_M00_AXI_ARVALID,
-      s_axi_awaddr(12 downto 0) => smartconnect_0_M00_AXI_AWADDR(12 downto 0),
-      s_axi_awburst(1 downto 0) => smartconnect_0_M00_AXI_AWBURST(1 downto 0),
-      s_axi_awcache(3 downto 0) => smartconnect_0_M00_AXI_AWCACHE(3 downto 0),
-      s_axi_awlen(7 downto 0) => smartconnect_0_M00_AXI_AWLEN(7 downto 0),
-      s_axi_awlock => smartconnect_0_M00_AXI_AWLOCK(0),
-      s_axi_awprot(2 downto 0) => smartconnect_0_M00_AXI_AWPROT(2 downto 0),
-      s_axi_awready => smartconnect_0_M00_AXI_AWREADY,
-      s_axi_awsize(2 downto 0) => smartconnect_0_M00_AXI_AWSIZE(2 downto 0),
-      s_axi_awvalid => smartconnect_0_M00_AXI_AWVALID,
-      s_axi_bready => smartconnect_0_M00_AXI_BREADY,
-      s_axi_bresp(1 downto 0) => smartconnect_0_M00_AXI_BRESP(1 downto 0),
-      s_axi_bvalid => smartconnect_0_M00_AXI_BVALID,
-      s_axi_rdata(31 downto 0) => smartconnect_0_M00_AXI_RDATA(31 downto 0),
-      s_axi_rlast => smartconnect_0_M00_AXI_RLAST,
-      s_axi_rready => smartconnect_0_M00_AXI_RREADY,
-      s_axi_rresp(1 downto 0) => smartconnect_0_M00_AXI_RRESP(1 downto 0),
-      s_axi_rvalid => smartconnect_0_M00_AXI_RVALID,
-      s_axi_wdata(31 downto 0) => smartconnect_0_M00_AXI_WDATA(31 downto 0),
-      s_axi_wlast => smartconnect_0_M00_AXI_WLAST,
-      s_axi_wready => smartconnect_0_M00_AXI_WREADY,
-      s_axi_wstrb(3 downto 0) => smartconnect_0_M00_AXI_WSTRB(3 downto 0),
-      s_axi_wvalid => smartconnect_0_M00_AXI_WVALID
+      s_axi_arlen(7 downto 0) => smartconnect_1_M00_AXI_ARLEN(7 downto 0),
+      s_axi_arlock => smartconnect_1_M00_AXI_ARLOCK(0),
+      s_axi_arprot(2 downto 0) => smartconnect_1_M00_AXI_ARPROT(2 downto 0),
+      s_axi_arready => smartconnect_1_M00_AXI_ARREADY,
+      s_axi_arsize(2 downto 0) => smartconnect_1_M00_AXI_ARSIZE(2 downto 0),
+      s_axi_arvalid => smartconnect_1_M00_AXI_ARVALID,
+      s_axi_awaddr(12 downto 0) => smartconnect_1_M00_AXI_AWADDR(12 downto 0),
+      s_axi_awburst(1 downto 0) => smartconnect_1_M00_AXI_AWBURST(1 downto 0),
+      s_axi_awcache(3 downto 0) => smartconnect_1_M00_AXI_AWCACHE(3 downto 0),
+      s_axi_awlen(7 downto 0) => smartconnect_1_M00_AXI_AWLEN(7 downto 0),
+      s_axi_awlock => smartconnect_1_M00_AXI_AWLOCK(0),
+      s_axi_awprot(2 downto 0) => smartconnect_1_M00_AXI_AWPROT(2 downto 0),
+      s_axi_awready => smartconnect_1_M00_AXI_AWREADY,
+      s_axi_awsize(2 downto 0) => smartconnect_1_M00_AXI_AWSIZE(2 downto 0),
+      s_axi_awvalid => smartconnect_1_M00_AXI_AWVALID,
+      s_axi_bready => smartconnect_1_M00_AXI_BREADY,
+      s_axi_bresp(1 downto 0) => smartconnect_1_M00_AXI_BRESP(1 downto 0),
+      s_axi_bvalid => smartconnect_1_M00_AXI_BVALID,
+      s_axi_rdata(31 downto 0) => smartconnect_1_M00_AXI_RDATA(31 downto 0),
+      s_axi_rlast => smartconnect_1_M00_AXI_RLAST,
+      s_axi_rready => smartconnect_1_M00_AXI_RREADY,
+      s_axi_rresp(1 downto 0) => smartconnect_1_M00_AXI_RRESP(1 downto 0),
+      s_axi_rvalid => smartconnect_1_M00_AXI_RVALID,
+      s_axi_wdata(31 downto 0) => smartconnect_1_M00_AXI_WDATA(31 downto 0),
+      s_axi_wlast => smartconnect_1_M00_AXI_WLAST,
+      s_axi_wready => smartconnect_1_M00_AXI_WREADY,
+      s_axi_wstrb(3 downto 0) => smartconnect_1_M00_AXI_WSTRB(3 downto 0),
+      s_axi_wvalid => smartconnect_1_M00_AXI_WVALID
     );
 diagonal_board_0: component turing_bombe_final_diagonal_board_0_0
      port map (
@@ -1474,41 +1474,41 @@ processing_system7_0: component turing_bombe_final_processing_system7_0_0
       USB0_VBUS_PWRFAULT => '0',
       USB0_VBUS_PWRSELECT => NLW_processing_system7_0_USB0_VBUS_PWRSELECT_UNCONNECTED
     );
-smartconnect_0: component turing_bombe_final_smartconnect_0_0
+smartconnect_1: component turing_bombe_final_smartconnect_1_0
      port map (
-      M00_AXI_araddr(12 downto 0) => smartconnect_0_M00_AXI_ARADDR(12 downto 0),
-      M00_AXI_arburst(1 downto 0) => smartconnect_0_M00_AXI_ARBURST(1 downto 0),
-      M00_AXI_arcache(3 downto 0) => smartconnect_0_M00_AXI_ARCACHE(3 downto 0),
-      M00_AXI_arlen(7 downto 0) => smartconnect_0_M00_AXI_ARLEN(7 downto 0),
-      M00_AXI_arlock(0) => smartconnect_0_M00_AXI_ARLOCK(0),
-      M00_AXI_arprot(2 downto 0) => smartconnect_0_M00_AXI_ARPROT(2 downto 0),
-      M00_AXI_arqos(3 downto 0) => NLW_smartconnect_0_M00_AXI_arqos_UNCONNECTED(3 downto 0),
-      M00_AXI_arready => smartconnect_0_M00_AXI_ARREADY,
-      M00_AXI_arsize(2 downto 0) => smartconnect_0_M00_AXI_ARSIZE(2 downto 0),
-      M00_AXI_arvalid => smartconnect_0_M00_AXI_ARVALID,
-      M00_AXI_awaddr(12 downto 0) => smartconnect_0_M00_AXI_AWADDR(12 downto 0),
-      M00_AXI_awburst(1 downto 0) => smartconnect_0_M00_AXI_AWBURST(1 downto 0),
-      M00_AXI_awcache(3 downto 0) => smartconnect_0_M00_AXI_AWCACHE(3 downto 0),
-      M00_AXI_awlen(7 downto 0) => smartconnect_0_M00_AXI_AWLEN(7 downto 0),
-      M00_AXI_awlock(0) => smartconnect_0_M00_AXI_AWLOCK(0),
-      M00_AXI_awprot(2 downto 0) => smartconnect_0_M00_AXI_AWPROT(2 downto 0),
-      M00_AXI_awqos(3 downto 0) => NLW_smartconnect_0_M00_AXI_awqos_UNCONNECTED(3 downto 0),
-      M00_AXI_awready => smartconnect_0_M00_AXI_AWREADY,
-      M00_AXI_awsize(2 downto 0) => smartconnect_0_M00_AXI_AWSIZE(2 downto 0),
-      M00_AXI_awvalid => smartconnect_0_M00_AXI_AWVALID,
-      M00_AXI_bready => smartconnect_0_M00_AXI_BREADY,
-      M00_AXI_bresp(1 downto 0) => smartconnect_0_M00_AXI_BRESP(1 downto 0),
-      M00_AXI_bvalid => smartconnect_0_M00_AXI_BVALID,
-      M00_AXI_rdata(31 downto 0) => smartconnect_0_M00_AXI_RDATA(31 downto 0),
-      M00_AXI_rlast => smartconnect_0_M00_AXI_RLAST,
-      M00_AXI_rready => smartconnect_0_M00_AXI_RREADY,
-      M00_AXI_rresp(1 downto 0) => smartconnect_0_M00_AXI_RRESP(1 downto 0),
-      M00_AXI_rvalid => smartconnect_0_M00_AXI_RVALID,
-      M00_AXI_wdata(31 downto 0) => smartconnect_0_M00_AXI_WDATA(31 downto 0),
-      M00_AXI_wlast => smartconnect_0_M00_AXI_WLAST,
-      M00_AXI_wready => smartconnect_0_M00_AXI_WREADY,
-      M00_AXI_wstrb(3 downto 0) => smartconnect_0_M00_AXI_WSTRB(3 downto 0),
-      M00_AXI_wvalid => smartconnect_0_M00_AXI_WVALID,
+      M00_AXI_araddr(12 downto 0) => smartconnect_1_M00_AXI_ARADDR(12 downto 0),
+      M00_AXI_arburst(1 downto 0) => smartconnect_1_M00_AXI_ARBURST(1 downto 0),
+      M00_AXI_arcache(3 downto 0) => smartconnect_1_M00_AXI_ARCACHE(3 downto 0),
+      M00_AXI_arlen(7 downto 0) => smartconnect_1_M00_AXI_ARLEN(7 downto 0),
+      M00_AXI_arlock(0) => smartconnect_1_M00_AXI_ARLOCK(0),
+      M00_AXI_arprot(2 downto 0) => smartconnect_1_M00_AXI_ARPROT(2 downto 0),
+      M00_AXI_arqos(3 downto 0) => NLW_smartconnect_1_M00_AXI_arqos_UNCONNECTED(3 downto 0),
+      M00_AXI_arready => smartconnect_1_M00_AXI_ARREADY,
+      M00_AXI_arsize(2 downto 0) => smartconnect_1_M00_AXI_ARSIZE(2 downto 0),
+      M00_AXI_arvalid => smartconnect_1_M00_AXI_ARVALID,
+      M00_AXI_awaddr(12 downto 0) => smartconnect_1_M00_AXI_AWADDR(12 downto 0),
+      M00_AXI_awburst(1 downto 0) => smartconnect_1_M00_AXI_AWBURST(1 downto 0),
+      M00_AXI_awcache(3 downto 0) => smartconnect_1_M00_AXI_AWCACHE(3 downto 0),
+      M00_AXI_awlen(7 downto 0) => smartconnect_1_M00_AXI_AWLEN(7 downto 0),
+      M00_AXI_awlock(0) => smartconnect_1_M00_AXI_AWLOCK(0),
+      M00_AXI_awprot(2 downto 0) => smartconnect_1_M00_AXI_AWPROT(2 downto 0),
+      M00_AXI_awqos(3 downto 0) => NLW_smartconnect_1_M00_AXI_awqos_UNCONNECTED(3 downto 0),
+      M00_AXI_awready => smartconnect_1_M00_AXI_AWREADY,
+      M00_AXI_awsize(2 downto 0) => smartconnect_1_M00_AXI_AWSIZE(2 downto 0),
+      M00_AXI_awvalid => smartconnect_1_M00_AXI_AWVALID,
+      M00_AXI_bready => smartconnect_1_M00_AXI_BREADY,
+      M00_AXI_bresp(1 downto 0) => smartconnect_1_M00_AXI_BRESP(1 downto 0),
+      M00_AXI_bvalid => smartconnect_1_M00_AXI_BVALID,
+      M00_AXI_rdata(31 downto 0) => smartconnect_1_M00_AXI_RDATA(31 downto 0),
+      M00_AXI_rlast => smartconnect_1_M00_AXI_RLAST,
+      M00_AXI_rready => smartconnect_1_M00_AXI_RREADY,
+      M00_AXI_rresp(1 downto 0) => smartconnect_1_M00_AXI_RRESP(1 downto 0),
+      M00_AXI_rvalid => smartconnect_1_M00_AXI_RVALID,
+      M00_AXI_wdata(31 downto 0) => smartconnect_1_M00_AXI_WDATA(31 downto 0),
+      M00_AXI_wlast => smartconnect_1_M00_AXI_WLAST,
+      M00_AXI_wready => smartconnect_1_M00_AXI_WREADY,
+      M00_AXI_wstrb(3 downto 0) => smartconnect_1_M00_AXI_WSTRB(3 downto 0),
+      M00_AXI_wvalid => smartconnect_1_M00_AXI_WVALID,
       S00_AXI_araddr(31 downto 0) => processing_system7_0_M_AXI_GP0_ARADDR(31 downto 0),
       S00_AXI_arburst(1 downto 0) => processing_system7_0_M_AXI_GP0_ARBURST(1 downto 0),
       S00_AXI_arcache(3 downto 0) => processing_system7_0_M_AXI_GP0_ARCACHE(3 downto 0),

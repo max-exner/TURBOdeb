@@ -26,9 +26,9 @@
       "indicator_drum_0": "",
       "proc_sys_reset_0": "",
       "processing_system7_0": "",
-      "smartconnect_0": "",
       "turing_bombe_control_0": "",
-      "xlconstant_0": ""
+      "xlconstant_0": "",
+      "smartconnect_1": ""
     },
     "interface_ports": {
       "DDR": {
@@ -2308,28 +2308,6 @@
           }
         }
       },
-      "smartconnect_0": {
-        "vlnv": "xilinx.com:ip:smartconnect:1.0",
-        "xci_name": "turing_bombe_final_smartconnect_0_0",
-        "parameters": {
-          "NUM_SI": {
-            "value": "1"
-          }
-        },
-        "interface_ports": {
-          "S00_AXI": {
-            "mode": "Slave",
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-            "bridges": [
-              "M00_AXI"
-            ]
-          },
-          "M00_AXI": {
-            "mode": "Master",
-            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
-          }
-        }
-      },
       "turing_bombe_control_0": {
         "vlnv": "xilinx.com:module_ref:turing_bombe_controller:1.0",
         "xci_name": "turing_bombe_final_turing_bombe_control_0_0",
@@ -3044,25 +3022,41 @@
       "xlconstant_0": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
         "xci_name": "turing_bombe_final_xlconstant_0_0"
+      },
+      "smartconnect_1": {
+        "vlnv": "xilinx.com:ip:smartconnect:1.0",
+        "xci_name": "turing_bombe_final_smartconnect_1_0",
+        "parameters": {
+          "NUM_SI": {
+            "value": "1"
+          }
+        },
+        "interface_ports": {
+          "S00_AXI": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "bridges": [
+              "M00_AXI"
+            ]
+          },
+          "M00_AXI": {
+            "mode": "Master",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          }
+        }
       }
     },
     "interface_nets": {
       "processing_system7_0_M_AXI_GP0": {
         "interface_ports": [
-          "processing_system7_0/M_AXI_GP0",
-          "smartconnect_0/S00_AXI"
+          "smartconnect_1/S00_AXI",
+          "processing_system7_0/M_AXI_GP0"
         ]
       },
-      "axi_bram_ctrl_0_BRAM_PORTA": {
+      "processing_system7_0_FIXED_IO": {
         "interface_ports": [
-          "turing_bombe_control_0/BRAM_A",
-          "axi_bram_ctrl_0/BRAM_PORTA"
-        ]
-      },
-      "smartconnect_0_M00_AXI": {
-        "interface_ports": [
-          "smartconnect_0/M00_AXI",
-          "axi_bram_ctrl_0/S_AXI"
+          "FIXED_IO",
+          "processing_system7_0/FIXED_IO"
         ]
       },
       "processing_system7_0_DDR": {
@@ -3071,10 +3065,16 @@
           "processing_system7_0/DDR"
         ]
       },
-      "processing_system7_0_FIXED_IO": {
+      "axi_bram_ctrl_0_BRAM_PORTA": {
         "interface_ports": [
-          "FIXED_IO",
-          "processing_system7_0/FIXED_IO"
+          "turing_bombe_control_0/BRAM_A",
+          "axi_bram_ctrl_0/BRAM_PORTA"
+        ]
+      },
+      "smartconnect_1_M00_AXI": {
+        "interface_ports": [
+          "axi_bram_ctrl_0/S_AXI",
+          "smartconnect_1/M00_AXI"
         ]
       }
     },
@@ -3514,8 +3514,8 @@
           "diagonal_board_0/CLK_IN",
           "indicator_drum_0/CLK_IN",
           "axi_bram_ctrl_0/s_axi_aclk",
-          "smartconnect_0/aclk",
-          "turing_bombe_control_0/CLK_IN"
+          "turing_bombe_control_0/CLK_IN",
+          "smartconnect_1/aclk"
         ]
       },
       "turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON0_OUT": {
@@ -4153,8 +4153,8 @@
       "xlconstant_0_dout": {
         "ports": [
           "xlconstant_0/dout",
-          "smartconnect_0/aresetn",
-          "axi_bram_ctrl_0/s_axi_aresetn"
+          "axi_bram_ctrl_0/s_axi_aresetn",
+          "smartconnect_1/aresetn"
         ]
       }
     },

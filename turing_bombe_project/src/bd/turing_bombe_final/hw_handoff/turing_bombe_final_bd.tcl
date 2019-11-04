@@ -66,7 +66,7 @@ set run_remote_bd_flow 1
 if { $run_remote_bd_flow == 1 } {
   # Set the reference directory for source file relative paths (by default 
   # the value is script directory path)
-  set origin_dir ./turing_bombe_project/src/bd
+  set origin_dir ./bd
 
   # Use origin directory path location variable, if specified in the tcl shell
   if { [info exists ::origin_dir_loc] } {
@@ -1046,11 +1046,11 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_WDT_PERIPHERAL_FREQMHZ {133.333333} \
  ] $processing_system7_0
 
-  # Create instance: smartconnect_0, and set properties
-  set smartconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 smartconnect_0 ]
+  # Create instance: smartconnect_1, and set properties
+  set smartconnect_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 smartconnect_1 ]
   set_property -dict [ list \
    CONFIG.NUM_SI {1} \
- ] $smartconnect_0
+ ] $smartconnect_1
 
   # Create instance: turing_bombe_control_0, and set properties
   set block_name turing_bombe_controller
@@ -1070,8 +1070,8 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_bram_ctrl_0_BRAM_PORTA [get_bd_intf_pins axi_bram_ctrl_0/BRAM_PORTA] [get_bd_intf_pins turing_bombe_control_0/BRAM_A]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
-  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins smartconnect_0/S00_AXI]
-  connect_bd_intf_net -intf_net smartconnect_0_M00_AXI [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins smartconnect_0/M00_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins smartconnect_1/S00_AXI]
+  connect_bd_intf_net -intf_net smartconnect_1_M00_AXI [get_bd_intf_pins axi_bram_ctrl_0/S_AXI] [get_bd_intf_pins smartconnect_1/M00_AXI]
 
   # Create port connections
   connect_bd_net -net TURBO_enigma_0_CODED_CHARACTERS_OUT_DB0 [get_bd_pins TURBO_enigma_0/CODED_CHARACTERS_OUT_DB0] [get_bd_pins diagonal_board_0/ACTIVE_OUT_1_ENIGMA_1_IN]
@@ -1141,7 +1141,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net indicator_drum_0_POS_INDICATOR_DRUM_2_OUT [get_bd_pins indicator_drum_0/POS_INDICATOR_DRUM_2_OUT] [get_bd_pins turing_bombe_control_0/POS_2_INDICATOR_DRUM_IN]
   connect_bd_net -net indicator_drum_0_POS_INDICATOR_DRUM_3_OUT [get_bd_pins indicator_drum_0/POS_INDICATOR_DRUM_3_OUT] [get_bd_pins turing_bombe_control_0/POS_3_INDICATOR_DRUM_IN]
   connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins TURBO_enigma_0/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_1/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_10/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_11/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_12/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_2/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_4/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_5/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_6/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_7/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_8/SOFT_RESET_N_IN] [get_bd_pins TURBO_enigma_9/SOFT_RESET_N_IN] [get_bd_pins diagonal_board_0/RESET_IN] [get_bd_pins indicator_drum_0/RESET_IN] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
-  connect_bd_net -net sim_clk_gen_0_clk [get_bd_ports CLK] [get_bd_pins TURBO_enigma_0/UB_CLK_IN] [get_bd_pins TURBO_enigma_1/UB_CLK_IN] [get_bd_pins TURBO_enigma_10/UB_CLK_IN] [get_bd_pins TURBO_enigma_11/UB_CLK_IN] [get_bd_pins TURBO_enigma_12/UB_CLK_IN] [get_bd_pins TURBO_enigma_2/UB_CLK_IN] [get_bd_pins TURBO_enigma_4/UB_CLK_IN] [get_bd_pins TURBO_enigma_5/UB_CLK_IN] [get_bd_pins TURBO_enigma_6/UB_CLK_IN] [get_bd_pins TURBO_enigma_7/UB_CLK_IN] [get_bd_pins TURBO_enigma_8/UB_CLK_IN] [get_bd_pins TURBO_enigma_9/UB_CLK_IN] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins diagonal_board_0/CLK_IN] [get_bd_pins indicator_drum_0/CLK_IN] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins smartconnect_0/aclk] [get_bd_pins turing_bombe_control_0/CLK_IN]
+  connect_bd_net -net sim_clk_gen_0_clk [get_bd_ports CLK] [get_bd_pins TURBO_enigma_0/UB_CLK_IN] [get_bd_pins TURBO_enigma_1/UB_CLK_IN] [get_bd_pins TURBO_enigma_10/UB_CLK_IN] [get_bd_pins TURBO_enigma_11/UB_CLK_IN] [get_bd_pins TURBO_enigma_12/UB_CLK_IN] [get_bd_pins TURBO_enigma_2/UB_CLK_IN] [get_bd_pins TURBO_enigma_4/UB_CLK_IN] [get_bd_pins TURBO_enigma_5/UB_CLK_IN] [get_bd_pins TURBO_enigma_6/UB_CLK_IN] [get_bd_pins TURBO_enigma_7/UB_CLK_IN] [get_bd_pins TURBO_enigma_8/UB_CLK_IN] [get_bd_pins TURBO_enigma_9/UB_CLK_IN] [get_bd_pins axi_bram_ctrl_0/s_axi_aclk] [get_bd_pins diagonal_board_0/CLK_IN] [get_bd_pins indicator_drum_0/CLK_IN] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins smartconnect_1/aclk] [get_bd_pins turing_bombe_control_0/CLK_IN]
   connect_bd_net -net turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON0_OUT [get_bd_pins diagonal_board_0/ENIGMA_10_DB_CON_1_IN] [get_bd_pins turing_bombe_control_0/DB_IN_ENIGMA_10_DBCON0_OUT]
   connect_bd_net -net turing_bombe_control_0_DB_IN_ENIGMA_10_DBCON1_OUT [get_bd_pins diagonal_board_0/ENIGMA_10_DB_CON_2_IN] [get_bd_pins turing_bombe_control_0/DB_IN_ENIGMA_10_DBCON1_OUT]
   connect_bd_net -net turing_bombe_control_0_DB_IN_ENIGMA_11_DBCON0_OUT [get_bd_pins diagonal_board_0/ENIGMA_11_DB_CON_1_IN] [get_bd_pins turing_bombe_control_0/DB_IN_ENIGMA_11_DBCON0_OUT]
@@ -1238,7 +1238,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net turing_bombe_control_0_LED_SECOND_STOP_OUT [get_bd_ports LED_SECOND_STOP_OUT] [get_bd_pins turing_bombe_control_0/LED_SECOND_STOP_OUT]
   connect_bd_net -net turing_bombe_control_0_LED_THIRD_STOP_OUT [get_bd_ports LED_THIRD_STOP_OUT] [get_bd_pins turing_bombe_control_0/LED_THIRD_STOP_OUT]
   connect_bd_net -net turing_bombe_control_0_RESET_OUT [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins turing_bombe_control_0/RESET_OUT]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins smartconnect_0/aresetn] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins axi_bram_ctrl_0/s_axi_aresetn] [get_bd_pins smartconnect_1/aresetn] [get_bd_pins xlconstant_0/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x00002000 -offset 0x40000000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_bram_ctrl_0/S_AXI/Mem0] SEG_axi_bram_ctrl_0_Mem0

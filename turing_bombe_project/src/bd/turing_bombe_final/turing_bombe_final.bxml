@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="turing_bombe_final" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1572273824"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1572273824"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1572273824"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1572273824"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1572886092"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1572886092"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1572886092"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1572886092"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/turing_bombe_final_TURBO_enigma_0_0/turing_bombe_final_TURBO_enigma_0_0.xci" Type="IP">
         <Instance HierarchyPath="TURBO_enigma_0"/>
@@ -143,14 +143,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/turing_bombe_final_smartconnect_0_0/turing_bombe_final_smartconnect_0_0.xci" Type="IP">
-        <Instance HierarchyPath="smartconnect_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip/turing_bombe_final_turing_bombe_control_0_0/turing_bombe_final_turing_bombe_control_0_0.xci" Type="IP">
         <Instance HierarchyPath="turing_bombe_control_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -175,6 +167,14 @@
       <File Name="sim/turing_bombe_final.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/turing_bombe_final_smartconnect_1_0/turing_bombe_final_smartconnect_1_0.xci" Type="IP">
+        <Instance HierarchyPath="smartconnect_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="turing_bombe_final_ooc.xdc" Type="XDC">
