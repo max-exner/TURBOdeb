@@ -87,6 +87,7 @@
 !*.pdf
 !*.mp4
 !*.zip
+!*.png
 #exclude runs
 turing_bombe_project/vivado/TURBO.runs/*
 
