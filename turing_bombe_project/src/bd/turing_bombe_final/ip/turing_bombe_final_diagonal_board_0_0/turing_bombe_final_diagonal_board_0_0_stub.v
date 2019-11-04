@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-// Date        : Mon Oct 28 15:09:36 2019
-// Host        : rabida running 64-bit Ubuntu 16.04.6 LTS
+// Date        : Mon Nov  4 16:20:50 2019
+// Host        : TobisLinux running 64-bit Ubuntu 16.04.6 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               /homes/mexner/TURBOdeb/turing_bombe_project/src/bd/turing_bombe_final/ip/turing_bombe_final_diagonal_board_0_0/turing_bombe_final_diagonal_board_0_0_stub.v
+//               /home/tobias/Development/TURBOdeb/turing_bombe_project/src/bd/turing_bombe_final/ip/turing_bombe_final_diagonal_board_0_0/turing_bombe_final_diagonal_board_0_0_stub.v
 // Design      : turing_bombe_final_diagonal_board_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
