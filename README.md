@@ -33,8 +33,8 @@ If the Turing Bombe transmits a possible solution, it is passed to another C/C++
 
 To run the CPU implementation, do the following steps (please use the Linux GCC toolchain):
 * Open the [MAIN](/c_implementation/src/main.cpp) 
-* Use the [makefile](/c_implementation/makefile) in the sw directory to build the application.
-* Use the following call to run the CPU implementation (from the sw directory):
+* Use the [makefile](/c_implementation/makefile) in the c_implementation directory to build the application.
+* Use the following call to run the CPU implementation (from the c_implementation directory):
 ```
 ./bin/TURBOdeb -m "<Path_of_the_message_json>"
 ```
@@ -57,9 +57,9 @@ To run the FPGA implementation, do the following steps:
     * Make sure that the "Reset entire System" and "Programm FPGA" checkboxes are checked
     * Press run to flash the bitstream and start the FPGA application
 * After flashing the FPGA application to the FPGA the hardware can be used for the acceletration
-* Use the following call to run the FPGA implementation (from the sw directory):
+* Use the following call to run the FPGA implementation (from the c_implementation directory):
     * make sure that the ZYBO-Z7-20 board is connected and configured 
-    * use the right device file in the /dev/.. - directory
+    * use the right device port in the /dev/.. - directory
 ```
 ./bin/TURBOdeb -m "<Path_of_the_message_json>" -p "/dev/ttyUSBX"
 ```
